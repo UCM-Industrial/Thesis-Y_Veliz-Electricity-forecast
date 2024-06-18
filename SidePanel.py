@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QWidget, QComboBox, QPushButton, QLineEdit, QLabel, QCheckBox
+from PyQt5.QtWidgets import QWidget, QComboBox, QPushButton, QLineEdit, QLabel, QCheckBox, QListWidgetItem, QListWidget
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
 import os
@@ -21,6 +21,7 @@ class SidePanelWindow(QWidget):
         self.init_model_settings_ui()
         self.init_plot_settings_ui()
         self.init_correction_settings_ui()  
+        self.init_line_settings_ui()
 
         self.show_model_settings()
 
@@ -202,6 +203,7 @@ class SidePanelWindow(QWidget):
         self.start_correction_checkbox.setVisible(True)
         self.apply_correction_button.setVisible(True)
         self.apply_button.setVisible(True)
+        
 
         self.title_section2.setVisible(False)
         self.left_arrow_button2.setVisible(False)
@@ -222,8 +224,19 @@ class SidePanelWindow(QWidget):
         self.ylabel_size_input.setVisible(False)
         self.xlabel_size_label.setVisible(False)
         self.xlabel_size_input.setVisible(False)
-        
         self.apply_plot_button.setVisible(False)
+        self.line_list_label.setVisible(False)
+        self.line_list.setVisible(False)
+        self.new_line_label.setVisible(False)
+        self.line_name_label.setVisible(False)
+        self.line_name_input.setVisible(False)
+        self.line_value_label.setVisible(False)
+        self.line_value_input.setVisible(False)
+        self.line_color_label.setVisible(False)
+        self.line_color_input.setVisible(False)
+        self.line_type_label.setVisible(False)
+        self.line_type_combo.setVisible(False)
+        self.add_line_button.setVisible(False)
 
     def show_plot_settings(self):
         """
@@ -275,6 +288,19 @@ class SidePanelWindow(QWidget):
         self.xlabel_size_label.setVisible(True)
         self.xlabel_size_input.setVisible(True)
         self.apply_plot_button.setVisible(True)
+        self.line_list_label.setVisible(True)
+        self.line_list.setVisible(True)
+        self.new_line_label.setVisible(True)
+        self.line_name_label.setVisible(True)
+        self.line_name_input.setVisible(True)
+        self.line_value_label.setVisible(True)
+        self.line_value_input.setVisible(True)
+        self.line_color_label.setVisible(True)
+        self.line_color_input.setVisible(True)
+        self.line_type_label.setVisible(True)
+        self.line_type_combo.setVisible(True)
+        self.add_line_button.setVisible(True)
+
 
     def update_model_parameters(self, model_name):
         """
@@ -422,3 +448,73 @@ class SidePanelWindow(QWidget):
         self.apply_correction_button = QPushButton("Apply Correction", self)
         self.apply_correction_button.clicked.connect(self.main_window.apply_forecast_corrections)
         self.apply_correction_button.setGeometry(10, 610, 280, 30)
+
+
+    def init_line_settings_ui(self):
+        """
+        Initialize UI elements for line settings.
+        """
+        self.line_list_label = QLabel("Active Lines:", self)
+        self.line_list_label.setGeometry(10, 450, 120, 30)
+
+        self.line_list = QListWidget(self)
+        self.line_list.setGeometry(10, 480, 280, 100)
+        self.update_line_list()
+
+        self.new_line_label = QLabel("Add New Line:", self)
+        self.new_line_label.setGeometry(10, 590, 120, 30)
+
+        self.line_name_label = QLabel("Name:", self)
+        self.line_name_label.setGeometry(10, 620, 50, 30)
+        self.line_name_input = QLineEdit(self)
+        self.line_name_input.setGeometry(70, 620, 220, 30)
+
+        self.line_value_label = QLabel("Value:", self)
+        self.line_value_label.setGeometry(10, 660, 50, 30)
+        self.line_value_input = QLineEdit(self)
+        self.line_value_input.setGeometry(70, 660, 220, 30)
+
+        self.line_color_label = QLabel("Color:", self)
+        self.line_color_label.setGeometry(10, 700, 50, 30)
+        self.line_color_input = QLineEdit(self)
+        self.line_color_input.setGeometry(70, 700, 220, 30)
+
+        self.line_type_label = QLabel("Type:", self)
+        self.line_type_label.setGeometry(10, 740, 50, 30)
+        self.line_type_combo = QComboBox(self)
+        self.line_type_combo.addItems(["solid", "dashed", "dotted"])
+        self.line_type_combo.setGeometry(70, 740, 220, 30)
+
+        self.add_line_button = QPushButton("Add Line", self)
+        self.add_line_button.setGeometry(10, 780, 280, 30)
+        self.add_line_button.clicked.connect(self.add_line)
+
+    def update_line_list(self):
+        """
+        Update the list of active lines.
+        """
+        self.line_list.clear()
+        for line in self.main_window.active_lines:
+            item = QListWidgetItem(line['name'])
+            item.setFlags(item.flags() | Qt.ItemIsUserCheckable)
+            item.setCheckState(Qt.Checked if line['active'] else Qt.Unchecked)
+            self.line_list.addItem(item)
+
+    def add_line(self):
+        """
+        Add a new line to the plot.
+        """
+        name = self.line_name_input.text().strip()
+        value = self.line_value_input.text().strip()
+        color = self.line_color_input.text().strip()
+        line_type = self.line_type_combo.currentText()
+
+        if name and value and color:
+            self.main_window.add_line(name, value, color, line_type)
+            self.update_line_list()
+            self.line_name_input.clear()
+            self.line_value_input.clear()
+            self.line_color_input.clear()
+            self.line_type_combo.setCurrentIndex(0)
+        else:
+            self.main_window.console.append("Please fill in all fields to add a new line.")

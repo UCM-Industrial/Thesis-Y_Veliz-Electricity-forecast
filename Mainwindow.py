@@ -152,6 +152,27 @@ class MainWindow(QMainWindow):
         self.sidePanelWindow = None
         self.forecast_until_year = 2100
         self.replace_negative_forecast = False
+        
+        self.active_lines = [] 
+        
+        
+    def add_line(self, name, value, color, line_type):
+        """
+        Add a new line to the active lines list.
+
+        Args:
+            name (str): Name of the line.
+            value (float): Value at which the line will be drawn.
+            color (str): Color of the line.
+            line_type (str): Type of the line (solid, dashed, dotted).
+        """
+        try:
+            value = float(value)
+            line = {'name': name, 'value': value, 'color': color, 'type': line_type, 'active': True}
+            self.active_lines.append(line)
+            self.console.append(f"Added line: {line}")
+        except ValueError:
+            self.console.append("Invalid value for the line.")
 
     def closeEvent(self, event):
         """
@@ -205,7 +226,7 @@ class MainWindow(QMainWindow):
 
     def toggleSidePanel(self):
         """
-        Toggle the visibility of the side panel.
+        Toggle the visibility of the side panel(Hide the Side Panel).
         """
         if self.sidePanelWindow and self.sidePanelWindow.isVisible():
             self.sidePanelWindow.hide()
@@ -316,7 +337,7 @@ class MainWindow(QMainWindow):
             return
 
         p_range = p_range if p_range is not None else range(0, 2)
-        d_range = d_range if d_range is not None else range(0, 1)
+        d_range = d_range if d_range is not None else range(0, 2)
         q_range = q_range if q_range is not None else range(0, 2)
         seasonal_period = seasonal_period if seasonal_period is not None else 11
 
@@ -348,7 +369,7 @@ class MainWindow(QMainWindow):
             return
 
         p_range = p_range if p_range is not None else range(0, 2)
-        d_range = d_range if d_range is not None else range(0, 1)
+        d_range = d_range if d_range is not None else range(0, 2)
         q_range = q_range if q_range is not None else range(0, 2)
 
         selected_countries = self.get_selected_countries(self.country_list)
@@ -384,7 +405,7 @@ class MainWindow(QMainWindow):
             return
 
         p_range = p_range if p_range is not None else range(0, 2)
-        d_range = d_range if d_range is not None else range(0, 1)
+        d_range = d_range if d_range is not None else range(0, 2)
         q_range = q_range if q_range is not None else range(0, 2)
 
         selected_countries = self.get_selected_countries(self.country_list)
@@ -490,6 +511,24 @@ class MainWindow(QMainWindow):
 
         self.forecasted_country_search.clear()
 
+    def add_line(self, name, value, color, line_type):
+        """
+        Add a new line to the active lines list.
+
+        Args:
+            name (str): Name of the line.
+            value (float): Value at which the line will be drawn.
+            color (str): Color of the line.
+            line_type (str): Type of the line (solid, dashed, dotted).
+        """
+        try:
+            value = float(value)
+            line = {'name': name, 'value': value, 'color': color, 'type': line_type, 'active': True}
+            self.active_lines.append(line)
+            self.console.append(f"Added line: {line}")
+        except ValueError:
+            self.console.append("Invalid value for the line.")
+
     def plot_selected_data(self):
         """
         Plot the selected data.
@@ -529,6 +568,16 @@ class MainWindow(QMainWindow):
 
         ax.set_xlim([start_year, end_year])
         ax.set_ylim([0, max_value * 1.01])
+
+        for line in self.active_lines:
+            if line['active']:
+                if line['type'] == 'solid':
+                    linestyle = '-'
+                elif line['type'] == 'dashed':
+                    linestyle = '--'
+                elif line['type'] == 'dotted':
+                    linestyle = ':'
+                ax.axvline(x=line['value'], color=line['color'], linestyle=linestyle, label=line['name'])
 
         self.canvas.draw()
 
