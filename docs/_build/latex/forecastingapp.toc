@@ -1,0 +1,12 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}S+}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Adf\_test module}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Arima module}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Arimax module}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.4}GroupPanel module}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Mainwindow module}{3}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Plotting module}{5}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Sarimax module}{6}{section.1.7}%
+\contentsline {section}{\numberline {1.8}SidePanel module}{7}{section.1.8}%
+\contentsline {chapter}{\numberline {2}Indices and tables}{9}{chapter.2}%
+\contentsline {chapter}{Python Module Index}{11}{section*.61}%

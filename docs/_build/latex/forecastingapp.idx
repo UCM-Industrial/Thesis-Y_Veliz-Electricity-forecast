@@ -1,0 +1,74 @@
+\indexentry{module@\spxentry{module}!Adf\_test@\spxentry{Adf\_test}|hyperpage}{1}
+\indexentry{Adf\_test@\spxentry{Adf\_test}!module@\spxentry{module}|hyperpage}{1}
+\indexentry{perform\_adf\_test\_with\_differencing() (in module Adf\_test)@\spxentry{perform\_adf\_test\_with\_differencing()}\spxextra{in module Adf\_test}|hyperpage}{1}
+\indexentry{module@\spxentry{module}!Arima@\spxentry{Arima}|hyperpage}{1}
+\indexentry{Arima@\spxentry{Arima}!module@\spxentry{module}|hyperpage}{1}
+\indexentry{forecast\_future() (in module Arima)@\spxentry{forecast\_future()}\spxextra{in module Arima}|hyperpage}{1}
+\indexentry{optimize\_arima() (in module Arima)@\spxentry{optimize\_arima()}\spxextra{in module Arima}|hyperpage}{1}
+\indexentry{optimize\_arima\_models() (in module Arima)@\spxentry{optimize\_arima\_models()}\spxextra{in module Arima}|hyperpage}{1}
+\indexentry{module@\spxentry{module}!Arimax@\spxentry{Arimax}|hyperpage}{2}
+\indexentry{Arimax@\spxentry{Arimax}!module@\spxentry{module}|hyperpage}{2}
+\indexentry{forecast\_future() (in module Arimax)@\spxentry{forecast\_future()}\spxextra{in module Arimax}|hyperpage}{2}
+\indexentry{optimize\_arimax() (in module Arimax)@\spxentry{optimize\_arimax()}\spxextra{in module Arimax}|hyperpage}{2}
+\indexentry{optimize\_arimax\_models() (in module Arimax)@\spxentry{optimize\_arimax\_models()}\spxextra{in module Arimax}|hyperpage}{2}
+\indexentry{module@\spxentry{module}!GroupPanel@\spxentry{GroupPanel}|hyperpage}{3}
+\indexentry{GroupPanel@\spxentry{GroupPanel}!module@\spxentry{module}|hyperpage}{3}
+\indexentry{GroupPanelWindow (class in GroupPanel)@\spxentry{GroupPanelWindow}\spxextra{class in GroupPanel}|hyperpage}{3}
+\indexentry{accept() (GroupPanel.GroupPanelWindow method)@\spxentry{accept()}\spxextra{GroupPanel.GroupPanelWindow method}|hyperpage}{3}
+\indexentry{cancel() (GroupPanel.GroupPanelWindow method)@\spxentry{cancel()}\spxextra{GroupPanel.GroupPanelWindow method}|hyperpage}{3}
+\indexentry{module@\spxentry{module}!Mainwindow@\spxentry{Mainwindow}|hyperpage}{3}
+\indexentry{Mainwindow@\spxentry{Mainwindow}!module@\spxentry{module}|hyperpage}{3}
+\indexentry{MainWindow (class in Mainwindow)@\spxentry{MainWindow}\spxextra{class in Mainwindow}|hyperpage}{3}
+\indexentry{add\_line() (Mainwindow.MainWindow method)@\spxentry{add\_line()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{3}
+\indexentry{apply\_forecast\_corrections() (Mainwindow.MainWindow method)@\spxentry{apply\_forecast\_corrections()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{3}
+\indexentry{apply\_linear\_correction() (Mainwindow.MainWindow method)@\spxentry{apply\_linear\_correction()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{3}
+\indexentry{apply\_plot\_settings() (Mainwindow.MainWindow method)@\spxentry{apply\_plot\_settings()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{3}
+\indexentry{clear\_all() (Mainwindow.MainWindow method)@\spxentry{clear\_all()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{3}
+\indexentry{closeEvent() (Mainwindow.MainWindow method)@\spxentry{closeEvent()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{3}
+\indexentry{create\_group() (Mainwindow.MainWindow method)@\spxentry{create\_group()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{3}
+\indexentry{download\_plot() (Mainwindow.MainWindow method)@\spxentry{download\_plot()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{4}
+\indexentry{filter\_country\_list() (Mainwindow.MainWindow method)@\spxentry{filter\_country\_list()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{4}
+\indexentry{filter\_forecasted\_country\_list() (Mainwindow.MainWindow method)@\spxentry{filter\_forecasted\_country\_list()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{4}
+\indexentry{format\_adf\_results() (Mainwindow.MainWindow method)@\spxentry{format\_adf\_results()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{4}
+\indexentry{format\_arima\_results() (Mainwindow.MainWindow method)@\spxentry{format\_arima\_results()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{4}
+\indexentry{format\_arimax\_results() (Mainwindow.MainWindow method)@\spxentry{format\_arimax\_results()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{4}
+\indexentry{format\_sarimax\_results() (Mainwindow.MainWindow method)@\spxentry{format\_sarimax\_results()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{4}
+\indexentry{get\_selected\_countries() (Mainwindow.MainWindow method)@\spxentry{get\_selected\_countries()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{4}
+\indexentry{group\_countries() (Mainwindow.MainWindow method)@\spxentry{group\_countries()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{4}
+\indexentry{load\_file() (Mainwindow.MainWindow method)@\spxentry{load\_file()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{5}
+\indexentry{plot\_selected\_data() (Mainwindow.MainWindow method)@\spxentry{plot\_selected\_data()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{5}
+\indexentry{run\_adf\_test() (Mainwindow.MainWindow method)@\spxentry{run\_adf\_test()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{5}
+\indexentry{run\_arima() (Mainwindow.MainWindow method)@\spxentry{run\_arima()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{5}
+\indexentry{run\_arimax() (Mainwindow.MainWindow method)@\spxentry{run\_arimax()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{5}
+\indexentry{run\_sarimax() (Mainwindow.MainWindow method)@\spxentry{run\_sarimax()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{5}
+\indexentry{save\_forecast() (Mainwindow.MainWindow method)@\spxentry{save\_forecast()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{5}
+\indexentry{toggleSidePanel() (Mainwindow.MainWindow method)@\spxentry{toggleSidePanel()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{5}
+\indexentry{update\_combos() (Mainwindow.MainWindow method)@\spxentry{update\_combos()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{5}
+\indexentry{update\_forecasted\_countries\_list() (Mainwindow.MainWindow method)@\spxentry{update\_forecasted\_countries\_list()}\spxextra{Mainwindow.MainWindow method}|hyperpage}{5}
+\indexentry{module@\spxentry{module}!Plotting@\spxentry{Plotting}|hyperpage}{5}
+\indexentry{Plotting@\spxentry{Plotting}!module@\spxentry{module}|hyperpage}{5}
+\indexentry{plot\_data() (in module Plotting)@\spxentry{plot\_data()}\spxextra{in module Plotting}|hyperpage}{5}
+\indexentry{plot\_data\_stacked\_bar() (in module Plotting)@\spxentry{plot\_data\_stacked\_bar()}\spxextra{in module Plotting}|hyperpage}{6}
+\indexentry{module@\spxentry{module}!Sarimax@\spxentry{Sarimax}|hyperpage}{6}
+\indexentry{Sarimax@\spxentry{Sarimax}!module@\spxentry{module}|hyperpage}{6}
+\indexentry{forecast\_future() (in module Sarimax)@\spxentry{forecast\_future()}\spxextra{in module Sarimax}|hyperpage}{6}
+\indexentry{optimize\_sarimax() (in module Sarimax)@\spxentry{optimize\_sarimax()}\spxextra{in module Sarimax}|hyperpage}{6}
+\indexentry{optimize\_sarimax\_models() (in module Sarimax)@\spxentry{optimize\_sarimax\_models()}\spxextra{in module Sarimax}|hyperpage}{6}
+\indexentry{module@\spxentry{module}!SidePanel@\spxentry{SidePanel}|hyperpage}{7}
+\indexentry{SidePanel@\spxentry{SidePanel}!module@\spxentry{module}|hyperpage}{7}
+\indexentry{SidePanelWindow (class in SidePanel)@\spxentry{SidePanelWindow}\spxextra{class in SidePanel}|hyperpage}{7}
+\indexentry{add\_line() (SidePanel.SidePanelWindow method)@\spxentry{add\_line()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{apply\_arima() (SidePanel.SidePanelWindow method)@\spxentry{apply\_arima()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{apply\_arimax() (SidePanel.SidePanelWindow method)@\spxentry{apply\_arimax()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{apply\_model() (SidePanel.SidePanelWindow method)@\spxentry{apply\_model()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{apply\_plot\_settings() (SidePanel.SidePanelWindow method)@\spxentry{apply\_plot\_settings()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{apply\_sarimax() (SidePanel.SidePanelWindow method)@\spxentry{apply\_sarimax()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{get\_range() (SidePanel.SidePanelWindow method)@\spxentry{get\_range()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{init\_correction\_settings\_ui() (SidePanel.SidePanelWindow method)@\spxentry{init\_correction\_settings\_ui()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{init\_line\_settings\_ui() (SidePanel.SidePanelWindow method)@\spxentry{init\_line\_settings\_ui()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{init\_model\_settings\_ui() (SidePanel.SidePanelWindow method)@\spxentry{init\_model\_settings\_ui()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{init\_plot\_settings\_ui() (SidePanel.SidePanelWindow method)@\spxentry{init\_plot\_settings\_ui()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{show\_model\_settings() (SidePanel.SidePanelWindow method)@\spxentry{show\_model\_settings()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{show\_plot\_settings() (SidePanel.SidePanelWindow method)@\spxentry{show\_plot\_settings()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{update\_line\_list() (SidePanel.SidePanelWindow method)@\spxentry{update\_line\_list()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
+\indexentry{update\_model\_parameters() (SidePanel.SidePanelWindow method)@\spxentry{update\_model\_parameters()}\spxextra{SidePanel.SidePanelWindow method}|hyperpage}{7}
