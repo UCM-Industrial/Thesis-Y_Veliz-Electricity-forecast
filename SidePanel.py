@@ -518,3 +518,6 @@ class SidePanelWindow(QWidget):
             self.line_type_combo.setCurrentIndex(0)
         else:
             self.main_window.console.append("Please fill in all fields to add a new line.")
+
+
+# C:\Users\Yerko\Desktop\S+

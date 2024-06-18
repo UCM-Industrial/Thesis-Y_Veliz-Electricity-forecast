@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arimax module &mdash; Forecasting App Alpha - 1.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=bebbe655"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Forecasting App
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Arimax module</a><ul>
+<li><a class="reference internal" href="#Arimax.forecast_future"><code class="docutils literal notranslate"><span class="pre">forecast_future()</span></code></a></li>
+<li><a class="reference internal" href="#Arimax.optimize_arimax"><code class="docutils literal notranslate"><span class="pre">optimize_arimax()</span></code></a></li>
+<li><a class="reference internal" href="#Arimax.optimize_arimax_models"><code class="docutils literal notranslate"><span class="pre">optimize_arimax_models()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Forecasting App</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Arimax module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Arimax.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Arimax">
+<span id="arimax-module"></span><h1>Arimax module<a class="headerlink" href="#module-Arimax" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="Arimax.forecast_future">
+<span class="sig-prename descclassname"><span class="pre">Arimax.</span></span><span class="sig-name descname"><span class="pre">forecast_future</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arimax_results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">forecast_until_year</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replace_negative_forecast</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Arimax.html#forecast_future"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Arimax.forecast_future" title="Link to this definition"></a></dt>
+<dd><p>Forecast future values using ARIMAX models.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>arimax_results (dict): ARIMAX results.
+df (pd.DataFrame): Data frame containing the data.
+start_year (int): Start year for the forecast.
+forecast_until_year (int): Year until which to forecast.
+replace_negative_forecast (bool): Whether to replace negative forecast values with zero.</p>
+</dd>
+<dt>Returns:</dt><dd><p>dict: Forecast results for each country.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Arimax.optimize_arimax">
+<span class="sig-prename descclassname"><span class="pre">Arimax.</span></span><span class="sig-name descname"><span class="pre">optimize_arimax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exog_series</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Arimax.html#optimize_arimax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Arimax.optimize_arimax" title="Link to this definition"></a></dt>
+<dd><p>Optimize ARIMAX model parameters.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>series (pd.Series): Time series data.
+p_range (range): Range of p values.
+d_range (range): Range of d values.
+q_range (range): Range of q values.
+exog_series (pd.DataFrame): Exogenous variables.</p>
+</dd>
+<dt>Returns:</dt><dd><p>tuple: Best AIC, best order, best model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Arimax.optimize_arimax_models">
+<span class="sig-prename descclassname"><span class="pre">Arimax.</span></span><span class="sig-name descname"><span class="pre">optimize_arimax_models</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adf_results</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selected_countries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_year</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Arimax.html#optimize_arimax_models"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Arimax.optimize_arimax_models" title="Link to this definition"></a></dt>
+<dd><p>Optimize ARIMAX models for multiple countries.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>adf_results (pd.DataFrame): ADF test results.
+df (pd.DataFrame): Data frame containing the data.
+selected_countries (list): List of selected countries.
+p_range (range): Range of p values.
+d_range (range): Range of d values.
+q_range (range): Range of q values.
+start_year (int): Start year for the data.
+end_year (int): End year for the data.</p>
+</dd>
+<dt>Returns:</dt><dd><p>dict: ARIMAX results for each country.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Yerko E. Veliz Olivares.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

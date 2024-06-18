@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SidePanel module &mdash; Forecasting App Alpha - 1.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=bebbe655"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Forecasting App
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">SidePanel module</a><ul>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow</span></code></a><ul>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.add_line"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.add_line()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.apply_arima"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.apply_arima()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.apply_arimax"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.apply_arimax()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.apply_model"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.apply_model()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.apply_plot_settings"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.apply_plot_settings()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.apply_sarimax"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.apply_sarimax()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.get_range"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.get_range()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.init_correction_settings_ui"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.init_correction_settings_ui()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.init_line_settings_ui"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.init_line_settings_ui()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.init_model_settings_ui"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.init_model_settings_ui()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.init_plot_settings_ui"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.init_plot_settings_ui()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.show_model_settings"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.show_model_settings()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.show_plot_settings"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.show_plot_settings()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.update_line_list"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.update_line_list()</span></code></a></li>
+<li><a class="reference internal" href="#SidePanel.SidePanelWindow.update_model_parameters"><code class="docutils literal notranslate"><span class="pre">SidePanelWindow.update_model_parameters()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Forecasting App</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">SidePanel module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/SidePanel.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-SidePanel">
+<span id="sidepanel-module"></span><h1>SidePanel module<a class="headerlink" href="#module-SidePanel" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SidePanel.</span></span><span class="sig-name descname"><span class="pre">SidePanelWindow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">main_window</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<p>Side panel window for settings.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.add_line">
+<span class="sig-name descname"><span class="pre">add_line</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.add_line"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.add_line" title="Link to this definition"></a></dt>
+<dd><p>Add a new line to the plot.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.apply_arima">
+<span class="sig-name descname"><span class="pre">apply_arima</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.apply_arima"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.apply_arima" title="Link to this definition"></a></dt>
+<dd><p>Apply ARIMA model settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.apply_arimax">
+<span class="sig-name descname"><span class="pre">apply_arimax</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.apply_arimax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.apply_arimax" title="Link to this definition"></a></dt>
+<dd><p>Apply ARIMAX model settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.apply_model">
+<span class="sig-name descname"><span class="pre">apply_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.apply_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.apply_model" title="Link to this definition"></a></dt>
+<dd><p>Apply the selected model settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.apply_plot_settings">
+<span class="sig-name descname"><span class="pre">apply_plot_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.apply_plot_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.apply_plot_settings" title="Link to this definition"></a></dt>
+<dd><p>Apply the plot settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.apply_sarimax">
+<span class="sig-name descname"><span class="pre">apply_sarimax</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.apply_sarimax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.apply_sarimax" title="Link to this definition"></a></dt>
+<dd><p>Apply SARIMAX model settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.get_range">
+<span class="sig-name descname"><span class="pre">get_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.get_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.get_range" title="Link to this definition"></a></dt>
+<dd><p>Get a range of values from a text input.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>text (str): The text input.
+default (list): The default range.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: The range of values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.init_correction_settings_ui">
+<span class="sig-name descname"><span class="pre">init_correction_settings_ui</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.init_correction_settings_ui"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.init_correction_settings_ui" title="Link to this definition"></a></dt>
+<dd><p>Initialize UI elements for correction settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.init_line_settings_ui">
+<span class="sig-name descname"><span class="pre">init_line_settings_ui</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.init_line_settings_ui"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.init_line_settings_ui" title="Link to this definition"></a></dt>
+<dd><p>Initialize UI elements for line settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.init_model_settings_ui">
+<span class="sig-name descname"><span class="pre">init_model_settings_ui</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.init_model_settings_ui"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.init_model_settings_ui" title="Link to this definition"></a></dt>
+<dd><p>Initialize UI elements for model settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.init_plot_settings_ui">
+<span class="sig-name descname"><span class="pre">init_plot_settings_ui</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.init_plot_settings_ui"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.init_plot_settings_ui" title="Link to this definition"></a></dt>
+<dd><p>Initialize UI elements for plot settings.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.show_model_settings">
+<span class="sig-name descname"><span class="pre">show_model_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.show_model_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.show_model_settings" title="Link to this definition"></a></dt>
+<dd><p>Show the model settings UI elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.show_plot_settings">
+<span class="sig-name descname"><span class="pre">show_plot_settings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.show_plot_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.show_plot_settings" title="Link to this definition"></a></dt>
+<dd><p>Show the plot settings UI elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.update_line_list">
+<span class="sig-name descname"><span class="pre">update_line_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.update_line_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.update_line_list" title="Link to this definition"></a></dt>
+<dd><p>Update the list of active lines.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SidePanel.SidePanelWindow.update_model_parameters">
+<span class="sig-name descname"><span class="pre">update_model_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/SidePanel.html#SidePanelWindow.update_model_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#SidePanel.SidePanelWindow.update_model_parameters" title="Link to this definition"></a></dt>
+<dd><p>Update model parameters based on selected model.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>model_name (str): The name of the model.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Yerko E. Veliz Olivares.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

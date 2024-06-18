@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mainwindow module &mdash; Forecasting App Alpha - 1.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=bebbe655"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Forecasting App
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Mainwindow module</a><ul>
+<li><a class="reference internal" href="#Mainwindow.MainWindow"><code class="docutils literal notranslate"><span class="pre">MainWindow</span></code></a><ul>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.add_line"><code class="docutils literal notranslate"><span class="pre">MainWindow.add_line()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.apply_forecast_corrections"><code class="docutils literal notranslate"><span class="pre">MainWindow.apply_forecast_corrections()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.apply_linear_correction"><code class="docutils literal notranslate"><span class="pre">MainWindow.apply_linear_correction()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.apply_plot_settings"><code class="docutils literal notranslate"><span class="pre">MainWindow.apply_plot_settings()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.clear_all"><code class="docutils literal notranslate"><span class="pre">MainWindow.clear_all()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.closeEvent"><code class="docutils literal notranslate"><span class="pre">MainWindow.closeEvent()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.create_group"><code class="docutils literal notranslate"><span class="pre">MainWindow.create_group()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.download_plot"><code class="docutils literal notranslate"><span class="pre">MainWindow.download_plot()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.filter_country_list"><code class="docutils literal notranslate"><span class="pre">MainWindow.filter_country_list()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.filter_forecasted_country_list"><code class="docutils literal notranslate"><span class="pre">MainWindow.filter_forecasted_country_list()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.format_adf_results"><code class="docutils literal notranslate"><span class="pre">MainWindow.format_adf_results()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.format_arima_results"><code class="docutils literal notranslate"><span class="pre">MainWindow.format_arima_results()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.format_arimax_results"><code class="docutils literal notranslate"><span class="pre">MainWindow.format_arimax_results()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.format_sarimax_results"><code class="docutils literal notranslate"><span class="pre">MainWindow.format_sarimax_results()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.get_selected_countries"><code class="docutils literal notranslate"><span class="pre">MainWindow.get_selected_countries()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.group_countries"><code class="docutils literal notranslate"><span class="pre">MainWindow.group_countries()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.load_file"><code class="docutils literal notranslate"><span class="pre">MainWindow.load_file()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.plot_selected_data"><code class="docutils literal notranslate"><span class="pre">MainWindow.plot_selected_data()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.run_adf_test"><code class="docutils literal notranslate"><span class="pre">MainWindow.run_adf_test()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.run_arima"><code class="docutils literal notranslate"><span class="pre">MainWindow.run_arima()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.run_arimax"><code class="docutils literal notranslate"><span class="pre">MainWindow.run_arimax()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.run_sarimax"><code class="docutils literal notranslate"><span class="pre">MainWindow.run_sarimax()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.save_forecast"><code class="docutils literal notranslate"><span class="pre">MainWindow.save_forecast()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.toggleSidePanel"><code class="docutils literal notranslate"><span class="pre">MainWindow.toggleSidePanel()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.update_combos"><code class="docutils literal notranslate"><span class="pre">MainWindow.update_combos()</span></code></a></li>
+<li><a class="reference internal" href="#Mainwindow.MainWindow.update_forecasted_countries_list"><code class="docutils literal notranslate"><span class="pre">MainWindow.update_forecasted_countries_list()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Forecasting App</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Mainwindow module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Mainwindow.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Mainwindow">
+<span id="mainwindow-module"></span><h1>Mainwindow module<a class="headerlink" href="#module-Mainwindow" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Mainwindow.</span></span><span class="sig-name descname"><span class="pre">MainWindow</span></span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QMainWindow</span></code></p>
+<p>Main application window for forecasting.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.add_line">
+<span class="sig-name descname"><span class="pre">add_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.add_line"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.add_line" title="Link to this definition"></a></dt>
+<dd><p>Add a new line to the active lines list.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): Name of the line.
+value (float): Value at which the line will be drawn.
+color (str): Color of the line.
+line_type (str): Type of the line (solid, dashed, dotted).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.apply_forecast_corrections">
+<span class="sig-name descname"><span class="pre">apply_forecast_corrections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.apply_forecast_corrections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.apply_forecast_corrections" title="Link to this definition"></a></dt>
+<dd><p>Apply corrections to the forecasted data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.apply_linear_correction">
+<span class="sig-name descname"><span class="pre">apply_linear_correction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continuous</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">short</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.apply_linear_correction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.apply_linear_correction" title="Link to this definition"></a></dt>
+<dd><p>Apply linear correction to the forecasted data.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>country (str): The country for which to apply the correction.
+target_year (int): The target year for the correction.
+target_value (float): The target value for the correction.
+variable (str): The variable to correct.
+continuous (bool): Whether to apply continuous correction.
+short (bool): Whether to apply short correction.
+start (bool): Whether to apply start correction.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.apply_plot_settings">
+<span class="sig-name descname"><span class="pre">apply_plot_settings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">legend_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabel_size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.apply_plot_settings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.apply_plot_settings" title="Link to this definition"></a></dt>
+<dd><p>Apply plot settings to the current plot.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>x_range (tuple): Range for the x-axis.
+y_range (tuple): Range for the y-axis.
+title (str): Title of the plot.
+legend_size (int): Font size for the legend.
+xlabel (str): Label for the x-axis.
+ylabel (str): Label for the y-axis.
+xlabel_size (int): Font size for the x-axis label.
+ylabel_size (int): Font size for the y-axis label.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.clear_all">
+<span class="sig-name descname"><span class="pre">clear_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.clear_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.clear_all" title="Link to this definition"></a></dt>
+<dd><p>Clear all selected forecasted models.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.closeEvent">
+<span class="sig-name descname"><span class="pre">closeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.closeEvent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.closeEvent" title="Link to this definition"></a></dt>
+<dd><p>Handle the event of closing the side panel when closing the main window.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>event (QCloseEvent): The close event.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.create_group">
+<span class="sig-name descname"><span class="pre">create_group</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.create_group"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.create_group" title="Link to this definition"></a></dt>
+<dd><p>Create a group with the specified name from selected countries.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>group_name (str): The name of the group.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.download_plot">
+<span class="sig-name descname"><span class="pre">download_plot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.download_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.download_plot" title="Link to this definition"></a></dt>
+<dd><p>Download the current plot as an image.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.filter_country_list">
+<span class="sig-name descname"><span class="pre">filter_country_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.filter_country_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.filter_country_list" title="Link to this definition"></a></dt>
+<dd><p>Filter the list of countries based on the search input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.filter_forecasted_country_list">
+<span class="sig-name descname"><span class="pre">filter_forecasted_country_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.filter_forecasted_country_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.filter_forecasted_country_list" title="Link to this definition"></a></dt>
+<dd><p>Filter the list of forecasted countries based on the search input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.format_adf_results">
+<span class="sig-name descname"><span class="pre">format_adf_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adf_results</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.format_adf_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.format_adf_results" title="Link to this definition"></a></dt>
+<dd><p>Format ADF test results as HTML.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>adf_results (pd.DataFrame): The ADF test results.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: The formatted results in HTML.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.format_arima_results">
+<span class="sig-name descname"><span class="pre">format_arima_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arima_results</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.format_arima_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.format_arima_results" title="Link to this definition"></a></dt>
+<dd><p>Format ARIMA results as HTML.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>arima_results (dict): The ARIMA results.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: The formatted results in HTML.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.format_arimax_results">
+<span class="sig-name descname"><span class="pre">format_arimax_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arimax_results</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.format_arimax_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.format_arimax_results" title="Link to this definition"></a></dt>
+<dd><p>Format ARIMAX results as HTML.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>arimax_results (dict): The ARIMAX results.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: The formatted results in HTML.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.format_sarimax_results">
+<span class="sig-name descname"><span class="pre">format_sarimax_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sarimax_results</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.format_sarimax_results"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.format_sarimax_results" title="Link to this definition"></a></dt>
+<dd><p>Format SARIMAX results as HTML.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>sarimax_results (dict): The SARIMAX results.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: The formatted results in HTML.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.get_selected_countries">
+<span class="sig-name descname"><span class="pre">get_selected_countries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_widget</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.get_selected_countries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.get_selected_countries" title="Link to this definition"></a></dt>
+<dd><p>Get the list of selected countries from a QListWidget.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>list_widget (QListWidget): The list widget containing the countries.</p>
+</dd>
+<dt>Returns:</dt><dd><p>list: The list of selected countries.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.group_countries">
+<span class="sig-name descname"><span class="pre">group_countries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.group_countries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.group_countries" title="Link to this definition"></a></dt>
+<dd><p>Group selected countries into a single group.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.load_file">
+<span class="sig-name descname"><span class="pre">load_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.load_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.load_file" title="Link to this definition"></a></dt>
+<dd><p>Load a CSV file and update the UI with the loaded data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.plot_selected_data">
+<span class="sig-name descname"><span class="pre">plot_selected_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.plot_selected_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.plot_selected_data" title="Link to this definition"></a></dt>
+<dd><p>Plot the selected data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.run_adf_test">
+<span class="sig-name descname"><span class="pre">run_adf_test</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.run_adf_test"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.run_adf_test" title="Link to this definition"></a></dt>
+<dd><p>Run the Augmented Dickey-Fuller (ADF) test on the selected data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.run_arima">
+<span class="sig-name descname"><span class="pre">run_arima</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.run_arima"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.run_arima" title="Link to this definition"></a></dt>
+<dd><p>Run the ARIMA model optimization and forecasting.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>p_range (range): Range of p values.
+d_range (range): Range of d values.
+q_range (range): Range of q values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.run_arimax">
+<span class="sig-name descname"><span class="pre">run_arimax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.run_arimax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.run_arimax" title="Link to this definition"></a></dt>
+<dd><p>Run the ARIMAX model optimization and forecasting.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>p_range (range): Range of p values.
+d_range (range): Range of d values.
+q_range (range): Range of q values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.run_sarimax">
+<span class="sig-name descname"><span class="pre">run_sarimax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seasonal_period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.run_sarimax"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.run_sarimax" title="Link to this definition"></a></dt>
+<dd><p>Run the SARIMAX model optimization and forecasting.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>p_range (range): Range of p values.
+d_range (range): Range of d values.
+q_range (range): Range of q values.
+seasonal_period (int): Seasonal period.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.save_forecast">
+<span class="sig-name descname"><span class="pre">save_forecast</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.save_forecast"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.save_forecast" title="Link to this definition"></a></dt>
+<dd><p>Save the forecasted data to a CSV file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.toggleSidePanel">
+<span class="sig-name descname"><span class="pre">toggleSidePanel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.toggleSidePanel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.toggleSidePanel" title="Link to this definition"></a></dt>
+<dd><p>Toggle the visibility of the side panel(Hide the Side Panel).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.update_combos">
+<span class="sig-name descname"><span class="pre">update_combos</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.update_combos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.update_combos" title="Link to this definition"></a></dt>
+<dd><p>Update combo boxes and lists with the loaded data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Mainwindow.MainWindow.update_forecasted_countries_list">
+<span class="sig-name descname"><span class="pre">update_forecasted_countries_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Mainwindow.html#MainWindow.update_forecasted_countries_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Mainwindow.MainWindow.update_forecasted_countries_list" title="Link to this definition"></a></dt>
+<dd><p>Update the list of forecasted countries.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Yerko E. Veliz Olivares.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mainwindow &mdash; Forecasting App Alpha - 1.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=bebbe655"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Forecasting App
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"></div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Forecasting App</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Module code</a></li>
+      <li class="breadcrumb-item active">Mainwindow</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for Mainwindow</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">PyQt5.QtWidgets</span> <span class="kn">import</span> <span class="p">(</span><span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span><span class="p">,</span> <span class="n">QWidget</span><span class="p">,</span> <span class="n">QPushButton</span><span class="p">,</span> <span class="n">QComboBox</span><span class="p">,</span> <span class="n">QTextEdit</span><span class="p">,</span> <span class="n">QFileDialog</span><span class="p">,</span> <span class="n">QLabel</span><span class="p">,</span> <span class="n">QSpinBox</span><span class="p">,</span> <span class="n">QListWidget</span><span class="p">,</span> <span class="n">QListWidgetItem</span><span class="p">,</span> <span class="n">QLineEdit</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">PyQt5.QtGui</span> <span class="kn">import</span> <span class="n">QIcon</span>
+<span class="kn">from</span> <span class="nn">PyQt5.QtCore</span> <span class="kn">import</span> <span class="n">Qt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.backends.backend_qt5agg</span> <span class="kn">import</span> <span class="n">FigureCanvasQTAgg</span> <span class="k">as</span> <span class="n">FigureCanvas</span>
+<span class="kn">from</span> <span class="nn">matplotlib.figure</span> <span class="kn">import</span> <span class="n">Figure</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">Adf_test</span> <span class="kn">import</span> <span class="n">perform_adf_test_with_differencing</span>
+<span class="kn">from</span> <span class="nn">Sarimax</span> <span class="kn">import</span> <span class="n">optimize_sarimax_models</span><span class="p">,</span> <span class="n">forecast_future</span> <span class="k">as</span> <span class="n">forecast_future_sarimax</span>
+<span class="kn">from</span> <span class="nn">Arimax</span> <span class="kn">import</span> <span class="n">optimize_arimax_models</span><span class="p">,</span> <span class="n">forecast_future</span> <span class="k">as</span> <span class="n">forecast_future_arimax</span>
+<span class="kn">from</span> <span class="nn">Arima</span> <span class="kn">import</span> <span class="n">optimize_arima_models</span><span class="p">,</span> <span class="n">forecast_future</span> <span class="k">as</span> <span class="n">forecast_future_arima</span>
+<span class="kn">from</span> <span class="nn">Plotting</span> <span class="kn">import</span> <span class="n">plot_data</span><span class="p">,</span> <span class="n">plot_data_stacked_bar</span>
+<span class="kn">from</span> <span class="nn">SidePanel</span> <span class="kn">import</span> <span class="n">SidePanelWindow</span>
+<span class="kn">from</span> <span class="nn">GroupPanel</span> <span class="kn">import</span> <span class="n">GroupPanelWindow</span>
+
+<div class="viewcode-block" id="MainWindow">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow">[docs]</a>
+<span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Main application window for forecasting.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">&quot;Forecasting&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setGeometry</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">940</span><span class="p">,</span> <span class="mi">880</span><span class="p">)</span>
+
+        <span class="n">script_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+        <span class="n">icon_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">script_dir</span><span class="p">,</span> <span class="s2">&quot;assets&quot;</span><span class="p">,</span> <span class="s2">&quot;Logo_NBackground.png&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowIcon</span><span class="p">(</span><span class="n">QIcon</span><span class="p">(</span><span class="n">icon_path</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">dataset_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">script_dir</span><span class="p">,</span> <span class="s2">&quot;dataset&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">extracted_dataset_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">script_dir</span><span class="p">,</span> <span class="s2">&quot;extracted_dataset&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">script_dir</span><span class="p">,</span> <span class="s2">&quot;plot&quot;</span><span class="p">)</span>
+
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">dataset_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">extracted_dataset_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plot_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">container</span> <span class="o">=</span> <span class="n">QWidget</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;📁&quot;</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">load_file</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_button</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_button</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;💾&quot;</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">save_forecast</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">save_button</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">toggleSidePanelButton</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;⚙️&quot;</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toggleSidePanelButton</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toggleSidePanel</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toggleSidePanelButton</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toggleSidePanelButton</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;🗑️&quot;</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">clear_all</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clear_button</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">140</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">group_button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;Group&quot;</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">group_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">group_countries</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">group_button</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">group_button</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">220</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">country_search</span> <span class="o">=</span> <span class="n">QLineEdit</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">country_search</span><span class="o">.</span><span class="n">setPlaceholderText</span><span class="p">(</span><span class="s2">&quot;Search country...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">country_search</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">country_search</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">country_search</span><span class="o">.</span><span class="n">textChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filter_country_list</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">country_list</span> <span class="o">=</span> <span class="n">QListWidget</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">variable_combo</span> <span class="o">=</span> <span class="n">QComboBox</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variable_combo</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variable_combo</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_search</span> <span class="o">=</span> <span class="n">QLineEdit</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_search</span><span class="o">.</span><span class="n">setPlaceholderText</span><span class="p">(</span><span class="s2">&quot;Search forecast country...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_search</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">350</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_search</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">560</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_search</span><span class="o">.</span><span class="n">textChanged</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filter_forecasted_country_list</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_list</span> <span class="o">=</span> <span class="n">QListWidget</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_list</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_list</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">560</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_year_label</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s2">&quot;Start Year:&quot;</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_year_label</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">220</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_year_spin</span> <span class="o">=</span> <span class="n">QSpinBox</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_year_spin</span><span class="o">.</span><span class="n">setRange</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span> <span class="mi">2100</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_year_spin</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_year_spin</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">220</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_year_label</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s2">&quot;End Year:&quot;</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_year_label</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">220</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_year_spin</span> <span class="o">=</span> <span class="n">QSpinBox</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_year_spin</span><span class="o">.</span><span class="n">setRange</span><span class="p">(</span><span class="mi">1900</span><span class="p">,</span> <span class="mi">2100</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_year_spin</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_year_spin</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">280</span><span class="p">,</span> <span class="mi">220</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;ADF Test&quot;</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">run_adf_test</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_button</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">test_button</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">380</span><span class="p">,</span> <span class="mi">220</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_type_label</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s2">&quot;Plot Type:&quot;</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_type_label</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">260</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_combo</span> <span class="o">=</span> <span class="n">QComboBox</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_combo</span><span class="o">.</span><span class="n">addItems</span><span class="p">([</span><span class="s2">&quot;Historical&quot;</span><span class="p">,</span> <span class="s2">&quot;Forecast&quot;</span><span class="p">,</span> <span class="s2">&quot;Both&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_combo</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_combo</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">260</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">chart_type_label</span> <span class="o">=</span> <span class="n">QLabel</span><span class="p">(</span><span class="s2">&quot;Chart Type:&quot;</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chart_type_label</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">260</span><span class="p">,</span> <span class="mi">260</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chart_type_combo</span> <span class="o">=</span> <span class="n">QComboBox</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chart_type_combo</span><span class="o">.</span><span class="n">addItems</span><span class="p">([</span><span class="s2">&quot;Lines&quot;</span><span class="p">,</span> <span class="s2">&quot;Stacked Bars&quot;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chart_type_combo</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">chart_type_combo</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">340</span><span class="p">,</span> <span class="mi">260</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;Plot&quot;</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">plot_selected_data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_button</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plot_button</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">260</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span> <span class="o">=</span> <span class="n">QTextEdit</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">setReadOnly</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">900</span><span class="p">,</span> <span class="mi">150</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span> <span class="o">=</span> <span class="n">FigureCanvas</span><span class="p">(</span><span class="n">Figure</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">setParent</span><span class="p">(</span><span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">900</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">460</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">download_button</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">&quot;💾&quot;</span><span class="p">,</span> <span class="n">container</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">download_button</span><span class="o">.</span><span class="n">setToolTip</span><span class="p">(</span><span class="s2">&quot;Download plot as image&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">download_button</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">download_plot</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">download_button</span><span class="o">.</span><span class="n">setFixedSize</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">download_button</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="mi">880</span><span class="p">,</span> <span class="mi">470</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">filtered_data</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sarimax_results</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">arimax_results</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">arima_results</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecast_until_year</span> <span class="o">=</span> <span class="mi">2100</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">replace_negative_forecast</span> <span class="o">=</span> <span class="kc">False</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">active_lines</span> <span class="o">=</span> <span class="p">[]</span> 
+        
+        
+    <span class="k">def</span> <span class="nf">add_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">line_type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a new line to the active lines list.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name (str): Name of the line.</span>
+<span class="sd">            value (float): Value at which the line will be drawn.</span>
+<span class="sd">            color (str): Color of the line.</span>
+<span class="sd">            line_type (str): Type of the line (solid, dashed, dotted).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">value</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="n">color</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">line_type</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">active_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Added line: </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Invalid value for the line.&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MainWindow.closeEvent">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.closeEvent">[docs]</a>
+    <span class="k">def</span> <span class="nf">closeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Handle the event of closing the side panel when closing the main window.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            event (QCloseEvent): The close event.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">isVisible</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="n">event</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.load_file">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.load_file">[docs]</a>
+    <span class="k">def</span> <span class="nf">load_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Load a CSV file and update the UI with the loaded data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">options</span> <span class="o">=</span> <span class="n">QFileDialog</span><span class="o">.</span><span class="n">Options</span><span class="p">()</span>
+        <span class="n">file_name</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">QFileDialog</span><span class="o">.</span><span class="n">getOpenFileName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Load CSV File&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dataset_dir</span><span class="p">,</span> <span class="s2">&quot;CSV Files (*.csv);;All Files (*)&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">file_name</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">update_combos</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2"> loaded successfully.&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error loading file: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.update_combos">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.update_combos">[docs]</a>
+    <span class="k">def</span> <span class="nf">update_combos</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update combo boxes and lists with the loaded data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">countries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_list</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
+            <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">countries</span><span class="p">:</span>
+                <span class="n">country_item</span> <span class="o">=</span> <span class="n">QListWidgetItem</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
+                <span class="n">country_item</span><span class="o">.</span><span class="n">setFlags</span><span class="p">(</span><span class="n">country_item</span><span class="o">.</span><span class="n">flags</span><span class="p">()</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">.</span><span class="n">ItemIsUserCheckable</span><span class="p">)</span>
+                <span class="n">country_item</span><span class="o">.</span><span class="n">setCheckState</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">Unchecked</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="n">country_item</span><span class="p">)</span>
+
+            <span class="n">variables</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">variable_combo</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">variable_combo</span><span class="o">.</span><span class="n">addItems</span><span class="p">(</span><span class="n">variables</span><span class="p">)</span>
+
+            <span class="n">years</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start_year_spin</span><span class="o">.</span><span class="n">setRange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">years</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span> <span class="nb">int</span><span class="p">(</span><span class="n">years</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">end_year_spin</span><span class="o">.</span><span class="n">setRange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">years</span><span class="o">.</span><span class="n">min</span><span class="p">()),</span> <span class="nb">int</span><span class="p">(</span><span class="n">years</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start_year_spin</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">years</span><span class="o">.</span><span class="n">min</span><span class="p">()))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">end_year_spin</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">years</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.toggleSidePanel">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.toggleSidePanel">[docs]</a>
+    <span class="k">def</span> <span class="nf">toggleSidePanel</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Toggle the visibility of the side panel(Hide the Side Panel).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">isVisible</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span> <span class="o">=</span> <span class="n">SidePanelWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="n">main_window_geometry</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">frameGeometry</span><span class="p">()</span>
+            <span class="n">side_panel_x</span> <span class="o">=</span> <span class="n">main_window_geometry</span><span class="o">.</span><span class="n">x</span><span class="p">()</span> <span class="o">+</span> <span class="n">main_window_geometry</span><span class="o">.</span><span class="n">width</span><span class="p">()</span>
+            <span class="n">side_panel_y</span> <span class="o">=</span> <span class="n">main_window_geometry</span><span class="o">.</span><span class="n">y</span><span class="p">()</span>
+
+            <span class="n">side_panel_height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">geometry</span><span class="p">()</span><span class="o">.</span><span class="n">height</span><span class="p">()</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">side_panel_x</span><span class="p">,</span> <span class="n">side_panel_y</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">width</span><span class="p">(),</span> <span class="n">side_panel_height</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.group_countries">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.group_countries">[docs]</a>
+    <span class="k">def</span> <span class="nf">group_countries</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Group selected countries into a single group.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">selected_countries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_selected_countries</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">selected_countries</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Please select at least one country to group.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">group_panel</span> <span class="o">=</span> <span class="n">GroupPanelWindow</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">group_panel</span><span class="o">.</span><span class="n">show</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.create_group">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.create_group">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_name</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a group with the specified name from selected countries.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            group_name (str): The name of the group.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">selected_countries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_selected_countries</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">selected_countries</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Please select at least one country to group.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">start_year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_year_spin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+        <span class="n">end_year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_year_spin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+
+        <span class="n">group_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">selected_countries</span><span class="p">:</span>
+            <span class="n">country_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">start_year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">end_year</span><span class="p">)]</span>
+            <span class="k">if</span> <span class="n">group_data</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                <span class="n">group_data</span> <span class="o">=</span> <span class="n">country_data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">group_data</span> <span class="o">=</span> <span class="n">group_data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">country_data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">),</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+        <span class="n">group_data</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">group_name</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">,</span> <span class="n">group_data</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_combos</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Group &#39;</span><span class="si">{</span><span class="n">group_name</span><span class="si">}</span><span class="s2">&#39; created and added to the dataset.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">country_search</span><span class="o">.</span><span class="n">setPlaceholderText</span><span class="p">(</span><span class="s2">&quot;Search country...&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.run_adf_test">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.run_adf_test">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_adf_test</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run the Augmented Dickey-Fuller (ADF) test on the selected data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;You must first load a CSV file.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">selected_countries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_selected_countries</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="p">)</span>
+        <span class="n">variable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">variable_combo</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span>
+        <span class="n">start_year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_year_spin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+        <span class="n">end_year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_year_spin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">selected_countries</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Please select at least one country.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Variable&#39;</span><span class="p">,</span> <span class="s1">&#39;ADF Statistic&#39;</span><span class="p">,</span> <span class="s1">&#39;p-value&#39;</span><span class="p">,</span> <span class="s1">&#39;Num Lags&#39;</span><span class="p">,</span> <span class="s1">&#39;Num Observations&#39;</span><span class="p">,</span> <span class="s1">&#39;1%&#39;</span><span class="p">,</span> <span class="s1">&#39;5%&#39;</span><span class="p">,</span> <span class="s1">&#39;10%&#39;</span><span class="p">,</span> <span class="s1">&#39;Differencing&#39;</span><span class="p">,</span> <span class="s1">&#39;p-value diff&#39;</span><span class="p">,</span> <span class="s1">&#39;Error&#39;</span><span class="p">])</span>
+
+        <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">selected_countries</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">filtered_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">start_year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">end_year</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filtered_data</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No data for country </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2"> and selected year range.&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">filtered_data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="n">adf_result</span> <span class="o">=</span> <span class="n">perform_adf_test_with_differencing</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">filtered_data</span><span class="p">[[</span><span class="n">variable</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">adf_result</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                <span class="n">adf_result</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">country</span>
+                <span class="n">adf_result</span><span class="p">[</span><span class="s1">&#39;Variable&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">variable</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span><span class="p">,</span> <span class="n">adf_result</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format_adf_results</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.run_sarimax">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.run_sarimax">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_sarimax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">d_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">q_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seasonal_period</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run the SARIMAX model optimization and forecasting.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            p_range (range): Range of p values.</span>
+<span class="sd">            d_range (range): Range of d values.</span>
+<span class="sd">            q_range (range): Range of q values.</span>
+<span class="sd">            seasonal_period (int): Seasonal period.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;You must first run the ADF test.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">p_range</span> <span class="o">=</span> <span class="n">p_range</span> <span class="k">if</span> <span class="n">p_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">d_range</span> <span class="o">=</span> <span class="n">d_range</span> <span class="k">if</span> <span class="n">d_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">q_range</span> <span class="o">=</span> <span class="n">q_range</span> <span class="k">if</span> <span class="n">q_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">seasonal_period</span> <span class="o">=</span> <span class="n">seasonal_period</span> <span class="k">if</span> <span class="n">seasonal_period</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">11</span>
+
+        <span class="n">selected_countries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_selected_countries</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="p">)</span>
+        <span class="n">start_year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_year_spin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+        <span class="n">end_year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_year_spin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+
+        <span class="n">sarimax_results</span> <span class="o">=</span> <span class="n">optimize_sarimax_models</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">,</span> <span class="n">selected_countries</span><span class="p">,</span> <span class="n">p_range</span><span class="p">,</span> <span class="n">d_range</span><span class="p">,</span> <span class="n">q_range</span><span class="p">,</span> <span class="n">seasonal_period</span><span class="p">,</span> <span class="n">start_year</span><span class="p">,</span> <span class="n">end_year</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format_sarimax_results</span><span class="p">(</span><span class="n">sarimax_results</span><span class="p">))</span>
+
+        <span class="n">forecast_results</span> <span class="o">=</span> <span class="n">forecast_future_sarimax</span><span class="p">(</span><span class="n">sarimax_results</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">,</span> <span class="n">start_year</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecast_until_year</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">replace_negative_forecast</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">forecast_results</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_forecast_corrections</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_forecasted_countries_list</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.run_arimax">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.run_arimax">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_arimax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">d_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">q_range</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run the ARIMAX model optimization and forecasting.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            p_range (range): Range of p values.</span>
+<span class="sd">            d_range (range): Range of d values.</span>
+<span class="sd">            q_range (range): Range of q values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;You must first run the ADF test.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">p_range</span> <span class="o">=</span> <span class="n">p_range</span> <span class="k">if</span> <span class="n">p_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">d_range</span> <span class="o">=</span> <span class="n">d_range</span> <span class="k">if</span> <span class="n">d_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">q_range</span> <span class="o">=</span> <span class="n">q_range</span> <span class="k">if</span> <span class="n">q_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">selected_countries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_selected_countries</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="p">)</span>
+        <span class="n">start_year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_year_spin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+        <span class="n">end_year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_year_spin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">selected_countries</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No ADF results found for country </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+                <span class="k">return</span>
+
+        <span class="n">arimax_results</span> <span class="o">=</span> <span class="n">optimize_arimax_models</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">,</span> <span class="n">selected_countries</span><span class="p">,</span> <span class="n">p_range</span><span class="p">,</span> <span class="n">d_range</span><span class="p">,</span> <span class="n">q_range</span><span class="p">,</span> <span class="n">start_year</span><span class="p">,</span> <span class="n">end_year</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format_arimax_results</span><span class="p">(</span><span class="n">arimax_results</span><span class="p">))</span>
+
+        <span class="n">forecast_results</span> <span class="o">=</span> <span class="n">forecast_future_arimax</span><span class="p">(</span><span class="n">arimax_results</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">,</span> <span class="n">start_year</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecast_until_year</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">replace_negative_forecast</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">forecast_results</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_forecast_corrections</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_forecasted_countries_list</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.run_arima">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.run_arima">[docs]</a>
+    <span class="k">def</span> <span class="nf">run_arima</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">d_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">q_range</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run the ARIMA model optimization and forecasting.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            p_range (range): Range of p values.</span>
+<span class="sd">            d_range (range): Range of d values.</span>
+<span class="sd">            q_range (range): Range of q values.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;You must first run the ADF test.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">p_range</span> <span class="o">=</span> <span class="n">p_range</span> <span class="k">if</span> <span class="n">p_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">d_range</span> <span class="o">=</span> <span class="n">d_range</span> <span class="k">if</span> <span class="n">d_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">q_range</span> <span class="o">=</span> <span class="n">q_range</span> <span class="k">if</span> <span class="n">q_range</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">selected_countries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_selected_countries</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="p">)</span>
+        <span class="n">start_year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_year_spin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+        <span class="n">end_year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_year_spin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">selected_countries</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">]</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No ADF results found for country </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+                <span class="k">return</span>
+
+        <span class="n">arima_results</span> <span class="o">=</span> <span class="n">optimize_arima_models</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">adf_results</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">,</span> <span class="n">selected_countries</span><span class="p">,</span> <span class="n">p_range</span><span class="p">,</span> <span class="n">d_range</span><span class="p">,</span> <span class="n">q_range</span><span class="p">,</span> <span class="n">start_year</span><span class="p">,</span> <span class="n">end_year</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">format_arima_results</span><span class="p">(</span><span class="n">arima_results</span><span class="p">))</span>
+
+        <span class="n">forecast_results</span> <span class="o">=</span> <span class="n">forecast_future_arima</span><span class="p">(</span><span class="n">arima_results</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">,</span> <span class="n">start_year</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecast_until_year</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">replace_negative_forecast</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">forecast_results</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">apply_forecast_corrections</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_forecasted_countries_list</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.apply_forecast_corrections">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.apply_forecast_corrections">[docs]</a>
+    <span class="k">def</span> <span class="nf">apply_forecast_corrections</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Apply corrections to the forecasted data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">selected_country</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_selected_countries</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">selected_country</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Please select a country in the country search list.&quot;</span><span class="p">)</span>
+                <span class="k">return</span>
+
+            <span class="n">target_year_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">target_year_input</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+            <span class="n">target_value_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">target_value_input</span><span class="o">.</span><span class="n">text</span><span class="p">()</span>
+            <span class="n">continuous_correction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">continuous_correction_checkbox</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span>
+            <span class="n">short_correction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">short_correction_checkbox</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span>
+            <span class="n">start_correction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">start_correction_checkbox</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">target_year_text</span> <span class="ow">and</span> <span class="n">target_value_text</span><span class="p">:</span>
+                <span class="n">target_year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">target_year_text</span><span class="p">)</span>
+                <span class="n">target_value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">target_value_text</span><span class="p">)</span>
+                <span class="n">variable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">variable_combo</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">apply_linear_correction</span><span class="p">(</span><span class="n">selected_country</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">target_year</span><span class="p">,</span> <span class="n">target_value</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">continuous_correction</span><span class="p">,</span> <span class="n">short_correction</span><span class="p">,</span> <span class="n">start_correction</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.apply_linear_correction">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.apply_linear_correction">[docs]</a>
+    <span class="k">def</span> <span class="nf">apply_linear_correction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">country</span><span class="p">,</span> <span class="n">target_year</span><span class="p">,</span> <span class="n">target_value</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">continuous</span><span class="p">,</span> <span class="n">short</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Apply linear correction to the forecasted data.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            country (str): The country for which to apply the correction.</span>
+<span class="sd">            target_year (int): The target year for the correction.</span>
+<span class="sd">            target_value (float): The target value for the correction.</span>
+<span class="sd">            variable (str): The variable to correct.</span>
+<span class="sd">            continuous (bool): Whether to apply continuous correction.</span>
+<span class="sd">            short (bool): Whether to apply short correction.</span>
+<span class="sd">            start (bool): Whether to apply start correction.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">forecast_key</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">value</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">:</span>
+                <span class="n">forecast_key</span> <span class="o">=</span> <span class="n">key</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">forecast_key</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No forecast found for selected country: </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">forecast_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span><span class="p">[</span><span class="n">forecast_key</span><span class="p">]</span>
+        <span class="n">forecast_values</span> <span class="o">=</span> <span class="n">forecast_data</span><span class="p">[</span><span class="s1">&#39;forecast_values&#39;</span><span class="p">]</span>
+        <span class="n">forecast_years</span> <span class="o">=</span> <span class="n">forecast_values</span><span class="o">.</span><span class="n">index</span>
+
+        <span class="k">if</span> <span class="n">target_year</span> <span class="ow">in</span> <span class="n">forecast_years</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">start</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">forecast_years</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">year</span> <span class="o">&gt;=</span> <span class="n">target_year</span><span class="p">:</span>
+                        <span class="n">forecast_values</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">=</span> <span class="n">target_value</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">current_value</span> <span class="o">=</span> <span class="n">forecast_values</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">target_year</span><span class="p">]</span>
+                <span class="n">correction_factor</span> <span class="o">=</span> <span class="p">(</span><span class="n">target_value</span> <span class="o">-</span> <span class="n">current_value</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">target_year</span> <span class="o">-</span> <span class="n">forecast_years</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+
+                <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">forecast_years</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">year</span> <span class="o">&lt;=</span> <span class="n">target_year</span><span class="p">:</span>
+                        <span class="n">forecast_values</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">+=</span> <span class="n">correction_factor</span> <span class="o">*</span> <span class="p">(</span><span class="n">year</span> <span class="o">-</span> <span class="n">forecast_years</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">continuous</span><span class="p">:</span>
+                            <span class="n">forecast_values</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">+=</span> <span class="n">correction_factor</span> <span class="o">*</span> <span class="p">(</span><span class="n">year</span> <span class="o">-</span> <span class="n">forecast_years</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+                        <span class="k">elif</span> <span class="n">short</span><span class="p">:</span>
+                            <span class="n">forecast_values</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">=</span> <span class="n">target_value</span>
+
+            <span class="n">forecast_values</span><span class="p">[</span><span class="n">forecast_values</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.update_forecasted_countries_list">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.update_forecasted_countries_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">update_forecasted_countries_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Update the list of forecasted countries.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_list</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">forecasted_countries</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+        <span class="k">for</span> <span class="n">forecast_key</span> <span class="ow">in</span> <span class="n">forecasted_countries</span><span class="p">:</span>
+            <span class="n">forecasted_country_item</span> <span class="o">=</span> <span class="n">QListWidgetItem</span><span class="p">(</span><span class="n">forecast_key</span><span class="p">)</span>
+            <span class="n">forecasted_country_item</span><span class="o">.</span><span class="n">setFlags</span><span class="p">(</span><span class="n">forecasted_country_item</span><span class="o">.</span><span class="n">flags</span><span class="p">()</span> <span class="o">|</span> <span class="n">Qt</span><span class="o">.</span><span class="n">ItemIsUserCheckable</span><span class="p">)</span>
+            <span class="n">forecasted_country_item</span><span class="o">.</span><span class="n">setCheckState</span><span class="p">(</span><span class="n">Qt</span><span class="o">.</span><span class="n">Unchecked</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_list</span><span class="o">.</span><span class="n">addItem</span><span class="p">(</span><span class="n">forecasted_country_item</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_search</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.add_line">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.add_line">[docs]</a>
+    <span class="k">def</span> <span class="nf">add_line</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">line_type</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add a new line to the active lines list.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            name (str): Name of the line.</span>
+<span class="sd">            value (float): Value at which the line will be drawn.</span>
+<span class="sd">            color (str): Color of the line.</span>
+<span class="sd">            line_type (str): Type of the line (solid, dashed, dotted).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="n">line</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">value</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="n">color</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">line_type</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">active_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Added line: </span><span class="si">{</span><span class="n">line</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Invalid value for the line.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.plot_selected_data">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.plot_selected_data">[docs]</a>
+    <span class="k">def</span> <span class="nf">plot_selected_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Plot the selected data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;You must first apply a model.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">plot_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plot_combo</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span>
+        <span class="n">chart_type</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chart_type_combo</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span>
+        <span class="n">selected_forecasts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_selected_countries</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_list</span><span class="p">)</span>
+        <span class="n">variable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">variable_combo</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">selected_forecasts</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Please select at least one forecast to plot.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">show_confidence_interval</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sidePanelWindow</span><span class="o">.</span><span class="n">show_confidence_interval_checkbox</span><span class="o">.</span><span class="n">isChecked</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">show_confidence_interval</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">selected_forecasts</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;The &#39;Show Confidence Interval&#39; option is only available for one country at a time.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+        <span class="n">add_forecast_start_line</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">chart_type</span> <span class="o">==</span> <span class="s2">&quot;Lines&quot;</span><span class="p">:</span>
+            <span class="n">max_value</span> <span class="o">=</span> <span class="o">-</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">forecast_key</span> <span class="ow">in</span> <span class="n">selected_forecasts</span><span class="p">:</span>
+                <span class="n">max_value</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">max_value</span><span class="p">,</span> <span class="n">plot_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span><span class="p">,</span> <span class="n">forecast_key</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">plot_type</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">add_forecast_start_line</span><span class="p">,</span> <span class="n">show_confidence_interval</span><span class="p">))</span>
+                <span class="n">add_forecast_start_line</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">elif</span> <span class="n">chart_type</span> <span class="o">==</span> <span class="s2">&quot;Stacked Bars&quot;</span><span class="p">:</span>
+            <span class="n">max_value</span> <span class="o">=</span> <span class="n">plot_data_stacked_bar</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span><span class="p">,</span> <span class="n">selected_forecasts</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">plot_type</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
+
+        <span class="n">start_year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_year_spin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+        <span class="n">end_year</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecast_until_year</span>
+
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="n">start_year</span><span class="p">,</span> <span class="n">end_year</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_value</span> <span class="o">*</span> <span class="mf">1.01</span><span class="p">])</span>
+
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_lines</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="s1">&#39;active&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">line</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;solid&#39;</span><span class="p">:</span>
+                    <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span>
+                <span class="k">elif</span> <span class="n">line</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;dashed&#39;</span><span class="p">:</span>
+                    <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span>
+                <span class="k">elif</span> <span class="n">line</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;dotted&#39;</span><span class="p">:</span>
+                    <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">line</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="n">line</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="n">linestyle</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">line</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.apply_plot_settings">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.apply_plot_settings">[docs]</a>
+    <span class="k">def</span> <span class="nf">apply_plot_settings</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x_range</span><span class="p">,</span> <span class="n">y_range</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">legend_size</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">,</span> <span class="n">xlabel_size</span><span class="p">,</span> <span class="n">ylabel_size</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Apply plot settings to the current plot.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            x_range (tuple): Range for the x-axis.</span>
+<span class="sd">            y_range (tuple): Range for the y-axis.</span>
+<span class="sd">            title (str): Title of the plot.</span>
+<span class="sd">            legend_size (int): Font size for the legend.</span>
+<span class="sd">            xlabel (str): Label for the x-axis.</span>
+<span class="sd">            ylabel (str): Label for the y-axis.</span>
+<span class="sd">            xlabel_size (int): Font size for the x-axis label.</span>
+<span class="sd">            ylabel_size (int): Font size for the y-axis label.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">axes</span><span class="p">:</span>
+            <span class="n">ax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">x_range</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_range</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">x_range</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">y_range</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_range</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">y_range</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">title</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">legend_size</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">legend_size</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">xlabel</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">xlabel_size</span> <span class="k">if</span> <span class="n">xlabel_size</span> <span class="k">else</span> <span class="mi">14</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ylabel</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">ylabel_size</span> <span class="k">if</span> <span class="n">ylabel_size</span> <span class="k">else</span> <span class="mi">14</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">xlabel_size</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">xlabel</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_size</span><span class="p">(</span><span class="n">xlabel_size</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">ylabel_size</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ylabel</span><span class="p">:</span>
+                <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_size</span><span class="p">(</span><span class="n">ylabel_size</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.save_forecast">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.save_forecast">[docs]</a>
+    <span class="k">def</span> <span class="nf">save_forecast</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Save the forecasted data to a CSV file.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">selected_countries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_selected_countries</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">selected_countries</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Please select at least one forecasted country to save.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="n">variable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">variable_combo</span><span class="o">.</span><span class="n">currentText</span><span class="p">()</span>
+        <span class="n">forecast_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">selected_countries</span><span class="p">:</span>
+            <span class="n">historical_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">country</span><span class="p">)][[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Date&#39;</span><span class="p">,</span> <span class="n">variable</span><span class="p">]]</span>
+            <span class="n">forecast_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span><span class="p">[</span><span class="n">country</span><span class="p">][</span><span class="s1">&#39;forecast_values&#39;</span><span class="p">]</span>
+            <span class="n">forecast_years</span> <span class="o">=</span> <span class="n">forecast_values</span><span class="o">.</span><span class="n">index</span>
+            <span class="n">forecast_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+                <span class="s1">&#39;Country&#39;</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span>
+                <span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="n">forecast_years</span><span class="p">,</span>
+                <span class="n">variable</span><span class="p">:</span> <span class="n">forecast_values</span><span class="o">.</span><span class="n">values</span>
+            <span class="p">})</span>
+            <span class="n">combined_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">historical_data</span><span class="p">,</span> <span class="n">forecast_df</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">combined_data</span> <span class="o">=</span> <span class="n">combined_data</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">],</span> <span class="n">keep</span><span class="o">=</span><span class="s1">&#39;last&#39;</span><span class="p">)</span>
+            <span class="n">forecast_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">forecast_data</span><span class="p">,</span> <span class="n">combined_data</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="n">save_path</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">QFileDialog</span><span class="o">.</span><span class="n">getSaveFileName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Save CSV File&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">extracted_dataset_dir</span><span class="p">,</span> <span class="s2">&quot;CSV Files (*.csv);;All Files (*)&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">save_path</span><span class="p">:</span>
+            <span class="n">forecast_data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Forecast saved to </span><span class="si">{</span><span class="n">save_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.download_plot">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.download_plot">[docs]</a>
+    <span class="k">def</span> <span class="nf">download_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Download the current plot as an image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">options</span> <span class="o">=</span> <span class="n">QFileDialog</span><span class="o">.</span><span class="n">Options</span><span class="p">()</span>
+        <span class="n">save_path</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">QFileDialog</span><span class="o">.</span><span class="n">getSaveFileName</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Save Plot Image&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">plot_dir</span><span class="p">,</span> <span class="s2">&quot;PNG Files (*.png);;All Files (*)&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">save_path</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">save_path</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">save_path</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Plot saved to </span><span class="si">{</span><span class="n">save_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.filter_country_list">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.filter_country_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter_country_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Filter the list of countries based on the search input.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">filter_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">country_search</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="o">.</span><span class="n">count</span><span class="p">()):</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">country_list</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">setHidden</span><span class="p">(</span><span class="n">filter_text</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.filter_forecasted_country_list">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.filter_forecasted_country_list">[docs]</a>
+    <span class="k">def</span> <span class="nf">filter_forecasted_country_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Filter the list of forecasted countries based on the search input.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">filter_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_search</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_list</span><span class="o">.</span><span class="n">count</span><span class="p">()):</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_list</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">setHidden</span><span class="p">(</span><span class="n">filter_text</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">item</span><span class="o">.</span><span class="n">text</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.format_adf_results">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.format_adf_results">[docs]</a>
+    <span class="k">def</span> <span class="nf">format_adf_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">adf_results</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Format ADF test results as HTML.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            adf_results (pd.DataFrame): The ADF test results.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The formatted results in HTML.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">adf_results</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;No results to display.&quot;</span>
+        <span class="k">return</span> <span class="n">adf_results</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.format_sarimax_results">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.format_sarimax_results">[docs]</a>
+    <span class="k">def</span> <span class="nf">format_sarimax_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sarimax_results</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Format SARIMAX results as HTML.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            sarimax_results (dict): The SARIMAX results.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The formatted results in HTML.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">formatted_results</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">country</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">sarimax_results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="s1">&#39;model_object&#39;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+                <span class="n">summary_html</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;model_summary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">as_html</span><span class="p">()</span>
+                <span class="n">formatted_results</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;SARIMAX results for </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">:&lt;/b&gt;&lt;br&gt;</span><span class="si">{</span><span class="n">summary_html</span><span class="si">}</span><span class="s2">&lt;br&gt;&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">formatted_results</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;Failed to model </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">:&lt;/b&gt; </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;br&gt;&quot;</span>
+        <span class="k">return</span> <span class="n">formatted_results</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.format_arimax_results">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.format_arimax_results">[docs]</a>
+    <span class="k">def</span> <span class="nf">format_arimax_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arimax_results</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Format ARIMAX results as HTML.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            arimax_results (dict): The ARIMAX results.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The formatted results in HTML.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">formatted_results</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">country</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">arimax_results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="s1">&#39;model_object&#39;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+                <span class="n">summary_html</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;model_summary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">as_html</span><span class="p">()</span>
+                <span class="n">formatted_results</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;ARIMAX results for </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">:&lt;/b&gt;&lt;br&gt;</span><span class="si">{</span><span class="n">summary_html</span><span class="si">}</span><span class="s2">&lt;br&gt;&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">formatted_results</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;Failed to model </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">:&lt;/b&gt; </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;br&gt;&quot;</span>
+        <span class="k">return</span> <span class="n">formatted_results</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.format_arima_results">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.format_arima_results">[docs]</a>
+    <span class="k">def</span> <span class="nf">format_arima_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arima_results</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Format ARIMA results as HTML.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            arima_results (dict): The ARIMA results.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            str: The formatted results in HTML.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">formatted_results</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">country</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">arima_results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="s1">&#39;model_object&#39;</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+                <span class="n">summary_html</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;model_summary&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">as_html</span><span class="p">()</span>
+                <span class="n">formatted_results</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;ARIMA results for </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">:&lt;/b&gt;&lt;br&gt;</span><span class="si">{</span><span class="n">summary_html</span><span class="si">}</span><span class="s2">&lt;br&gt;&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">formatted_results</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;Failed to model </span><span class="si">{</span><span class="n">country</span><span class="si">}</span><span class="s2">:&lt;/b&gt; </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;error&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;br&gt;&quot;</span>
+        <span class="k">return</span> <span class="n">formatted_results</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.get_selected_countries">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.get_selected_countries">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_selected_countries</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_widget</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the list of selected countries from a QListWidget.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            list_widget (QListWidget): The list widget containing the countries.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            list: The list of selected countries.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">selected_countries</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">list_widget</span><span class="o">.</span><span class="n">count</span><span class="p">()):</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="n">list_widget</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">item</span><span class="o">.</span><span class="n">checkState</span><span class="p">()</span> <span class="o">==</span> <span class="n">Qt</span><span class="o">.</span><span class="n">Checked</span><span class="p">:</span>
+                <span class="n">selected_countries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">text</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">selected_countries</span></div>
+
+
+<div class="viewcode-block" id="MainWindow.clear_all">
+<a class="viewcode-back" href="../Mainwindow.html#Mainwindow.MainWindow.clear_all">[docs]</a>
+    <span class="k">def</span> <span class="nf">clear_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Clear all selected forecasted models.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">selected_forecasts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_selected_countries</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">forecasted_country_list</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">selected_forecasts</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;No forecasted countries selected to delete.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="k">for</span> <span class="n">forecast_key</span> <span class="ow">in</span> <span class="n">selected_forecasts</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">forecast_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span><span class="p">:</span>
+                <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">forecast_results</span><span class="p">[</span><span class="n">forecast_key</span><span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_forecasted_countries_list</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">console</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Selected models successfully deleted.&quot;</span><span class="p">)</span></div>
+</div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
+    <span class="n">mainWin</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">()</span>
+    <span class="n">mainWin</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">())</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Yerko E. Veliz Olivares.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
