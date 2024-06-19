@@ -203,7 +203,6 @@ class SidePanelWindow(QWidget):
         self.start_correction_checkbox.setVisible(True)
         self.apply_correction_button.setVisible(True)
         self.apply_button.setVisible(True)
-        
 
         self.title_section2.setVisible(False)
         self.left_arrow_button2.setVisible(False)
@@ -237,6 +236,9 @@ class SidePanelWindow(QWidget):
         self.line_type_label.setVisible(False)
         self.line_type_combo.setVisible(False)
         self.add_line_button.setVisible(False)
+        self.line_axis_label.setVisible(False)
+        self.line_axis_combo.setVisible(False)
+        self.line_type_combo.setVisible(False)
 
     def show_plot_settings(self):
         """
@@ -300,6 +302,9 @@ class SidePanelWindow(QWidget):
         self.line_type_label.setVisible(True)
         self.line_type_combo.setVisible(True)
         self.add_line_button.setVisible(True)
+        self.line_axis_label.setVisible(True)
+        self.line_axis_combo.setVisible(True)
+        self.line_type_combo.setVisible(True)
 
 
     def update_model_parameters(self, model_name):
@@ -479,14 +484,20 @@ class SidePanelWindow(QWidget):
         self.line_color_input = QLineEdit(self)
         self.line_color_input.setGeometry(70, 700, 220, 30)
 
+        self.line_axis_label = QLabel("Axis:", self)
+        self.line_axis_label.setGeometry(10, 740, 50, 30)
+        self.line_axis_combo = QComboBox(self)
+        self.line_axis_combo.addItems(["x-axis", "y-axis"])
+        self.line_axis_combo.setGeometry(70, 740, 220, 30)
+
         self.line_type_label = QLabel("Type:", self)
-        self.line_type_label.setGeometry(10, 740, 50, 30)
+        self.line_type_label.setGeometry(10, 780, 50, 30)
         self.line_type_combo = QComboBox(self)
         self.line_type_combo.addItems(["solid", "dashed", "dotted"])
-        self.line_type_combo.setGeometry(70, 740, 220, 30)
+        self.line_type_combo.setGeometry(70, 780, 220, 30)
 
         self.add_line_button = QPushButton("Add Line", self)
-        self.add_line_button.setGeometry(10, 780, 280, 30)
+        self.add_line_button.setGeometry(10, 820, 280, 30)
         self.add_line_button.clicked.connect(self.add_line)
 
     def update_line_list(self):
@@ -507,17 +518,20 @@ class SidePanelWindow(QWidget):
         name = self.line_name_input.text().strip()
         value = self.line_value_input.text().strip()
         color = self.line_color_input.text().strip()
+        axis = self.line_axis_combo.currentText()
         line_type = self.line_type_combo.currentText()
 
         if name and value and color:
-            self.main_window.add_line(name, value, color, line_type)
+            self.main_window.add_line(name, value, color, line_type, axis)
             self.update_line_list()
             self.line_name_input.clear()
             self.line_value_input.clear()
             self.line_color_input.clear()
+            self.line_axis_combo.setCurrentIndex(0)
             self.line_type_combo.setCurrentIndex(0)
         else:
             self.main_window.console.append("Please fill in all fields to add a new line.")
+
 
 
 # C:\Users\Yerko\Desktop\S+

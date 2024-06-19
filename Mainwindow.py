@@ -17,6 +17,7 @@ from GroupPanel import GroupPanelWindow
 class MainWindow(QMainWindow):
     """
     Main application window for forecasting.
+    
     """
     def __init__(self):
         super().__init__()
@@ -156,7 +157,7 @@ class MainWindow(QMainWindow):
         self.active_lines = [] 
         
         
-    def add_line(self, name, value, color, line_type):
+    def add_line(self, name, value, color, line_type, axis):
         """
         Add a new line to the active lines list.
 
@@ -165,10 +166,11 @@ class MainWindow(QMainWindow):
             value (float): Value at which the line will be drawn.
             color (str): Color of the line.
             line_type (str): Type of the line (solid, dashed, dotted).
+            axis (str): Axis on which the line will be drawn (x-axis, y-axis).
         """
         try:
             value = float(value)
-            line = {'name': name, 'value': value, 'color': color, 'type': line_type, 'active': True}
+            line = {'name': name, 'value': value, 'color': color, 'type': line_type, 'axis': axis, 'active': True}
             self.active_lines.append(line)
             self.console.append(f"Added line: {line}")
         except ValueError:
@@ -569,15 +571,14 @@ class MainWindow(QMainWindow):
         ax.set_xlim([start_year, end_year])
         ax.set_ylim([0, max_value * 1.01])
 
+        # Agregar las líneas activas al gráfico
         for line in self.active_lines:
             if line['active']:
-                if line['type'] == 'solid':
-                    linestyle = '-'
-                elif line['type'] == 'dashed':
-                    linestyle = '--'
-                elif line['type'] == 'dotted':
-                    linestyle = ':'
-                ax.axvline(x=line['value'], color=line['color'], linestyle=linestyle, label=line['name'])
+                linestyle = '-' if line['type'] == 'solid' else '--' if line['type'] == 'dashed' else ':'
+                if line['axis'] == 'x-axis':
+                    ax.axvline(x=line['value'], color=line['color'], linestyle=linestyle, label=line['name'])
+                else:
+                    ax.axhline(y=line['value'], color=line['color'], linestyle=linestyle, label=line['name'])
 
         self.canvas.draw()
 
