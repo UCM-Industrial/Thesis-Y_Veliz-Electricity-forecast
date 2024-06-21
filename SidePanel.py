@@ -203,6 +203,9 @@ class SidePanelWindow(QWidget):
         self.start_correction_checkbox.setVisible(True)
         self.apply_correction_button.setVisible(True)
         self.apply_button.setVisible(True)
+        self.start_target_year_label.setVisible(True)
+        self.start_target_year_input.setVisible(True)        
+        
 
         self.title_section2.setVisible(False)
         self.left_arrow_button2.setVisible(False)
@@ -240,6 +243,7 @@ class SidePanelWindow(QWidget):
         self.line_axis_combo.setVisible(False)
         self.line_type_combo.setVisible(False)
 
+
     def show_plot_settings(self):
         """
         Show the plot settings UI elements.
@@ -269,6 +273,8 @@ class SidePanelWindow(QWidget):
         self.start_correction_checkbox.setVisible(False)
         self.apply_correction_button.setVisible(False)
         self.apply_button.setVisible(False)
+        self.start_target_year_label.setVisible(False)
+        self.start_target_year_input.setVisible(False)        
 
         self.title_section2.setVisible(True)
         self.left_arrow_button2.setVisible(True)
@@ -435,24 +441,30 @@ class SidePanelWindow(QWidget):
         self.target_year_input.setText("")
         self.target_year_input.setGeometry(140, 410, 150, 30)
 
+        self.start_target_year_label = QLabel("Start Target Year:", self) 
+        self.start_target_year_label.setGeometry(10, 450, 120, 30)
+        self.start_target_year_input = QLineEdit(self)
+        self.start_target_year_input.setText("")
+        self.start_target_year_input.setGeometry(140, 450, 150, 30)
+
         self.target_value_label = QLabel("Target Value:", self)
-        self.target_value_label.setGeometry(10, 450, 120, 30)
+        self.target_value_label.setGeometry(10, 490, 120, 30)
         self.target_value_input = QLineEdit(self)
         self.target_value_input.setText("")
-        self.target_value_input.setGeometry(140, 450, 150, 30)
+        self.target_value_input.setGeometry(140, 490, 150, 30)
 
         self.continuous_correction_checkbox = QCheckBox("Continuous Correction", self)
-        self.continuous_correction_checkbox.setGeometry(10, 490, 280, 30)
+        self.continuous_correction_checkbox.setGeometry(10, 530, 280, 30)
 
         self.short_correction_checkbox = QCheckBox("Short Correction", self)
-        self.short_correction_checkbox.setGeometry(10, 530, 280, 30)
+        self.short_correction_checkbox.setGeometry(10, 570, 280, 30)
 
         self.start_correction_checkbox = QCheckBox("Start Correction", self)
-        self.start_correction_checkbox.setGeometry(10, 570, 280, 30)
+        self.start_correction_checkbox.setGeometry(10, 610, 280, 30)
 
         self.apply_correction_button = QPushButton("Apply Correction", self)
         self.apply_correction_button.clicked.connect(self.main_window.apply_forecast_corrections)
-        self.apply_correction_button.setGeometry(10, 610, 280, 30)
+        self.apply_correction_button.setGeometry(10, 650, 280, 30)
 
 
     def init_line_settings_ui(self):
@@ -513,25 +525,13 @@ class SidePanelWindow(QWidget):
 
     def add_line(self):
         """
-        Add a new line to the plot.
+        Add a line to the plot based on the user input.
         """
-        name = self.line_name_input.text().strip()
-        value = self.line_value_input.text().strip()
-        color = self.line_color_input.text().strip()
-        axis = self.line_axis_combo.currentText()
+        name = self.line_name_input.text()
+        value = float(self.line_value_input.text())
+        color = self.line_color_input.text()
         line_type = self.line_type_combo.currentText()
+        axis = self.axis_combo.currentText()
 
-        if name and value and color:
-            self.main_window.add_line(name, value, color, line_type, axis)
-            self.update_line_list()
-            self.line_name_input.clear()
-            self.line_value_input.clear()
-            self.line_color_input.clear()
-            self.line_axis_combo.setCurrentIndex(0)
-            self.line_type_combo.setCurrentIndex(0)
-        else:
-            self.main_window.console.append("Please fill in all fields to add a new line.")
+        self.main_window.add_line(name, value, color, line_type, axis)
 
-
-
-# C:\Users\Yerko\Desktop\S+

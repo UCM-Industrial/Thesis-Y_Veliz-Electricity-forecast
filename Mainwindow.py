@@ -10,7 +10,7 @@ from Adf_test import perform_adf_test_with_differencing
 from Sarimax import optimize_sarimax_models, forecast_future as forecast_future_sarimax
 from Arimax import optimize_arimax_models, forecast_future as forecast_future_arimax
 from Arima import optimize_arima_models, forecast_future as forecast_future_arima
-from Plotting import plot_data, plot_data_stacked_bar
+from Plotting import plot_data, plot_data_stacked_bar, plot_historical_data, plot_historical_data_bar
 from SidePanel import SidePanelWindow
 from GroupPanel import GroupPanelWindow
 
@@ -159,22 +159,17 @@ class MainWindow(QMainWindow):
         
     def add_line(self, name, value, color, line_type, axis):
         """
-        Add a new line to the active lines list.
-
-        Args:
-            name (str): Name of the line.
-            value (float): Value at which the line will be drawn.
-            color (str): Color of the line.
-            line_type (str): Type of the line (solid, dashed, dotted).
-            axis (str): Axis on which the line will be drawn (x-axis, y-axis).
+        Add a line to the plot.
         """
-        try:
-            value = float(value)
-            line = {'name': name, 'value': value, 'color': color, 'type': line_type, 'axis': axis, 'active': True}
-            self.active_lines.append(line)
-            self.console.append(f"Added line: {line}")
-        except ValueError:
-            self.console.append("Invalid value for the line.")
+        self.active_lines.append({
+            'name': name,
+            'value': value,
+            'color': color,
+            'type': line_type,
+            'axis': axis,
+            'active': True
+        })
+        self.update_sidepanel_lines()
 
     def closeEvent(self, event):
         """
@@ -434,12 +429,13 @@ class MainWindow(QMainWindow):
         Apply corrections to the forecasted data.
         """
         if self.sidePanelWindow is not None:
-            selected_country = self.get_selected_countries(self.country_list)
+            selected_country = self.get_selected_countries(self.forecasted_country_list)  
             if not selected_country:
-                self.console.append("Please select a country in the country search list.")
+                self.console.append("Please select a country in the forecast country search list.")
                 return
 
             target_year_text = self.sidePanelWindow.target_year_input.text()
+            start_target_year_text = self.sidePanelWindow.start_target_year_input.text()  
             target_value_text = self.sidePanelWindow.target_value_input.text()
             continuous_correction = self.sidePanelWindow.continuous_correction_checkbox.isChecked()
             short_correction = self.sidePanelWindow.short_correction_checkbox.isChecked()
@@ -448,16 +444,18 @@ class MainWindow(QMainWindow):
             if target_year_text and target_value_text:
                 target_year = int(target_year_text)
                 target_value = float(target_value_text)
+                start_target_year = int(start_target_year_text) if start_target_year_text else None  
                 variable = self.variable_combo.currentText()
-                self.apply_linear_correction(selected_country[0], target_year, target_value, variable, continuous_correction, short_correction, start_correction)
+                self.apply_linear_correction(selected_country[0], target_year, start_target_year, target_value, variable, continuous_correction, short_correction, start_correction)
 
-    def apply_linear_correction(self, country, target_year, target_value, variable, continuous, short, start):
+    def apply_linear_correction(self, country, target_year, start_target_year, target_value, variable, continuous, short, start):
         """
         Apply linear correction to the forecasted data.
 
         Args:
             country (str): The country for which to apply the correction.
             target_year (int): The target year for the correction.
+            start_target_year (int): The start target year for the correction (optional).
             target_value (float): The target value for the correction.
             variable (str): The variable to correct.
             continuous (bool): Whether to apply continuous correction.
@@ -466,7 +464,7 @@ class MainWindow(QMainWindow):
         """
         forecast_key = None
         for key, value in self.forecast_results.items():
-            if value['country'] == country:
+            if country in key: 
                 forecast_key = key
                 break
 
@@ -479,20 +477,21 @@ class MainWindow(QMainWindow):
         forecast_years = forecast_values.index
 
         if target_year in forecast_years:
+            start_year = start_target_year if start_target_year else forecast_years.min()
             if start:
                 for year in forecast_years:
-                    if year >= target_year:
+                    if start_year <= year <= target_year:
                         forecast_values.loc[year] = target_value
             else:
                 current_value = forecast_values.loc[target_year]
-                correction_factor = (target_value - current_value) / (target_year - forecast_years.min())
+                correction_factor = (target_value - current_value) / (target_year - start_year)
 
                 for year in forecast_years:
-                    if year <= target_year:
-                        forecast_values.loc[year] += correction_factor * (year - forecast_years.min())
-                    else:
+                    if start_year <= year <= target_year:
+                        forecast_values.loc[year] += correction_factor * (year - start_year)
+                    elif year > target_year:
                         if continuous:
-                            forecast_values.loc[year] += correction_factor * (year - forecast_years.min())
+                            forecast_values.loc[year] += correction_factor * (year - start_year)
                         elif short:
                             forecast_values.loc[year] = target_value
 
@@ -535,43 +534,57 @@ class MainWindow(QMainWindow):
         """
         Plot the selected data.
         """
-        if self.forecast_results is None:
-            self.console.append("You must first apply a model.")
-            return
-
         plot_type = self.plot_combo.currentText()
         chart_type = self.chart_type_combo.currentText()
         selected_forecasts = self.get_selected_countries(self.forecasted_country_list)
+        selected_countries = self.get_selected_countries(self.country_list)
         variable = self.variable_combo.currentText()
-
-        if not selected_forecasts:
-            self.console.append("Please select at least one forecast to plot.")
-            return
-
-        show_confidence_interval = self.sidePanelWindow.show_confidence_interval_checkbox.isChecked()
-        if show_confidence_interval and len(selected_forecasts) > 1:
-            self.console.append("The 'Show Confidence Interval' option is only available for one country at a time.")
-            return
 
         self.canvas.figure.clear()
         ax = self.canvas.figure.add_subplot(111)
 
-        add_forecast_start_line = True
-        if chart_type == "Lines":
-            max_value = -float('inf')
-            for forecast_key in selected_forecasts:
-                max_value = max(max_value, plot_data(self.df, self.forecast_results, forecast_key, variable, plot_type, ax, add_forecast_start_line, show_confidence_interval))
-                add_forecast_start_line = False
-        elif chart_type == "Stacked Bars":
-            max_value = plot_data_stacked_bar(self.df, self.forecast_results, selected_forecasts, variable, plot_type, ax)
+        if plot_type == "Historical" and not selected_forecasts and self.df is not None:
+            if chart_type == "Lines":
+                plot_historical_data(self.df, selected_countries, variable, self.start_year_spin.value(), self.end_year_spin.value(), ax)
+            elif chart_type == "Stacked Bars":
+                plot_historical_data_bar(self.df, selected_countries, variable, self.start_year_spin.value(), self.end_year_spin.value(), ax)
+            ax.set_xlim([self.start_year_spin.value(), self.end_year_spin.value()])
+        else:
+            if self.forecast_results is None:
+                self.console.append("You must first apply a model.")
+                return
 
-        start_year = self.start_year_spin.value()
-        end_year = self.forecast_until_year
+            if not selected_forecasts:
+                self.console.append("Please select at least one forecast to plot.")
+                return
 
-        ax.set_xlim([start_year, end_year])
-        ax.set_ylim([0, max_value * 1.01])
+            show_confidence_interval = self.sidePanelWindow.show_confidence_interval_checkbox.isChecked()
+            if show_confidence_interval and len(selected_forecasts) > 1:
+                self.console.append("The 'Show Confidence Interval' option is only available for one country at a time.")
+                return
 
-        # Agregar las líneas activas al gráfico
+            add_forecast_start_line = True
+            if chart_type == "Lines":
+                max_value = -float('inf')
+                for forecast_key in selected_forecasts:
+                    max_value = max(max_value, plot_data(self.df, self.forecast_results, forecast_key, variable, plot_type, ax, add_forecast_start_line, show_confidence_interval))
+                    add_forecast_start_line = False
+            elif chart_type == "Stacked Bars":
+                max_value = plot_data_stacked_bar(self.df, self.forecast_results, selected_forecasts, variable, plot_type, ax)
+
+            if plot_type == "Historical":
+                start_year = self.start_year_spin.value()
+                end_year = self.end_year_spin.value()
+            elif plot_type == "Forecast":
+                start_year = 2023
+                end_year = self.forecast_until_year
+            elif plot_type == "Both":
+                start_year = self.start_year_spin.value()
+                end_year = self.forecast_until_year
+
+            ax.set_xlim([start_year, end_year])
+            ax.set_ylim([0, max_value * 1.01])
+
         for line in self.active_lines:
             if line['active']:
                 linestyle = '-' if line['type'] == 'solid' else '--' if line['type'] == 'dashed' else ':'
