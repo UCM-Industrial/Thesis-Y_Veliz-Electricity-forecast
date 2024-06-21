@@ -1,6 +1,6 @@
 import sys
 import os
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QPushButton, QComboBox, QTextEdit, QFileDialog, QLabel, QSpinBox, QListWidget, QListWidgetItem, QLineEdit)
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QPushButton, QComboBox, QTextEdit, QFileDialog, QLabel, QSpinBox, QListWidget, QListWidgetItem, QLineEdit, QGridLayout)
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -13,11 +13,11 @@ from Arima import optimize_arima_models, forecast_future as forecast_future_arim
 from Plotting import plot_data, plot_data_stacked_bar, plot_historical_data, plot_historical_data_bar
 from SidePanel import SidePanelWindow
 from GroupPanel import GroupPanelWindow
+from SavePanel import SaveDialog
 
 class MainWindow(QMainWindow):
     """
     Main application window for forecasting.
-    
     """
     def __init__(self):
         super().__init__()
@@ -40,108 +40,95 @@ class MainWindow(QMainWindow):
         container = QWidget()
         self.setCentralWidget(container)
 
-        self.load_button = QPushButton("📁", container)
+        layout = QGridLayout(container)
+
+        self.load_button = QPushButton("📁")
         self.load_button.clicked.connect(self.load_file)
         self.load_button.setFixedSize(30, 30)
-        self.load_button.move(20, 10)
+        layout.addWidget(self.load_button, 0, 0)
 
-        self.save_button = QPushButton("💾", container)
-        self.save_button.clicked.connect(self.save_forecast)
+        self.save_button = QPushButton("💾")
+        self.save_button.clicked.connect(self.show_save_dialog)
         self.save_button.setFixedSize(30, 30)
-        self.save_button.move(60, 10)
+        layout.addWidget(self.save_button, 0, 1)
 
-        self.toggleSidePanelButton = QPushButton("⚙️", container)
+        self.toggleSidePanelButton = QPushButton("⚙️")
         self.toggleSidePanelButton.clicked.connect(self.toggleSidePanel)
         self.toggleSidePanelButton.setFixedSize(30, 30)
-        self.toggleSidePanelButton.move(100, 10)
+        layout.addWidget(self.toggleSidePanelButton, 0, 2)
 
-        self.clear_button = QPushButton("🗑️", container)
+        self.clear_button = QPushButton("🗑️")
         self.clear_button.clicked.connect(self.clear_all)
         self.clear_button.setFixedSize(30, 30)
-        self.clear_button.move(140, 10)
+        layout.addWidget(self.clear_button, 0, 3)
 
-        self.group_button = QPushButton("Group", container)
-        self.group_button.clicked.connect(self.group_countries)
-        self.group_button.setFixedSize(100, 30)
-        self.group_button.move(500, 220)
-
-        self.country_search = QLineEdit(container)
+        self.country_search = QLineEdit()
         self.country_search.setPlaceholderText("Search country...")
-        self.country_search.setFixedSize(300, 30)
-        self.country_search.move(20, 60)
+        layout.addWidget(self.country_search, 1, 0, 1, 4)
         self.country_search.textChanged.connect(self.filter_country_list)
 
-        self.country_list = QListWidget(container)
-        self.country_list.setFixedSize(300, 100)
-        self.country_list.move(20, 100)
+        self.country_list = QListWidget()
+        layout.addWidget(self.country_list, 2, 0, 1, 4)
 
-        self.variable_combo = QComboBox(container)
-        self.variable_combo.setFixedSize(200, 30)
-        self.variable_combo.move(340, 60)
+        self.variable_combo = QComboBox()
+        layout.addWidget(self.variable_combo, 1, 4, 1, 2)
 
-        self.forecasted_country_search = QLineEdit(container)
+        self.forecasted_country_search = QLineEdit()
         self.forecasted_country_search.setPlaceholderText("Search forecast country...")
-        self.forecasted_country_search.setFixedSize(350, 30)
-        self.forecasted_country_search.move(560, 60)
+        layout.addWidget(self.forecasted_country_search, 1, 6, 1, 4)
         self.forecasted_country_search.textChanged.connect(self.filter_forecasted_country_list)
 
-        self.forecasted_country_list = QListWidget(container)
-        self.forecasted_country_list.setFixedSize(350, 100)
-        self.forecasted_country_list.move(560, 100)
+        self.forecasted_country_list = QListWidget()
+        layout.addWidget(self.forecasted_country_list, 2, 6, 1, 4)
 
-        self.start_year_label = QLabel("Start Year:", container)
-        self.start_year_label.move(20, 220)
-        self.start_year_spin = QSpinBox(container)
+        self.start_year_label = QLabel("Start Year:")
+        layout.addWidget(self.start_year_label, 3, 0)
+        self.start_year_spin = QSpinBox()
         self.start_year_spin.setRange(1900, 2100)
-        self.start_year_spin.setFixedSize(80, 25)
-        self.start_year_spin.move(100, 220)
+        layout.addWidget(self.start_year_spin, 3, 1)
 
-        self.end_year_label = QLabel("End Year:", container)
-        self.end_year_label.move(200, 220)
-        self.end_year_spin = QSpinBox(container)
+        self.end_year_label = QLabel("End Year:")
+        layout.addWidget(self.end_year_label, 3, 2)
+        self.end_year_spin = QSpinBox()
         self.end_year_spin.setRange(1900, 2100)
-        self.end_year_spin.setFixedSize(80, 25)
-        self.end_year_spin.move(280, 220)
+        layout.addWidget(self.end_year_spin, 3, 3)
 
-        self.test_button = QPushButton("ADF Test", container)
+        self.test_button = QPushButton("ADF Test")
         self.test_button.clicked.connect(self.run_adf_test)
-        self.test_button.setFixedSize(100, 30)
-        self.test_button.move(380, 220)
+        layout.addWidget(self.test_button, 3, 4)
 
-        self.plot_type_label = QLabel("Plot Type:", container)
-        self.plot_type_label.move(20, 260)
-        self.plot_combo = QComboBox(container)
+        self.plot_type_label = QLabel("Plot Type:")
+        layout.addWidget(self.plot_type_label, 4, 0)
+        self.plot_combo = QComboBox()
         self.plot_combo.addItems(["Historical", "Forecast", "Both"])
-        self.plot_combo.setFixedSize(150, 30)
-        self.plot_combo.move(100, 260)
+        layout.addWidget(self.plot_combo, 4, 1)
 
-        self.chart_type_label = QLabel("Chart Type:", container)
-        self.chart_type_label.move(260, 260)
-        self.chart_type_combo = QComboBox(container)
+        self.chart_type_label = QLabel("Chart Type:")
+        layout.addWidget(self.chart_type_label, 4, 2)
+        self.chart_type_combo = QComboBox()
         self.chart_type_combo.addItems(["Lines", "Stacked Bars"])
-        self.chart_type_combo.setFixedSize(150, 30)
-        self.chart_type_combo.move(340, 260)
+        layout.addWidget(self.chart_type_combo, 4, 3)
 
-        self.plot_button = QPushButton("Plot", container)
+        self.plot_button = QPushButton("Plot")
         self.plot_button.clicked.connect(self.plot_selected_data)
-        self.plot_button.setFixedSize(100, 30)
-        self.plot_button.move(500, 260)
+        layout.addWidget(self.plot_button, 4, 4)
+        
+        self.group_button = QPushButton("Group")
+        self.group_button.clicked.connect(self.group_countries)
+        layout.addWidget(self.group_button, 4, 5)
 
-        self.console = QTextEdit(container)
+        self.console = QTextEdit()
         self.console.setReadOnly(True)
-        self.console.setFixedSize(900, 150)
-        self.console.move(20, 300)
+        layout.addWidget(self.console, 5, 0, 1, 10)
 
         self.canvas = FigureCanvas(Figure())
-        self.canvas.setParent(container)
-        self.canvas.setFixedSize(900, 400)
-        self.canvas.move(20, 460)
+        layout.addWidget(self.canvas, 6, 0, 1, 10)
 
-        self.download_button = QPushButton("💾", container)
+        self.download_button = QPushButton("💾")
         self.download_button.setToolTip("Download plot as image")
         self.download_button.clicked.connect(self.download_plot)
         self.download_button.setFixedSize(30, 30)
-        self.download_button.move(880, 470)
+        layout.addWidget(self.download_button, 6, 9, 1, 1)
 
         self.df = None
         self.adf_results = None
@@ -155,7 +142,14 @@ class MainWindow(QMainWindow):
         self.replace_negative_forecast = False
         
         self.active_lines = [] 
+
+        self.save_dialog = SaveDialog(self)
         
+    def show_save_dialog(self):
+        """
+        Show the save dialog to select the type of data to save.
+        """
+        self.save_dialog.show()
         
     def add_line(self, name, value, color, line_type, axis):
         """
@@ -595,7 +589,7 @@ class MainWindow(QMainWindow):
 
         self.canvas.draw()
 
-    def apply_plot_settings(self, x_range, y_range, title, legend_size, xlabel, ylabel, xlabel_size, ylabel_size):
+    def apply_plot_settings(self, x_range, y_range, title, legend_size, legend_position, xlabel, ylabel, xlabel_size, ylabel_size):
         """
         Apply plot settings to the current plot.
 
@@ -604,6 +598,7 @@ class MainWindow(QMainWindow):
             y_range (tuple): Range for the y-axis.
             title (str): Title of the plot.
             legend_size (int): Font size for the legend.
+            legend_position (str): Position for the legend.
             xlabel (str): Label for the x-axis.
             ylabel (str): Label for the y-axis.
             xlabel_size (int): Font size for the x-axis label.
@@ -618,7 +613,14 @@ class MainWindow(QMainWindow):
             if title:
                 ax.set_title(title, fontsize=16, fontweight='bold')
             if legend_size:
-                ax.legend(fontsize=legend_size)
+                legend_position_mapping = {
+                    "upperleft": "upper left",
+                    "bottomleft": "lower left",
+                    "upperright": "upper right",
+                    "bottomright": "lower right"
+                }
+                legend_pos = legend_position_mapping.get(legend_position, "upper right")
+                ax.legend(fontsize=legend_size, loc=legend_pos)
             if xlabel:
                 ax.set_xlabel(xlabel, fontsize=xlabel_size if xlabel_size else 14)
             if ylabel:
@@ -629,34 +631,43 @@ class MainWindow(QMainWindow):
                 ax.yaxis.label.set_size(ylabel_size)
             self.canvas.draw()
 
-    def save_forecast(self):
+    def save_forecast(self, save_type, save_path):
         """
-        Save the forecasted data to a CSV file.
+        Save the selected type of data to a CSV file.
+
+        Args:
+            save_type (str): The type of data to save ("Historical", "Forecast", "Both").
+            save_path (str): The path to save the CSV file.
         """
-        selected_countries = self.get_selected_countries(self.forecasted_country_list)
-        if not selected_countries:
+        selected_forecast_keys = self.get_selected_countries(self.forecasted_country_list)
+        if not selected_forecast_keys:
             self.console.append("Please select at least one forecasted country to save.")
             return
 
         variable = self.variable_combo.currentText()
-        forecast_data = pd.DataFrame()
-        for country in selected_countries:
-            historical_data = self.df[(self.df['Country'] == country)][['Country', 'Date', variable]]
-            forecast_values = self.forecast_results[country]['forecast_values']
-            forecast_years = forecast_values.index
-            forecast_df = pd.DataFrame({
-                'Country': country,
-                'Date': forecast_years,
-                variable: forecast_values.values
-            })
-            combined_data = pd.concat([historical_data, forecast_df], ignore_index=True)
-            combined_data = combined_data.drop_duplicates(subset=['Date'], keep='last')
-            forecast_data = pd.concat([forecast_data, combined_data], ignore_index=True)
+        save_data = pd.DataFrame()
 
-        save_path, _ = QFileDialog.getSaveFileName(self, "Save CSV File", self.extracted_dataset_dir, "CSV Files (*.csv);;All Files (*)")
-        if save_path:
-            forecast_data.to_csv(save_path, index=False)
-            self.console.append(f"Forecast saved to {save_path}")
+        countries = [key.split(" ")[0] for key in selected_forecast_keys]
+        for country in countries:
+            if save_type in ["Historical", "Both"]:
+                historical_data = self.df[(self.df['Country'] == country) & (self.df['Date'].notna())][['Country', 'Date', variable]]
+                save_data = pd.concat([save_data, historical_data], ignore_index=True)
+
+            if save_type in ["Forecast", "Both"]:
+                forecast_key = next((key for key in selected_forecast_keys if country in key), None)
+                if forecast_key:
+                    forecast_values = self.forecast_results[forecast_key]['forecast_values']
+                    forecast_years = forecast_values.index
+                    forecast_df = pd.DataFrame({
+                        'Country': country,
+                        'Date': forecast_years,
+                        variable: forecast_values.values
+                    })
+                    save_data = pd.concat([save_data, forecast_df], ignore_index=True)
+
+        save_data.to_csv(save_path, index=False)
+        self.console.append(f"Data saved to {save_path}")
+
 
     def download_plot(self):
         """

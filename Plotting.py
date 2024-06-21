@@ -193,5 +193,3 @@ def plot_data_stacked_bar(df, forecast_results, forecast_keys, variable, plot_ty
     ax.set_ylim(bottom=0)
 
     return max_value
-
-
