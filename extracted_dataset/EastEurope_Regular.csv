@@ -1,157 +1,238 @@
 Country,Date,nuclear_electricity
-"Belarus (2100) - ARIMA (0, 1, 0)",2023,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2024,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2025,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2026,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2027,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2028,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2029,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2030,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2031,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2032,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2033,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2034,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2035,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2036,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2037,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2038,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2039,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2040,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2041,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2042,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2043,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2044,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2045,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2046,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2047,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2048,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2049,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2050,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2051,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2052,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2053,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2054,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2055,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2056,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2057,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2058,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2059,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2060,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2061,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2062,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2063,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2064,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2065,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2066,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2067,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2068,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2069,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2070,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2071,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2072,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2073,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2074,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2075,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2076,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2077,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2078,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2079,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2080,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2081,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2082,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2083,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2084,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2085,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2086,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2087,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2088,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2089,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2090,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2091,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2092,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2093,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2094,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2095,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2096,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2097,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2098,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2099,10.0
-"Belarus (2100) - ARIMA (0, 1, 0)",2100,10.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2023,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2024,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2025,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2026,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2027,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2028,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2029,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2030,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2031,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2032,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2033,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2034,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2035,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2036,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2037,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2038,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2039,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2040,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2041,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2042,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2043,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2044,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2045,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2046,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2047,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2048,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2049,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2050,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2051,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2052,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2053,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2054,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2055,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2056,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2057,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2058,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2059,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2060,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2061,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2062,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2063,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2064,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2065,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2066,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2067,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2068,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2069,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2070,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2071,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2072,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2073,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2074,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2075,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2076,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2077,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2078,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2079,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2080,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2081,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2082,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2083,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2084,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2085,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2086,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2087,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2088,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2089,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2090,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2091,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2092,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2093,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2094,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2095,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2096,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2097,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2098,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2099,0.0
-"Lithuania (2100) - ARIMA (0, 1, 0)",2100,0.0
+Belarus,1980,0.0
+Belarus,1981,0.0
+Belarus,1982,0.0
+Belarus,1983,0.0
+Belarus,1984,0.0
+Belarus,1985,0.0
+Belarus,1986,0.0
+Belarus,1987,0.0
+Belarus,1988,0.0
+Belarus,1989,0.0
+Belarus,1990,0.0
+Belarus,1991,0.0
+Belarus,1992,0.0
+Belarus,1993,0.0
+Belarus,1994,0.0
+Belarus,1995,0.0
+Belarus,1996,0.0
+Belarus,1997,0.0
+Belarus,1998,0.0
+Belarus,1999,0.0
+Belarus,2000,0.0
+Belarus,2001,0.0
+Belarus,2002,0.0
+Belarus,2003,0.0
+Belarus,2004,0.0
+Belarus,2005,0.0
+Belarus,2006,0.0
+Belarus,2007,0.0
+Belarus,2008,0.0
+Belarus,2009,0.0
+Belarus,2010,0.0
+Belarus,2011,0.0
+Belarus,2012,0.0
+Belarus,2013,0.0
+Belarus,2014,0.0
+Belarus,2015,0.0
+Belarus,2016,0.0
+Belarus,2017,0.0
+Belarus,2018,0.0
+Belarus,2019,0.0
+Belarus,2020,0.34
+Belarus,2021,5.78
+Belarus,2022,4.69
+Belarus,2023,11.6
+Belarus,2024,11.6
+Belarus,2025,11.6
+Belarus,2026,11.6
+Belarus,2027,11.6
+Belarus,2028,11.6
+Belarus,2029,11.6
+Belarus,2030,11.6
+Belarus,2031,11.6
+Belarus,2032,11.6
+Belarus,2033,11.6
+Belarus,2034,11.6
+Belarus,2035,11.6
+Belarus,2036,11.6
+Belarus,2037,11.6
+Belarus,2038,11.6
+Belarus,2039,11.6
+Belarus,2040,11.6
+Belarus,2041,11.6
+Belarus,2042,11.6
+Belarus,2043,11.6
+Belarus,2044,11.6
+Belarus,2045,11.6
+Belarus,2046,11.6
+Belarus,2047,11.6
+Belarus,2048,11.6
+Belarus,2049,11.6
+Belarus,2050,11.6
+Belarus,2051,11.6
+Belarus,2052,11.6
+Belarus,2053,11.6
+Belarus,2054,11.6
+Belarus,2055,11.6
+Belarus,2056,11.6
+Belarus,2057,11.6
+Belarus,2058,11.6
+Belarus,2059,11.6
+Belarus,2060,11.6
+Belarus,2061,11.6
+Belarus,2062,11.6
+Belarus,2063,11.6
+Belarus,2064,11.6
+Belarus,2065,11.6
+Belarus,2066,11.6
+Belarus,2067,11.6
+Belarus,2068,11.6
+Belarus,2069,11.6
+Belarus,2070,11.6
+Belarus,2071,11.6
+Belarus,2072,11.6
+Belarus,2073,11.6
+Belarus,2074,11.6
+Belarus,2075,11.6
+Belarus,2076,11.6
+Belarus,2077,11.6
+Belarus,2078,11.6
+Belarus,2079,11.6
+Belarus,2080,11.6
+Belarus,2081,11.6
+Belarus,2082,11.6
+Belarus,2083,11.6
+Belarus,2084,11.6
+Belarus,2085,11.6
+Belarus,2086,11.6
+Belarus,2087,11.6
+Belarus,2088,11.6
+Belarus,2089,11.6
+Belarus,2090,11.6
+Belarus,2091,11.6
+Belarus,2092,11.6
+Belarus,2093,11.6
+Belarus,2094,11.6
+Belarus,2095,11.6
+Belarus,2096,11.6
+Belarus,2097,11.6
+Belarus,2098,11.6
+Belarus,2099,11.6
+Belarus,2100,11.6
+Lithuania,1985,9.48
+Lithuania,1986,9.88
+Lithuania,1987,9.18
+Lithuania,1988,12.81
+Lithuania,1989,16.65
+Lithuania,1990,17.03
+Lithuania,1991,17.0
+Lithuania,1992,14.64
+Lithuania,1993,12.26
+Lithuania,1994,7.71
+Lithuania,1995,11.82
+Lithuania,1996,13.94
+Lithuania,1997,12.02
+Lithuania,1998,13.55
+Lithuania,1999,9.86
+Lithuania,2000,8.42
+Lithuania,2001,11.36
+Lithuania,2002,14.14
+Lithuania,2003,15.48
+Lithuania,2004,15.1
+Lithuania,2005,10.34
+Lithuania,2006,8.65
+Lithuania,2007,9.83
+Lithuania,2008,9.89
+Lithuania,2009,10.85
+Lithuania,2010,0.0
+Lithuania,2011,0.0
+Lithuania,2012,0.0
+Lithuania,2013,0.0
+Lithuania,2014,0.0
+Lithuania,2015,0.0
+Lithuania,2016,0.0
+Lithuania,2017,0.0
+Lithuania,2018,0.0
+Lithuania,2019,0.0
+Lithuania,2020,0.0
+Lithuania,2021,0.0
+Lithuania,2022,0.0
+Lithuania,2023,0.0
+Lithuania,2024,0.0
+Lithuania,2025,0.0
+Lithuania,2026,0.0
+Lithuania,2027,0.0
+Lithuania,2028,0.0
+Lithuania,2029,0.0
+Lithuania,2030,0.0
+Lithuania,2031,0.0
+Lithuania,2032,0.0
+Lithuania,2033,0.0
+Lithuania,2034,0.0
+Lithuania,2035,0.0
+Lithuania,2036,0.0
+Lithuania,2037,0.0
+Lithuania,2038,0.0
+Lithuania,2039,0.0
+Lithuania,2040,0.0
+Lithuania,2041,0.0
+Lithuania,2042,0.0
+Lithuania,2043,0.0
+Lithuania,2044,0.0
+Lithuania,2045,0.0
+Lithuania,2046,0.0
+Lithuania,2047,0.0
+Lithuania,2048,0.0
+Lithuania,2049,0.0
+Lithuania,2050,0.0
+Lithuania,2051,0.0
+Lithuania,2052,0.0
+Lithuania,2053,0.0
+Lithuania,2054,0.0
+Lithuania,2055,0.0
+Lithuania,2056,0.0
+Lithuania,2057,0.0
+Lithuania,2058,0.0
+Lithuania,2059,0.0
+Lithuania,2060,0.0
+Lithuania,2061,0.0
+Lithuania,2062,0.0
+Lithuania,2063,0.0
+Lithuania,2064,0.0
+Lithuania,2065,0.0
+Lithuania,2066,0.0
+Lithuania,2067,0.0
+Lithuania,2068,0.0
+Lithuania,2069,0.0
+Lithuania,2070,0.0
+Lithuania,2071,0.0
+Lithuania,2072,0.0
+Lithuania,2073,0.0
+Lithuania,2074,0.0
+Lithuania,2075,0.0
+Lithuania,2076,0.0
+Lithuania,2077,0.0
+Lithuania,2078,0.0
+Lithuania,2079,0.0
+Lithuania,2080,0.0
+Lithuania,2081,0.0
+Lithuania,2082,0.0
+Lithuania,2083,0.0
+Lithuania,2084,0.0
+Lithuania,2085,0.0
+Lithuania,2086,0.0
+Lithuania,2087,0.0
+Lithuania,2088,0.0
+Lithuania,2089,0.0
+Lithuania,2090,0.0
+Lithuania,2091,0.0
+Lithuania,2092,0.0
+Lithuania,2093,0.0
+Lithuania,2094,0.0
+Lithuania,2095,0.0
+Lithuania,2096,0.0
+Lithuania,2097,0.0
+Lithuania,2098,0.0
+Lithuania,2099,0.0
+Lithuania,2100,0.0

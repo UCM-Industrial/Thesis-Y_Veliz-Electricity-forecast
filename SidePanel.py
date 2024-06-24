@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QComboBox, QPushButton, QLineEdit, QLabel, QCheckBox, QGridLayout, QListWidget, QListWidgetItem
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
+import matplotlib.container
 import os
 
 class SidePanelWindow(QWidget):
@@ -56,7 +57,7 @@ class SidePanelWindow(QWidget):
 
         self.d_range_label = QLabel("d_range :")
         self.layout.addWidget(self.d_range_label, 3, 0)
-        self.d_range_input = QLineEdit("0,1")
+        self.d_range_input = QLineEdit("0,2")
         self.layout.addWidget(self.d_range_input, 3, 1, 1, 2)
 
         self.q_range_label = QLabel("q_range :")
@@ -234,7 +235,7 @@ class SidePanelWindow(QWidget):
         self.line_value_label.setVisible(False)
         self.line_value_input.setVisible(False)
         self.line_color_label.setVisible(False)
-        self.line_color_input.setVisible(False)
+        self.line_color_combo.setVisible(False)
         self.line_type_label.setVisible(False)
         self.line_type_combo.setVisible(False)
         self.add_line_button.setVisible(False)
@@ -304,7 +305,7 @@ class SidePanelWindow(QWidget):
         self.line_value_label.setVisible(True)
         self.line_value_input.setVisible(True)
         self.line_color_label.setVisible(True)
-        self.line_color_input.setVisible(True)
+        self.line_color_combo.setVisible(True)
         self.line_type_label.setVisible(True)
         self.line_type_combo.setVisible(True)
         self.add_line_button.setVisible(True)
@@ -417,8 +418,9 @@ class SidePanelWindow(QWidget):
 
     def apply_plot_settings(self):
         """
-        Apply the plot settings.
+        Apply the plot settings and update the graph with selected lines.
         """
+        # Apply plot settings
         x_range = self.get_range(self.x_axis_input.text(), None)
         y_range = self.get_range(self.y_axis_input.text(), None)
         title = self.title_input.text()
@@ -430,6 +432,17 @@ class SidePanelWindow(QWidget):
         ylabel_size = int(self.ylabel_size_input.text()) if self.ylabel_size_input.text() else None
 
         self.main_window.apply_plot_settings(x_range, y_range, title, legend_size, legend_position, xlabel, ylabel, xlabel_size, ylabel_size)
+
+        for index in range(self.line_list.count()):
+            item = self.line_list.item(index)
+            line_name = item.text()
+            for line in self.main_window.active_lines:
+                if line['name'] == line_name:
+                    line['active'] = item.checkState() == Qt.Checked
+
+        self.clear_lines()
+        self.draw_lines()
+        self.update_legend()
 
     def init_correction_settings_ui(self):
         """
@@ -487,8 +500,9 @@ class SidePanelWindow(QWidget):
 
         self.line_color_label = QLabel("Color:")
         self.layout.addWidget(self.line_color_label, 22, 0)
-        self.line_color_input = QLineEdit()
-        self.layout.addWidget(self.line_color_input, 22, 1, 1, 2)
+        self.line_color_combo = QComboBox()
+        self.line_color_combo.addItems(["red", "blue", "green", "yellow", "black"])
+        self.layout.addWidget(self.line_color_combo, 22, 1, 1, 2)
 
         self.line_axis_label = QLabel("Axis:")
         self.layout.addWidget(self.line_axis_label, 23, 0)
@@ -522,9 +536,63 @@ class SidePanelWindow(QWidget):
         Add a line to the plot based on the user input.
         """
         name = self.line_name_input.text()
-        value = float(self.line_value_input.text())
-        color = self.line_color_input.text()
+        value = self.line_value_input.text()
+        color = self.line_color_combo.currentText()
         line_type = self.line_type_combo.currentText()
         axis = self.line_axis_combo.currentText()
 
-        self.main_window.add_line(name, value, color, line_type, axis)
+        try:
+            value = float(value)
+            line = {'name': name, 'value': value, 'color': color, 'type': line_type, 'axis': axis, 'active': True}
+            self.main_window.active_lines.append(line)
+            self.main_window.console.append(f"Added line: {line}")
+            self.update_line_list()
+        except ValueError:
+            self.main_window.console.append("Invalid value for the line.")
+                  
+    def draw_lines(self):
+        """
+        Draw the active lines on the plot.
+        """
+        ax = self.main_window.canvas.figure.gca()
+        for line in self.main_window.active_lines:
+            if line['active']:
+                linestyle = '-' if line['type'] == 'solid' else '--' if line['type'] == 'dashed' else ':'
+                if line['axis'] == 'x-axis':
+                    ax.axvline(x=line['value'], color=line['color'], linestyle=linestyle, label=line['name'])
+                else:
+                    ax.axhline(y=line['value'], color=line['color'], linestyle=linestyle, label=line['name'])
+                ax.lines[-1].set_visible(True)
+        self.main_window.canvas.draw()
+        
+    def clear_lines(self):
+        """
+        Hide all lines from the plot added by the SidePanel.
+        """
+        ax = self.main_window.canvas.figure.gca()
+        for line in ax.get_lines():
+            if line.get_label() in [l['name'] for l in self.main_window.active_lines]:
+                line.set_visible(False)
+        self.main_window.canvas.draw()
+        
+    def update_legend(self):
+        """
+        Update the legend to reflect the current active lines.
+        """
+        ax = self.main_window.canvas.figure.gca()
+        handles, labels = ax.get_legend_handles_labels()
+        visible_handles_labels = []
+        for handle, label in zip(handles, labels):
+            if isinstance(handle, matplotlib.container.BarContainer):
+                if any(bar.get_visible() for bar in handle.get_children()):
+                    visible_handles_labels.append((handle, label))
+            else:
+                if handle.get_visible():
+                    visible_handles_labels.append((handle, label))
+
+        if visible_handles_labels:
+            handles, labels = zip(*visible_handles_labels)
+            ax.legend(handles, labels)
+        else:
+            ax.legend().remove()
+        self.main_window.canvas.draw()

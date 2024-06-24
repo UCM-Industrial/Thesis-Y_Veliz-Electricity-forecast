@@ -1,391 +1,1006 @@
 Country,Date,nuclear_electricity
-"Italy (2100) - ARIMA (0, 2, 2)",2023,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2024,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2025,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2026,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2027,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2028,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2029,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2030,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2031,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2032,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2033,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2034,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2035,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2036,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2037,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2038,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2039,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2040,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2041,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2042,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2043,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2044,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2045,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2046,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2047,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2048,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2049,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2050,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2051,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2052,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2053,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2054,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2055,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2056,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2057,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2058,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2059,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2060,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2061,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2062,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2063,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2064,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2065,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2066,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2067,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2068,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2069,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2070,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2071,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2072,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2073,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2074,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2075,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2076,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2077,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2078,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2079,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2080,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2081,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2082,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2083,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2084,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2085,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2086,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2087,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2088,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2089,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2090,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2091,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2092,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2093,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2094,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2095,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2096,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2097,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2098,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2099,0.0
-"Italy (2100) - ARIMA (0, 2, 2)",2100,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2023,57.10744159727377
-"Spain (2100) - ARIMA (2, 2, 0)",2024,55.136680558629315
-"Spain (2100) - ARIMA (2, 2, 0)",2025,51.11420310575222
-"Spain (2100) - ARIMA (2, 2, 0)",2026,48.63499651331578
-"Spain (2100) - ARIMA (2, 2, 0)",2027,45.0
-"Spain (2100) - ARIMA (2, 2, 0)",2028,42.22933238801258
-"Spain (2100) - ARIMA (2, 2, 0)",2029,38.81261842167583
-"Spain (2100) - ARIMA (2, 2, 0)",2030,35.87871337961945
-"Spain (2100) - ARIMA (2, 2, 0)",2031,32.58401198988206
-"Spain (2100) - ARIMA (2, 2, 0)",2032,29.55892344393161
-"Spain (2100) - ARIMA (2, 2, 0)",2033,26.332362213378538
-"Spain (2100) - ARIMA (2, 2, 0)",2034,23.256354464533125
-"Spain (2100) - ARIMA (2, 2, 0)",2035,20.06784345601291
-"Spain (2100) - ARIMA (2, 2, 0)",2036,16.963402108686367
-"Spain (2100) - ARIMA (2, 2, 0)",2037,13.796138516562102
-"Spain (2100) - ARIMA (2, 2, 0)",2038,10.67581973507724
-"Spain (2100) - ARIMA (2, 2, 0)",2039,7.520420780461606
-"Spain (2100) - ARIMA (2, 2, 0)",2040,4.391235980849622
-"Spain (2100) - ARIMA (2, 2, 0)",2041,1.2424622835658852
-"Spain (2100) - ARIMA (2, 2, 0)",2042,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2043,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2044,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2045,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2046,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2047,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2048,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2049,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2050,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2051,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2052,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2053,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2054,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2055,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2056,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2057,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2058,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2059,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2060,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2061,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2062,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2063,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2064,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2065,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2066,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2067,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2068,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2069,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2070,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2071,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2072,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2073,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2074,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2075,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2076,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2077,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2078,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2079,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2080,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2081,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2082,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2083,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2084,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2085,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2086,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2087,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2088,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2089,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2090,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2091,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2092,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2093,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2094,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2095,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2096,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2097,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2098,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2099,0.0
-"Spain (2100) - ARIMA (2, 2, 0)",2100,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2023,43.7064878463944
-"Belgium (2100) - ARIMA (0, 2, 2)",2024,21.8532439231972
-"Belgium (2100) - ARIMA (0, 2, 2)",2025,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2026,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2027,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2028,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2029,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2030,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2031,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2032,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2033,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2034,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2035,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2036,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2037,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2038,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2039,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2040,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2041,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2042,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2043,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2044,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2045,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2046,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2047,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2048,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2049,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2050,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2051,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2052,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2053,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2054,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2055,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2056,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2057,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2058,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2059,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2060,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2061,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2062,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2063,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2064,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2065,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2066,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2067,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2068,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2069,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2070,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2071,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2072,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2073,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2074,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2075,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2076,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2077,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2078,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2079,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2080,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2081,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2082,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2083,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2084,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2085,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2086,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2087,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2088,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2089,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2090,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2091,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2092,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2093,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2094,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2095,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2096,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2097,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2098,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2099,0.0
-"Belgium (2100) - ARIMA (0, 2, 2)",2100,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2023,38.43031410683186
-"Germany (2100) - ARIMA (0, 2, 2)",2024,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2025,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2026,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2027,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2028,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2029,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2030,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2031,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2032,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2033,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2034,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2035,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2036,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2037,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2038,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2039,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2040,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2041,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2042,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2043,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2044,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2045,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2046,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2047,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2048,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2049,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2050,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2051,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2052,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2053,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2054,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2055,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2056,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2057,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2058,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2059,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2060,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2061,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2062,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2063,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2064,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2065,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2066,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2067,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2068,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2069,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2070,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2071,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2072,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2073,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2074,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2075,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2076,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2077,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2078,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2079,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2080,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2081,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2082,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2083,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2084,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2085,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2086,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2087,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2088,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2089,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2090,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2091,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2092,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2093,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2094,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2095,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2096,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2097,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2098,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2099,0.0
-"Germany (2100) - ARIMA (0, 2, 2)",2100,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2023,24.415962798149263
-"Switzerland (2100) - ARIMA (2, 2, 2)",2024,20.60864034007359
-"Switzerland (2100) - ARIMA (2, 2, 2)",2025,17.842038221993533
-"Switzerland (2100) - ARIMA (2, 2, 2)",2026,16.302593943626455
-"Switzerland (2100) - ARIMA (2, 2, 2)",2027,14.660577111405285
-"Switzerland (2100) - ARIMA (2, 2, 2)",2028,12.499794312794284
-"Switzerland (2100) - ARIMA (2, 2, 2)",2029,10.246989609049953
-"Switzerland (2100) - ARIMA (2, 2, 2)",2030,8.178730119079068
-"Switzerland (2100) - ARIMA (2, 2, 2)",2031,6.194775139269856
-"Switzerland (2100) - ARIMA (2, 2, 2)",2032,4.158409431897081
-"Switzerland (2100) - ARIMA (2, 2, 2)",2033,2.0747587583520968
-"Switzerland (2100) - ARIMA (2, 2, 2)",2034,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2035,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2036,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2037,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2038,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2039,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2040,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2041,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2042,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2043,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2044,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2045,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2046,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2047,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2048,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2049,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2050,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2051,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2052,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2053,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2054,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2055,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2056,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2057,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2058,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2059,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2060,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2061,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2062,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2063,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2064,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2065,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2066,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2067,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2068,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2069,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2070,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2071,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2072,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2073,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2074,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2075,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2076,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2077,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2078,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2079,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2080,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2081,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2082,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2083,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2084,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2085,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2086,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2087,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2088,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2089,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2090,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2091,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2092,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2093,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2094,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2095,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2096,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2097,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2098,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2099,0.0
-"Switzerland (2100) - ARIMA (2, 2, 2)",2100,0.0
+Italy,1900,
+Italy,1901,
+Italy,1902,
+Italy,1903,
+Italy,1904,
+Italy,1905,
+Italy,1906,
+Italy,1907,
+Italy,1908,
+Italy,1909,
+Italy,1910,
+Italy,1911,
+Italy,1912,
+Italy,1913,
+Italy,1914,
+Italy,1915,
+Italy,1916,
+Italy,1917,
+Italy,1918,
+Italy,1919,
+Italy,1920,
+Italy,1921,
+Italy,1922,
+Italy,1923,
+Italy,1924,
+Italy,1925,
+Italy,1926,
+Italy,1927,
+Italy,1928,
+Italy,1929,
+Italy,1930,
+Italy,1931,
+Italy,1932,
+Italy,1933,
+Italy,1934,
+Italy,1935,
+Italy,1936,
+Italy,1937,
+Italy,1938,
+Italy,1939,
+Italy,1940,
+Italy,1941,
+Italy,1942,
+Italy,1943,
+Italy,1944,
+Italy,1945,
+Italy,1946,
+Italy,1947,
+Italy,1948,
+Italy,1949,
+Italy,1950,
+Italy,1951,
+Italy,1952,
+Italy,1953,
+Italy,1954,
+Italy,1955,
+Italy,1956,
+Italy,1957,
+Italy,1958,
+Italy,1959,
+Italy,1960,
+Italy,1961,
+Italy,1962,
+Italy,1963,
+Italy,1964,
+Italy,1965,3.51
+Italy,1966,3.86
+Italy,1967,3.15
+Italy,1968,2.58
+Italy,1969,1.68
+Italy,1970,3.18
+Italy,1971,3.37
+Italy,1972,3.63
+Italy,1973,3.14
+Italy,1974,3.41
+Italy,1975,3.8
+Italy,1976,3.81
+Italy,1977,3.39
+Italy,1978,4.43
+Italy,1979,2.63
+Italy,1980,2.21
+Italy,1981,2.71
+Italy,1982,6.8
+Italy,1983,5.78
+Italy,1984,6.89
+Italy,1985,7.02
+Italy,1986,8.76
+Italy,1987,0.17
+Italy,1988,0.0
+Italy,1989,0.0
+Italy,1990,0.0
+Italy,1991,0.0
+Italy,1992,0.0
+Italy,1993,0.0
+Italy,1994,0.0
+Italy,1995,0.0
+Italy,1996,0.0
+Italy,1997,0.0
+Italy,1998,0.0
+Italy,1999,0.0
+Italy,2000,0.0
+Italy,2001,0.0
+Italy,2002,0.0
+Italy,2003,0.0
+Italy,2004,0.0
+Italy,2005,0.0
+Italy,2006,0.0
+Italy,2007,0.0
+Italy,2008,0.0
+Italy,2009,0.0
+Italy,2010,0.0
+Italy,2011,0.0
+Italy,2012,0.0
+Italy,2013,0.0
+Italy,2014,0.0
+Italy,2015,0.0
+Italy,2016,0.0
+Italy,2017,0.0
+Italy,2018,0.0
+Italy,2019,0.0
+Italy,2020,0.0
+Italy,2021,0.0
+Italy,2022,0.0
+Italy,2023,0.0
+Italy,2024,0.0
+Italy,2025,0.0
+Italy,2026,0.0
+Italy,2027,0.0
+Italy,2028,0.0
+Italy,2029,0.0
+Italy,2030,0.0
+Italy,2031,0.0
+Italy,2032,0.0
+Italy,2033,0.0
+Italy,2034,0.0
+Italy,2035,0.0
+Italy,2036,0.0
+Italy,2037,0.0
+Italy,2038,0.0
+Italy,2039,0.0
+Italy,2040,0.0
+Italy,2041,0.0
+Italy,2042,0.0
+Italy,2043,0.0
+Italy,2044,0.0
+Italy,2045,0.0
+Italy,2046,0.0
+Italy,2047,0.0
+Italy,2048,0.0
+Italy,2049,0.0
+Italy,2050,0.0
+Italy,2051,0.0
+Italy,2052,0.0
+Italy,2053,0.0
+Italy,2054,0.0
+Italy,2055,0.0
+Italy,2056,0.0
+Italy,2057,0.0
+Italy,2058,0.0
+Italy,2059,0.0
+Italy,2060,0.0
+Italy,2061,0.0
+Italy,2062,0.0
+Italy,2063,0.0
+Italy,2064,0.0
+Italy,2065,0.0
+Italy,2066,0.0
+Italy,2067,0.0
+Italy,2068,0.0
+Italy,2069,0.0
+Italy,2070,0.0
+Italy,2071,0.0
+Italy,2072,0.0
+Italy,2073,0.0
+Italy,2074,0.0
+Italy,2075,0.0
+Italy,2076,0.0
+Italy,2077,0.0
+Italy,2078,0.0
+Italy,2079,0.0
+Italy,2080,0.0
+Italy,2081,0.0
+Italy,2082,0.0
+Italy,2083,0.0
+Italy,2084,0.0
+Italy,2085,0.0
+Italy,2086,0.0
+Italy,2087,0.0
+Italy,2088,0.0
+Italy,2089,0.0
+Italy,2090,0.0
+Italy,2091,0.0
+Italy,2092,0.0
+Italy,2093,0.0
+Italy,2094,0.0
+Italy,2095,0.0
+Italy,2096,0.0
+Italy,2097,0.0
+Italy,2098,0.0
+Italy,2099,0.0
+Italy,2100,0.0
+Spain,1900,
+Spain,1901,
+Spain,1902,
+Spain,1903,
+Spain,1904,
+Spain,1905,
+Spain,1906,
+Spain,1907,
+Spain,1908,
+Spain,1909,
+Spain,1910,
+Spain,1911,
+Spain,1912,
+Spain,1913,
+Spain,1914,
+Spain,1915,
+Spain,1916,
+Spain,1917,
+Spain,1918,
+Spain,1919,
+Spain,1920,
+Spain,1921,
+Spain,1922,
+Spain,1923,
+Spain,1924,
+Spain,1925,
+Spain,1926,
+Spain,1927,
+Spain,1928,
+Spain,1929,
+Spain,1930,
+Spain,1931,
+Spain,1932,
+Spain,1933,
+Spain,1934,
+Spain,1935,
+Spain,1936,
+Spain,1937,
+Spain,1938,
+Spain,1939,
+Spain,1940,
+Spain,1941,
+Spain,1942,
+Spain,1943,
+Spain,1944,
+Spain,1945,
+Spain,1946,
+Spain,1947,
+Spain,1948,
+Spain,1949,
+Spain,1950,
+Spain,1951,
+Spain,1952,
+Spain,1953,
+Spain,1954,
+Spain,1955,
+Spain,1956,
+Spain,1957,
+Spain,1958,
+Spain,1959,
+Spain,1960,
+Spain,1961,
+Spain,1962,
+Spain,1963,
+Spain,1964,
+Spain,1965,0.0
+Spain,1966,0.0
+Spain,1967,0.0
+Spain,1968,0.08
+Spain,1969,0.83
+Spain,1970,0.92
+Spain,1971,2.52
+Spain,1972,4.75
+Spain,1973,6.55
+Spain,1974,7.22
+Spain,1975,7.54
+Spain,1976,7.56
+Spain,1977,6.52
+Spain,1978,7.65
+Spain,1979,6.7
+Spain,1980,5.19
+Spain,1981,9.57
+Spain,1982,8.77
+Spain,1983,10.66
+Spain,1984,23.09
+Spain,1985,28.04
+Spain,1986,37.46
+Spain,1987,41.27
+Spain,1988,50.47
+Spain,1989,56.13
+Spain,1990,54.27
+Spain,1991,55.58
+Spain,1992,55.78
+Spain,1993,56.06
+Spain,1994,55.31
+Spain,1995,55.46
+Spain,1996,56.33
+Spain,1997,55.3
+Spain,1998,58.99
+Spain,1999,58.85
+Spain,2000,62.21
+Spain,2001,63.71
+Spain,2002,63.02
+Spain,2003,61.88
+Spain,2004,63.61
+Spain,2005,57.54
+Spain,2006,60.13
+Spain,2007,55.1
+Spain,2008,58.97
+Spain,2009,52.76
+Spain,2010,61.99
+Spain,2011,57.72
+Spain,2012,61.47
+Spain,2013,56.73
+Spain,2014,57.31
+Spain,2015,57.2
+Spain,2016,58.63
+Spain,2017,58.04
+Spain,2018,55.77
+Spain,2019,58.35
+Spain,2020,58.3
+Spain,2021,56.56
+Spain,2022,58.53
+Spain,2023,57.10752235237912
+Spain,2024,53.4642141301265
+Spain,2025,47.7697192302593
+Spain,2026,43.61784654878868
+Spain,2027,38.310869533585574
+Spain,2028,33.8675552354421
+Spain,2029,28.77880850651851
+Spain,2030,24.17232485269563
+Spain,2031,19.205517907138635
+Spain,2032,14.50792159501816
+Spain,2033,9.609189558102159
+Spain,2034,4.860732005418029
+Spain,2035,0.0
+Spain,2036,0.0
+Spain,2037,0.0
+Spain,2038,0.0
+Spain,2039,0.0
+Spain,2040,0.0
+Spain,2041,0.0
+Spain,2042,0.0
+Spain,2043,0.0
+Spain,2044,0.0
+Spain,2045,0.0
+Spain,2046,0.0
+Spain,2047,0.0
+Spain,2048,0.0
+Spain,2049,0.0
+Spain,2050,0.0
+Spain,2051,0.0
+Spain,2052,0.0
+Spain,2053,0.0
+Spain,2054,0.0
+Spain,2055,0.0
+Spain,2056,0.0
+Spain,2057,0.0
+Spain,2058,0.0
+Spain,2059,0.0
+Spain,2060,0.0
+Spain,2061,0.0
+Spain,2062,0.0
+Spain,2063,0.0
+Spain,2064,0.0
+Spain,2065,0.0
+Spain,2066,0.0
+Spain,2067,0.0
+Spain,2068,0.0
+Spain,2069,0.0
+Spain,2070,0.0
+Spain,2071,0.0
+Spain,2072,0.0
+Spain,2073,0.0
+Spain,2074,0.0
+Spain,2075,0.0
+Spain,2076,0.0
+Spain,2077,0.0
+Spain,2078,0.0
+Spain,2079,0.0
+Spain,2080,0.0
+Spain,2081,0.0
+Spain,2082,0.0
+Spain,2083,0.0
+Spain,2084,0.0
+Spain,2085,0.0
+Spain,2086,0.0
+Spain,2087,0.0
+Spain,2088,0.0
+Spain,2089,0.0
+Spain,2090,0.0
+Spain,2091,0.0
+Spain,2092,0.0
+Spain,2093,0.0
+Spain,2094,0.0
+Spain,2095,0.0
+Spain,2096,0.0
+Spain,2097,0.0
+Spain,2098,0.0
+Spain,2099,0.0
+Spain,2100,0.0
+Belgium,1900,
+Belgium,1901,
+Belgium,1902,
+Belgium,1903,
+Belgium,1904,
+Belgium,1905,
+Belgium,1906,
+Belgium,1907,
+Belgium,1908,
+Belgium,1909,
+Belgium,1910,
+Belgium,1911,
+Belgium,1912,
+Belgium,1913,
+Belgium,1914,
+Belgium,1915,
+Belgium,1916,
+Belgium,1917,
+Belgium,1918,
+Belgium,1919,
+Belgium,1920,
+Belgium,1921,
+Belgium,1922,
+Belgium,1923,
+Belgium,1924,
+Belgium,1925,
+Belgium,1926,
+Belgium,1927,
+Belgium,1928,
+Belgium,1929,
+Belgium,1930,
+Belgium,1931,
+Belgium,1932,
+Belgium,1933,
+Belgium,1934,
+Belgium,1935,
+Belgium,1936,
+Belgium,1937,
+Belgium,1938,
+Belgium,1939,
+Belgium,1940,
+Belgium,1941,
+Belgium,1942,
+Belgium,1943,
+Belgium,1944,
+Belgium,1945,
+Belgium,1946,
+Belgium,1947,
+Belgium,1948,
+Belgium,1949,
+Belgium,1950,
+Belgium,1951,
+Belgium,1952,
+Belgium,1953,
+Belgium,1954,
+Belgium,1955,
+Belgium,1956,
+Belgium,1957,
+Belgium,1958,
+Belgium,1959,
+Belgium,1960,
+Belgium,1961,
+Belgium,1962,
+Belgium,1963,
+Belgium,1964,
+Belgium,1965,0.0
+Belgium,1966,0.01
+Belgium,1967,0.09
+Belgium,1968,0.06
+Belgium,1969,0.02
+Belgium,1970,0.06
+Belgium,1971,0.0
+Belgium,1972,0.01
+Belgium,1973,0.08
+Belgium,1974,0.15
+Belgium,1975,6.78
+Belgium,1976,10.04
+Belgium,1977,11.94
+Belgium,1978,12.51
+Belgium,1979,11.41
+Belgium,1980,12.55
+Belgium,1981,12.86
+Belgium,1982,15.66
+Belgium,1983,24.11
+Belgium,1984,27.74
+Belgium,1985,34.6
+Belgium,1986,39.39
+Belgium,1987,41.97
+Belgium,1988,43.1
+Belgium,1989,41.22
+Belgium,1990,42.72
+Belgium,1991,42.86
+Belgium,1992,43.46
+Belgium,1993,41.93
+Belgium,1994,40.62
+Belgium,1995,41.36
+Belgium,1996,43.34
+Belgium,1997,47.41
+Belgium,1998,46.17
+Belgium,1999,49.02
+Belgium,2000,48.16
+Belgium,2001,46.35
+Belgium,2002,47.36
+Belgium,2003,47.38
+Belgium,2004,47.31
+Belgium,2005,47.6
+Belgium,2006,46.65
+Belgium,2007,48.23
+Belgium,2008,45.57
+Belgium,2009,47.22
+Belgium,2010,47.94
+Belgium,2011,48.23
+Belgium,2012,40.29
+Belgium,2013,42.64
+Belgium,2014,33.7
+Belgium,2015,26.1
+Belgium,2016,43.52
+Belgium,2017,42.23
+Belgium,2018,28.6
+Belgium,2019,43.52
+Belgium,2020,34.43
+Belgium,2021,50.33
+Belgium,2022,44.11
+Belgium,2023,43.706910556346095
+Belgium,2024,40.06466800998392
+Belgium,2025,36.42242546362175
+Belgium,2026,32.78018291725957
+Belgium,2027,29.137940370897397
+Belgium,2028,25.49569782453522
+Belgium,2029,21.853455278173048
+Belgium,2030,18.211212731810875
+Belgium,2031,14.568970185448698
+Belgium,2032,10.926727639086522
+Belgium,2033,7.284485092724346
+Belgium,2034,3.6422425463621764
+Belgium,2035,0.0
+Belgium,2036,0.0
+Belgium,2037,0.0
+Belgium,2038,0.0
+Belgium,2039,0.0
+Belgium,2040,0.0
+Belgium,2041,0.0
+Belgium,2042,0.0
+Belgium,2043,0.0
+Belgium,2044,0.0
+Belgium,2045,0.0
+Belgium,2046,0.0
+Belgium,2047,0.0
+Belgium,2048,0.0
+Belgium,2049,0.0
+Belgium,2050,0.0
+Belgium,2051,0.0
+Belgium,2052,0.0
+Belgium,2053,0.0
+Belgium,2054,0.0
+Belgium,2055,0.0
+Belgium,2056,0.0
+Belgium,2057,0.0
+Belgium,2058,0.0
+Belgium,2059,0.0
+Belgium,2060,0.0
+Belgium,2061,0.0
+Belgium,2062,0.0
+Belgium,2063,0.0
+Belgium,2064,0.0
+Belgium,2065,0.0
+Belgium,2066,0.0
+Belgium,2067,0.0
+Belgium,2068,0.0
+Belgium,2069,0.0
+Belgium,2070,0.0
+Belgium,2071,0.0
+Belgium,2072,0.0
+Belgium,2073,0.0
+Belgium,2074,0.0
+Belgium,2075,0.0
+Belgium,2076,0.0
+Belgium,2077,0.0
+Belgium,2078,0.0
+Belgium,2079,0.0
+Belgium,2080,0.0
+Belgium,2081,0.0
+Belgium,2082,0.0
+Belgium,2083,0.0
+Belgium,2084,0.0
+Belgium,2085,0.0
+Belgium,2086,0.0
+Belgium,2087,0.0
+Belgium,2088,0.0
+Belgium,2089,0.0
+Belgium,2090,0.0
+Belgium,2091,0.0
+Belgium,2092,0.0
+Belgium,2093,0.0
+Belgium,2094,0.0
+Belgium,2095,0.0
+Belgium,2096,0.0
+Belgium,2097,0.0
+Belgium,2098,0.0
+Belgium,2099,0.0
+Belgium,2100,0.0
+Germany,1900,
+Germany,1901,
+Germany,1902,
+Germany,1903,
+Germany,1904,
+Germany,1905,
+Germany,1906,
+Germany,1907,
+Germany,1908,
+Germany,1909,
+Germany,1910,
+Germany,1911,
+Germany,1912,
+Germany,1913,
+Germany,1914,
+Germany,1915,
+Germany,1916,
+Germany,1917,
+Germany,1918,
+Germany,1919,
+Germany,1920,
+Germany,1921,
+Germany,1922,
+Germany,1923,
+Germany,1924,
+Germany,1925,
+Germany,1926,
+Germany,1927,
+Germany,1928,
+Germany,1929,
+Germany,1930,
+Germany,1931,
+Germany,1932,
+Germany,1933,
+Germany,1934,
+Germany,1935,
+Germany,1936,
+Germany,1937,
+Germany,1938,
+Germany,1939,
+Germany,1940,
+Germany,1941,
+Germany,1942,
+Germany,1943,
+Germany,1944,
+Germany,1945,
+Germany,1946,
+Germany,1947,
+Germany,1948,
+Germany,1949,
+Germany,1950,
+Germany,1951,
+Germany,1952,
+Germany,1953,
+Germany,1954,
+Germany,1955,
+Germany,1956,
+Germany,1957,
+Germany,1958,
+Germany,1959,
+Germany,1960,
+Germany,1961,
+Germany,1962,
+Germany,1963,
+Germany,1964,
+Germany,1965,0.12
+Germany,1966,0.27
+Germany,1967,1.23
+Germany,1968,1.77
+Germany,1969,4.94
+Germany,1970,6.49
+Germany,1971,6.22
+Germany,1972,9.52
+Germany,1973,12.11
+Germany,1974,14.46
+Germany,1975,24.14
+Germany,1976,29.53
+Germany,1977,41.26
+Germany,1978,43.87
+Germany,1979,52.06
+Germany,1980,55.59
+Germany,1981,65.53
+Germany,1982,74.43
+Germany,1983,78.06
+Germany,1984,104.32
+Germany,1985,138.64
+Germany,1986,130.49
+Germany,1987,141.73
+Germany,1988,156.82
+Germany,1989,161.67
+Germany,1990,152.47
+Germany,1991,147.23
+Germany,1992,158.8
+Germany,1993,153.28
+Germany,1994,150.7
+Germany,1995,153.09
+Germany,1996,160.02
+Germany,1997,170.33
+Germany,1998,161.64
+Germany,1999,170.0
+Germany,2000,169.61
+Germany,2001,171.3
+Germany,2002,164.84
+Germany,2003,165.06
+Germany,2004,167.07
+Germany,2005,163.05
+Germany,2006,167.27
+Germany,2007,140.53
+Germany,2008,148.49
+Germany,2009,134.93
+Germany,2010,140.56
+Germany,2011,107.97
+Germany,2012,99.46
+Germany,2013,97.29
+Germany,2014,97.13
+Germany,2015,91.79
+Germany,2016,84.63
+Germany,2017,76.32
+Germany,2018,76.0
+Germany,2019,75.07
+Germany,2020,64.38
+Germany,2021,69.13
+Germany,2022,35.86
+Germany,2023,
+Germany,2024,0.0
+Germany,2025,0.0
+Germany,2026,0.0
+Germany,2027,0.0
+Germany,2028,0.0
+Germany,2029,0.0
+Germany,2030,0.0
+Germany,2031,0.0
+Germany,2032,0.0
+Germany,2033,0.0
+Germany,2034,0.0
+Germany,2035,0.0
+Germany,2036,0.0
+Germany,2037,0.0
+Germany,2038,0.0
+Germany,2039,0.0
+Germany,2040,0.0
+Germany,2041,0.0
+Germany,2042,0.0
+Germany,2043,0.0
+Germany,2044,0.0
+Germany,2045,0.0
+Germany,2046,0.0
+Germany,2047,0.0
+Germany,2048,0.0
+Germany,2049,0.0
+Germany,2050,0.0
+Germany,2051,0.0
+Germany,2052,0.0
+Germany,2053,0.0
+Germany,2054,0.0
+Germany,2055,0.0
+Germany,2056,0.0
+Germany,2057,0.0
+Germany,2058,0.0
+Germany,2059,0.0
+Germany,2060,0.0
+Germany,2061,0.0
+Germany,2062,0.0
+Germany,2063,0.0
+Germany,2064,0.0
+Germany,2065,0.0
+Germany,2066,0.0
+Germany,2067,0.0
+Germany,2068,0.0
+Germany,2069,0.0
+Germany,2070,0.0
+Germany,2071,0.0
+Germany,2072,0.0
+Germany,2073,0.0
+Germany,2074,0.0
+Germany,2075,0.0
+Germany,2076,0.0
+Germany,2077,0.0
+Germany,2078,0.0
+Germany,2079,0.0
+Germany,2080,0.0
+Germany,2081,0.0
+Germany,2082,0.0
+Germany,2083,0.0
+Germany,2084,0.0
+Germany,2085,0.0
+Germany,2086,0.0
+Germany,2087,0.0
+Germany,2088,0.0
+Germany,2089,0.0
+Germany,2090,0.0
+Germany,2091,0.0
+Germany,2092,0.0
+Germany,2093,0.0
+Germany,2094,0.0
+Germany,2095,0.0
+Germany,2096,0.0
+Germany,2097,0.0
+Germany,2098,0.0
+Germany,2099,0.0
+Germany,2100,0.0
+Switzerland,1900,
+Switzerland,1901,
+Switzerland,1902,
+Switzerland,1903,
+Switzerland,1904,
+Switzerland,1905,
+Switzerland,1906,
+Switzerland,1907,
+Switzerland,1908,
+Switzerland,1909,
+Switzerland,1910,
+Switzerland,1911,
+Switzerland,1912,
+Switzerland,1913,
+Switzerland,1914,
+Switzerland,1915,
+Switzerland,1916,
+Switzerland,1917,
+Switzerland,1918,
+Switzerland,1919,
+Switzerland,1920,
+Switzerland,1921,
+Switzerland,1922,
+Switzerland,1923,
+Switzerland,1924,
+Switzerland,1925,
+Switzerland,1926,
+Switzerland,1927,
+Switzerland,1928,
+Switzerland,1929,
+Switzerland,1930,
+Switzerland,1931,
+Switzerland,1932,
+Switzerland,1933,
+Switzerland,1934,
+Switzerland,1935,
+Switzerland,1936,
+Switzerland,1937,
+Switzerland,1938,
+Switzerland,1939,
+Switzerland,1940,
+Switzerland,1941,
+Switzerland,1942,
+Switzerland,1943,
+Switzerland,1944,
+Switzerland,1945,
+Switzerland,1946,
+Switzerland,1947,
+Switzerland,1948,
+Switzerland,1949,
+Switzerland,1950,
+Switzerland,1951,
+Switzerland,1952,
+Switzerland,1953,
+Switzerland,1954,
+Switzerland,1955,
+Switzerland,1956,
+Switzerland,1957,
+Switzerland,1958,
+Switzerland,1959,
+Switzerland,1960,
+Switzerland,1961,
+Switzerland,1962,
+Switzerland,1963,
+Switzerland,1964,
+Switzerland,1965,0.0
+Switzerland,1966,0.0
+Switzerland,1967,0.0
+Switzerland,1968,0.0
+Switzerland,1969,0.54
+Switzerland,1970,1.77
+Switzerland,1971,1.39
+Switzerland,1972,3.84
+Switzerland,1973,6.31
+Switzerland,1974,7.07
+Switzerland,1975,7.76
+Switzerland,1976,7.94
+Switzerland,1977,8.11
+Switzerland,1978,8.4
+Switzerland,1979,11.81
+Switzerland,1980,14.35
+Switzerland,1981,15.33
+Switzerland,1982,15.13
+Switzerland,1983,15.71
+Switzerland,1984,18.44
+Switzerland,1985,22.4
+Switzerland,1986,22.42
+Switzerland,1987,22.84
+Switzerland,1988,22.63
+Switzerland,1989,22.68
+Switzerland,1990,23.47
+Switzerland,1991,22.79
+Switzerland,1992,23.29
+Switzerland,1993,23.19
+Switzerland,1994,24.19
+Switzerland,1995,24.72
+Switzerland,1996,24.97
+Switzerland,1997,25.23
+Switzerland,1998,25.65
+Switzerland,1999,24.76
+Switzerland,2000,26.45
+Switzerland,2001,26.81
+Switzerland,2002,27.23
+Switzerland,2003,27.49
+Switzerland,2004,26.96
+Switzerland,2005,23.34
+Switzerland,2006,27.82
+Switzerland,2007,27.92
+Switzerland,2008,27.7
+Switzerland,2009,27.69
+Switzerland,2010,26.34
+Switzerland,2011,26.71
+Switzerland,2012,25.44
+Switzerland,2013,25.99
+Switzerland,2014,27.56
+Switzerland,2015,23.09
+Switzerland,2016,21.15
+Switzerland,2017,20.38
+Switzerland,2018,25.51
+Switzerland,2019,26.42
+Switzerland,2020,24.02
+Switzerland,2021,19.36
+Switzerland,2022,23.95
+Switzerland,2023,24.41431887545223
+Switzerland,2024,20.607490723341503
+Switzerland,2025,17.84181108508197
+Switzerland,2026,16.30217880145574
+Switzerland,2027,14.659725287596002
+Switzerland,2028,12.499095590104794
+Switzerland,2029,10.246665073343252
+Switzerland,2030,8.178508694767688
+Switzerland,2031,6.194487189026685
+Switzerland,2032,4.158153841412403
+Switzerland,2033,2.0746421719670494
+Switzerland,2034,0.0
+Switzerland,2035,0.0
+Switzerland,2036,0.0
+Switzerland,2037,0.0
+Switzerland,2038,0.0
+Switzerland,2039,0.0
+Switzerland,2040,0.0
+Switzerland,2041,0.0
+Switzerland,2042,0.0
+Switzerland,2043,0.0
+Switzerland,2044,0.0
+Switzerland,2045,0.0
+Switzerland,2046,0.0
+Switzerland,2047,0.0
+Switzerland,2048,0.0
+Switzerland,2049,0.0
+Switzerland,2050,0.0
+Switzerland,2051,0.0
+Switzerland,2052,0.0
+Switzerland,2053,0.0
+Switzerland,2054,0.0
+Switzerland,2055,0.0
+Switzerland,2056,0.0
+Switzerland,2057,0.0
+Switzerland,2058,0.0
+Switzerland,2059,0.0
+Switzerland,2060,0.0
+Switzerland,2061,0.0
+Switzerland,2062,0.0
+Switzerland,2063,0.0
+Switzerland,2064,0.0
+Switzerland,2065,0.0
+Switzerland,2066,0.0
+Switzerland,2067,0.0
+Switzerland,2068,0.0
+Switzerland,2069,0.0
+Switzerland,2070,0.0
+Switzerland,2071,0.0
+Switzerland,2072,0.0
+Switzerland,2073,0.0
+Switzerland,2074,0.0
+Switzerland,2075,0.0
+Switzerland,2076,0.0
+Switzerland,2077,0.0
+Switzerland,2078,0.0
+Switzerland,2079,0.0
+Switzerland,2080,0.0
+Switzerland,2081,0.0
+Switzerland,2082,0.0
+Switzerland,2083,0.0
+Switzerland,2084,0.0
+Switzerland,2085,0.0
+Switzerland,2086,0.0
+Switzerland,2087,0.0
+Switzerland,2088,0.0
+Switzerland,2089,0.0
+Switzerland,2090,0.0
+Switzerland,2091,0.0
+Switzerland,2092,0.0
+Switzerland,2093,0.0
+Switzerland,2094,0.0
+Switzerland,2095,0.0
+Switzerland,2096,0.0
+Switzerland,2097,0.0
+Switzerland,2098,0.0
+Switzerland,2099,0.0
+Switzerland,2100,0.0

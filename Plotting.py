@@ -113,9 +113,9 @@ def plot_data(df, forecast_results, forecast_key, variable, plot_type, ax, add_f
     max_value = max(historical_part.max(), forecast_part.max())
 
     if plot_type == "Historical":
-        ax.plot(historical_part.index, historical_part, label=f'Historical - {country}')
+        ax.plot(historical_part.index, historical_part, label=country)
     elif plot_type == "Forecast":
-        ax.plot(forecast_part.index, forecast_part, label=f'Forecast - {country}', linestyle='--')
+        ax.plot(forecast_part.index, forecast_part, label=country, linestyle='--')
         if show_confidence_interval:
             ax.fill_between(forecast_ci.index, forecast_ci['mean_ci_lower'], forecast_ci['mean_ci_upper'], color='gray', alpha=0.2)
     elif plot_type == "Both":
@@ -124,9 +124,6 @@ def plot_data(df, forecast_results, forecast_key, variable, plot_type, ax, add_f
         if show_confidence_interval:
             ax.fill_between(forecast_ci.index, forecast_ci['mean_ci_lower'], forecast_ci['mean_ci_upper'], color='gray', alpha=0.2)
 
-    if add_forecast_start_line and plot_type != "Historical":
-        ax.axvline(x=2022.5, color='black', linestyle='--', linewidth=1, label='Forecast Start')
-        ax.axvline(x=2050.5, color='red', linestyle='--', linewidth=1, label='Cop28 Agreement')
     ax.set_title(f'{variable} Production ({plot_type})', fontsize=16, fontweight='bold')
     ax.set_ylabel('Production (TWh)', fontsize=14)
     ax.set_xlabel('Year', fontsize=14)
@@ -180,10 +177,6 @@ def plot_data_stacked_bar(df, forecast_results, forecast_keys, variable, plot_ty
         country = forecast_results[forecast_key]['country']
         ax.bar(combined_data.index, combined_data[country], bottom=bottom, color=colors[i], label=country)
         bottom += combined_data[country]
-
-    if plot_type != "Historical":
-        ax.axvline(x=2022.5, color='black', linestyle='--', linewidth=1, label='Forecast Start')
-        ax.axvline(x=2050.5, color='red', linestyle='--', linewidth=1, label='Cop28 Agreement')
 
     ax.set_title(f'{variable} Production ({plot_type})', fontsize=16, fontweight='bold')
     ax.set_ylabel('Production (TWh)', fontsize=14)

@@ -1,392 +1,914 @@
 Country,Date,nuclear_electricity
-"Japan (2100) - ARIMA (0, 2, 2)",2023,42.948803580745434
-"Japan (2100) - ARIMA (0, 2, 2)",2024,43.7643227387224
-"Japan (2100) - ARIMA (0, 2, 2)",2025,44.579841896699364
-"Japan (2100) - ARIMA (0, 2, 2)",2026,45.395361054676314
-"Japan (2100) - ARIMA (0, 2, 2)",2027,46.21088021265328
-"Japan (2100) - ARIMA (0, 2, 2)",2028,47.026399370630244
-"Japan (2100) - ARIMA (0, 2, 2)",2029,47.841918528607195
-"Japan (2100) - ARIMA (0, 2, 2)",2030,48.65743768658416
-"Japan (2100) - ARIMA (0, 2, 2)",2031,49.47295684456112
-"Japan (2100) - ARIMA (0, 2, 2)",2032,50.288476002538076
-"Japan (2100) - ARIMA (0, 2, 2)",2033,55.55555555555556
-"Japan (2100) - ARIMA (0, 2, 2)",2034,61.11111111111111
-"Japan (2100) - ARIMA (0, 2, 2)",2035,66.66666666666666
-"Japan (2100) - ARIMA (0, 2, 2)",2036,72.22222222222221
-"Japan (2100) - ARIMA (0, 2, 2)",2037,77.77777777777777
-"Japan (2100) - ARIMA (0, 2, 2)",2038,83.33333333333333
-"Japan (2100) - ARIMA (0, 2, 2)",2039,88.88888888888889
-"Japan (2100) - ARIMA (0, 2, 2)",2040,94.44444444444444
-"Japan (2100) - ARIMA (0, 2, 2)",2041,100.0
-"Japan (2100) - ARIMA (0, 2, 2)",2042,105.55555555555556
-"Japan (2100) - ARIMA (0, 2, 2)",2043,111.11111111111111
-"Japan (2100) - ARIMA (0, 2, 2)",2044,116.66666666666666
-"Japan (2100) - ARIMA (0, 2, 2)",2045,122.22222222222221
-"Japan (2100) - ARIMA (0, 2, 2)",2046,127.77777777777777
-"Japan (2100) - ARIMA (0, 2, 2)",2047,133.33333333333331
-"Japan (2100) - ARIMA (0, 2, 2)",2048,138.88888888888889
-"Japan (2100) - ARIMA (0, 2, 2)",2049,144.44444444444443
-"Japan (2100) - ARIMA (0, 2, 2)",2050,150.0
-"Japan (2100) - ARIMA (0, 2, 2)",2051,155.55555555555554
-"Japan (2100) - ARIMA (0, 2, 2)",2052,161.11111111111111
-"Japan (2100) - ARIMA (0, 2, 2)",2053,166.66666666666666
-"Japan (2100) - ARIMA (0, 2, 2)",2054,172.22222222222223
-"Japan (2100) - ARIMA (0, 2, 2)",2055,177.77777777777777
-"Japan (2100) - ARIMA (0, 2, 2)",2056,183.33333333333331
-"Japan (2100) - ARIMA (0, 2, 2)",2057,188.88888888888889
-"Japan (2100) - ARIMA (0, 2, 2)",2058,194.44444444444443
-"Japan (2100) - ARIMA (0, 2, 2)",2059,200.0
-"Japan (2100) - ARIMA (0, 2, 2)",2060,205.55555555555554
-"Japan (2100) - ARIMA (0, 2, 2)",2061,211.11111111111111
-"Japan (2100) - ARIMA (0, 2, 2)",2062,216.66666666666666
-"Japan (2100) - ARIMA (0, 2, 2)",2063,222.22222222222223
-"Japan (2100) - ARIMA (0, 2, 2)",2064,227.77777777777777
-"Japan (2100) - ARIMA (0, 2, 2)",2065,233.33333333333331
-"Japan (2100) - ARIMA (0, 2, 2)",2066,238.88888888888889
-"Japan (2100) - ARIMA (0, 2, 2)",2067,244.44444444444443
-"Japan (2100) - ARIMA (0, 2, 2)",2068,250.0
-"Japan (2100) - ARIMA (0, 2, 2)",2069,255.55555555555554
-"Japan (2100) - ARIMA (0, 2, 2)",2070,261.1111111111111
-"Japan (2100) - ARIMA (0, 2, 2)",2071,266.66666666666663
-"Japan (2100) - ARIMA (0, 2, 2)",2072,272.22222222222223
-"Japan (2100) - ARIMA (0, 2, 2)",2073,277.77777777777777
-"Japan (2100) - ARIMA (0, 2, 2)",2074,283.3333333333333
-"Japan (2100) - ARIMA (0, 2, 2)",2075,288.88888888888886
-"Japan (2100) - ARIMA (0, 2, 2)",2076,294.44444444444446
-"Japan (2100) - ARIMA (0, 2, 2)",2077,300.0
-"Japan (2100) - ARIMA (0, 2, 2)",2078,305.55555555555554
-"Japan (2100) - ARIMA (0, 2, 2)",2079,311.1111111111111
-"Japan (2100) - ARIMA (0, 2, 2)",2080,316.66666666666663
-"Japan (2100) - ARIMA (0, 2, 2)",2081,322.22222222222223
-"Japan (2100) - ARIMA (0, 2, 2)",2082,327.77777777777777
-"Japan (2100) - ARIMA (0, 2, 2)",2083,333.3333333333333
-"Japan (2100) - ARIMA (0, 2, 2)",2084,338.88888888888886
-"Japan (2100) - ARIMA (0, 2, 2)",2085,344.44444444444446
-"Japan (2100) - ARIMA (0, 2, 2)",2086,350.0
-"Japan (2100) - ARIMA (0, 2, 2)",2087,355.55555555555554
-"Japan (2100) - ARIMA (0, 2, 2)",2088,361.1111111111111
-"Japan (2100) - ARIMA (0, 2, 2)",2089,366.66666666666663
-"Japan (2100) - ARIMA (0, 2, 2)",2090,372.22222222222223
-"Japan (2100) - ARIMA (0, 2, 2)",2091,377.77777777777777
-"Japan (2100) - ARIMA (0, 2, 2)",2092,383.3333333333333
-"Japan (2100) - ARIMA (0, 2, 2)",2093,388.88888888888886
-"Japan (2100) - ARIMA (0, 2, 2)",2094,394.44444444444446
-"Japan (2100) - ARIMA (0, 2, 2)",2095,400.0
-"Japan (2100) - ARIMA (0, 2, 2)",2096,405.55555555555554
-"Japan (2100) - ARIMA (0, 2, 2)",2097,411.1111111111111
-"Japan (2100) - ARIMA (0, 2, 2)",2098,416.66666666666663
-"Japan (2100) - ARIMA (0, 2, 2)",2099,422.22222222222223
-"Japan (2100) - ARIMA (0, 2, 2)",2100,427.77777777777777
-"South Korea (2100) - ARIMA (0, 2, 2)",2023,176.70039678445045
-"South Korea (2100) - ARIMA (0, 2, 2)",2024,188.67445616280415
-"South Korea (2100) - ARIMA (0, 2, 2)",2025,200.64851554115782
-"South Korea (2100) - ARIMA (0, 2, 2)",2026,212.62257491951152
-"South Korea (2100) - ARIMA (0, 2, 2)",2027,224.5966342978652
-"South Korea (2100) - ARIMA (0, 2, 2)",2028,236.5706936762189
-"South Korea (2100) - ARIMA (0, 2, 2)",2029,248.54475305457257
-"South Korea (2100) - ARIMA (0, 2, 2)",2030,260.51881243292627
-"South Korea (2100) - ARIMA (0, 2, 2)",2031,272.49287181127994
-"South Korea (2100) - ARIMA (0, 2, 2)",2032,284.46693118963367
-"South Korea (2100) - ARIMA (0, 2, 2)",2033,296.44099056798734
-"South Korea (2100) - ARIMA (0, 2, 2)",2034,308.415049946341
-"South Korea (2100) - ARIMA (0, 2, 2)",2035,320.3891093246947
-"South Korea (2100) - ARIMA (0, 2, 2)",2036,332.36316870304836
-"South Korea (2100) - ARIMA (0, 2, 2)",2037,344.3372280814021
-"South Korea (2100) - ARIMA (0, 2, 2)",2038,356.31128745975576
-"South Korea (2100) - ARIMA (0, 2, 2)",2039,368.28534683810943
-"South Korea (2100) - ARIMA (0, 2, 2)",2040,380.25940621646316
-"South Korea (2100) - ARIMA (0, 2, 2)",2041,392.23346559481683
-"South Korea (2100) - ARIMA (0, 2, 2)",2042,404.2075249731705
-"South Korea (2100) - ARIMA (0, 2, 2)",2043,416.1815843515242
-"South Korea (2100) - ARIMA (0, 2, 2)",2044,428.15564372987785
-"South Korea (2100) - ARIMA (0, 2, 2)",2045,440.1297031082316
-"South Korea (2100) - ARIMA (0, 2, 2)",2046,452.10376248658525
-"South Korea (2100) - ARIMA (0, 2, 2)",2047,464.077821864939
-"South Korea (2100) - ARIMA (0, 2, 2)",2048,476.05188124329266
-"South Korea (2100) - ARIMA (0, 2, 2)",2049,488.0259406216463
-"South Korea (2100) - ARIMA (0, 2, 2)",2050,500.0
-"South Korea (2100) - ARIMA (0, 2, 2)",2051,511.9740593783537
-"South Korea (2100) - ARIMA (0, 2, 2)",2052,523.9481187567073
-"South Korea (2100) - ARIMA (0, 2, 2)",2053,535.9221781350611
-"South Korea (2100) - ARIMA (0, 2, 2)",2054,547.8962375134147
-"South Korea (2100) - ARIMA (0, 2, 2)",2055,559.8702968917685
-"South Korea (2100) - ARIMA (0, 2, 2)",2056,571.8443562701221
-"South Korea (2100) - ARIMA (0, 2, 2)",2057,583.8184156484758
-"South Korea (2100) - ARIMA (0, 2, 2)",2058,595.7924750268295
-"South Korea (2100) - ARIMA (0, 2, 2)",2059,607.7665344051832
-"South Korea (2100) - ARIMA (0, 2, 2)",2060,619.740593783537
-"South Korea (2100) - ARIMA (0, 2, 2)",2061,631.7146531618905
-"South Korea (2100) - ARIMA (0, 2, 2)",2062,643.6887125402443
-"South Korea (2100) - ARIMA (0, 2, 2)",2063,655.662771918598
-"South Korea (2100) - ARIMA (0, 2, 2)",2064,667.6368312969516
-"South Korea (2100) - ARIMA (0, 2, 2)",2065,679.6108906753053
-"South Korea (2100) - ARIMA (0, 2, 2)",2066,691.584950053659
-"South Korea (2100) - ARIMA (0, 2, 2)",2067,703.5590094320128
-"South Korea (2100) - ARIMA (0, 2, 2)",2068,715.5330688103663
-"South Korea (2100) - ARIMA (0, 2, 2)",2069,727.5071281887201
-"South Korea (2100) - ARIMA (0, 2, 2)",2070,739.4811875670737
-"South Korea (2100) - ARIMA (0, 2, 2)",2071,751.4552469454275
-"South Korea (2100) - ARIMA (0, 2, 2)",2072,763.4293063237811
-"South Korea (2100) - ARIMA (0, 2, 2)",2073,775.4033657021348
-"South Korea (2100) - ARIMA (0, 2, 2)",2074,787.3774250804886
-"South Korea (2100) - ARIMA (0, 2, 2)",2075,799.3514844588422
-"South Korea (2100) - ARIMA (0, 2, 2)",2076,811.3255438371959
-"South Korea (2100) - ARIMA (0, 2, 2)",2077,823.2996032155495
-"South Korea (2100) - ARIMA (0, 2, 2)",2078,835.2736625939033
-"South Korea (2100) - ARIMA (0, 2, 2)",2079,847.247721972257
-"South Korea (2100) - ARIMA (0, 2, 2)",2080,859.2217813506106
-"South Korea (2100) - ARIMA (0, 2, 2)",2081,871.1958407289643
-"South Korea (2100) - ARIMA (0, 2, 2)",2082,883.169900107318
-"South Korea (2100) - ARIMA (0, 2, 2)",2083,895.1439594856718
-"South Korea (2100) - ARIMA (0, 2, 2)",2084,907.1180188640253
-"South Korea (2100) - ARIMA (0, 2, 2)",2085,919.0920782423791
-"South Korea (2100) - ARIMA (0, 2, 2)",2086,931.0661376207328
-"South Korea (2100) - ARIMA (0, 2, 2)",2087,943.0401969990864
-"South Korea (2100) - ARIMA (0, 2, 2)",2088,955.0142563774401
-"South Korea (2100) - ARIMA (0, 2, 2)",2089,966.9883157557938
-"South Korea (2100) - ARIMA (0, 2, 2)",2090,978.9623751341476
-"South Korea (2100) - ARIMA (0, 2, 2)",2091,990.9364345125011
-"South Korea (2100) - ARIMA (0, 2, 2)",2092,1002.9104938908549
-"South Korea (2100) - ARIMA (0, 2, 2)",2093,1014.8845532692085
-"South Korea (2100) - ARIMA (0, 2, 2)",2094,1026.8586126475623
-"South Korea (2100) - ARIMA (0, 2, 2)",2095,1038.832672025916
-"South Korea (2100) - ARIMA (0, 2, 2)",2096,1050.8067314042696
-"South Korea (2100) - ARIMA (0, 2, 2)",2097,1062.7807907826234
-"South Korea (2100) - ARIMA (0, 2, 2)",2098,1074.754850160977
-"South Korea (2100) - ARIMA (0, 2, 2)",2099,1086.7289095393307
-"South Korea (2100) - ARIMA (0, 2, 2)",2100,1098.7029689176843
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2023,25.626323241467404
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2024,24.649083509711748
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2025,25.186334774464555
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2026,27.556141859994717
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2027,29.79823722377763
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2028,30.90980190623923
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2029,31.625944846466304
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2030,32.84217227220388
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2031,34.49899787724029
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2032,36.045186743205775
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2033,37.28629827871015
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2034,38.46548711499788
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2035,39.79826321881099
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2036,41.23136438282383
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2037,42.61592325405889
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2038,43.92129757139648
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2039,45.22225536250885
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2040,46.56792854408147
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2041,47.93480792439843
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2042,49.28422424607352
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2043,50.613905427302456
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2044,51.94563994995292
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2045,53.28983153758411
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2046,54.638000331286435
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2047,55.980500716376014
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2048,57.31830377735811
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2049,58.657484422744915
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2050,60.000000000000014
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2051,61.34309361406845
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2052,62.684467152993136
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2053,64.0247849959905
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2054,65.36567472983225
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2055,66.70742312865477
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2056,68.0491926662591
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2057,69.39046618290763
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2058,70.73152083757242
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2059,72.07277602226986
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2060,73.41424333500896
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2061,74.75568103751564
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2062,76.09698170443141
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2063,77.43824274798109
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2064,78.7795678657755
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2065,80.12094294503191
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2066,81.46230114732882
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2067,82.80362295287549
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2068,84.14493953295195
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2069,85.48627533633584
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2070,86.82762221219684
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2071,88.16896239461516
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2072,89.510293281723
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2073,90.85162423545145
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2074,92.19296068172059
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2075,93.53429937471117
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2076,94.87563577361891
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2077,96.21696989690204
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2078,97.5583044218308
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2079,98.89964045178121
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2080,100.24097687196041
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2081,101.58231256972664
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2082,102.92364773741883
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2083,104.26498310921909
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2084,105.60631887760132
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2085,106.94765469103612
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2086,108.28899029006584
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2087,109.63032577337759
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2088,110.9716613345808
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2089,112.3129969962327
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2090,113.65433265389629
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2091,114.99566825084497
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2092,116.33700382487024
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2093,117.67833942505007
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2094,119.01967504959191
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2095,120.3610106688962
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2096,121.70234627169805
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2097,123.04368187071105
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2098,124.3850174778492
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2099,125.72635309059638
-"United Arab Emirates (2100) - ARIMA (2, 2, 0)",2100,127.06768870090104
-"Armenia (2100) - ARIMA (0, 0, 0)",2022,2.2036313971068378
-"Armenia (2100) - ARIMA (0, 0, 0)",2023,2.3749302757815935
-"Armenia (2100) - ARIMA (0, 0, 0)",2024,2.5462291544563493
-"Armenia (2100) - ARIMA (0, 0, 0)",2025,2.717528033131105
-"Armenia (2100) - ARIMA (0, 0, 0)",2026,2.888826911805861
-"Armenia (2100) - ARIMA (0, 0, 0)",2027,3.0601257904806167
-"Armenia (2100) - ARIMA (0, 0, 0)",2028,3.2314246691553725
-"Armenia (2100) - ARIMA (0, 0, 0)",2029,3.4027235478301283
-"Armenia (2100) - ARIMA (0, 0, 0)",2030,3.574022426504884
-"Armenia (2100) - ARIMA (0, 0, 0)",2031,3.74532130517964
-"Armenia (2100) - ARIMA (0, 0, 0)",2032,3.9166201838543957
-"Armenia (2100) - ARIMA (0, 0, 0)",2033,4.087919062529151
-"Armenia (2100) - ARIMA (0, 0, 0)",2034,4.259217941203907
-"Armenia (2100) - ARIMA (0, 0, 0)",2035,4.4305168198786635
-"Armenia (2100) - ARIMA (0, 0, 0)",2036,4.601815698553419
-"Armenia (2100) - ARIMA (0, 0, 0)",2037,4.773114577228174
-"Armenia (2100) - ARIMA (0, 0, 0)",2038,4.9444134559029305
-"Armenia (2100) - ARIMA (0, 0, 0)",2039,5.115712334577687
-"Armenia (2100) - ARIMA (0, 0, 0)",2040,5.287011213252442
-"Armenia (2100) - ARIMA (0, 0, 0)",2041,5.458310091927197
-"Armenia (2100) - ARIMA (0, 0, 0)",2042,5.629608970601954
-"Armenia (2100) - ARIMA (0, 0, 0)",2043,5.80090784927671
-"Armenia (2100) - ARIMA (0, 0, 0)",2044,5.972206727951465
-"Armenia (2100) - ARIMA (0, 0, 0)",2045,6.143505606626221
-"Armenia (2100) - ARIMA (0, 0, 0)",2046,6.314804485300977
-"Armenia (2100) - ARIMA (0, 0, 0)",2047,6.486103363975733
-"Armenia (2100) - ARIMA (0, 0, 0)",2048,6.657402242650488
-"Armenia (2100) - ARIMA (0, 0, 0)",2049,6.828701121325244
-"Armenia (2100) - ARIMA (0, 0, 0)",2050,7.0
-"Armenia (2100) - ARIMA (0, 0, 0)",2051,7.171298878674756
-"Armenia (2100) - ARIMA (0, 0, 0)",2052,7.342597757349512
-"Armenia (2100) - ARIMA (0, 0, 0)",2053,7.513896636024267
-"Armenia (2100) - ARIMA (0, 0, 0)",2054,7.685195514699023
-"Armenia (2100) - ARIMA (0, 0, 0)",2055,7.856494393373779
-"Armenia (2100) - ARIMA (0, 0, 0)",2056,8.027793272048534
-"Armenia (2100) - ARIMA (0, 0, 0)",2057,8.19909215072329
-"Armenia (2100) - ARIMA (0, 0, 0)",2058,8.370391029398046
-"Armenia (2100) - ARIMA (0, 0, 0)",2059,8.541689908072803
-"Armenia (2100) - ARIMA (0, 0, 0)",2060,8.712988786747559
-"Armenia (2100) - ARIMA (0, 0, 0)",2061,8.884287665422313
-"Armenia (2100) - ARIMA (0, 0, 0)",2062,9.05558654409707
-"Armenia (2100) - ARIMA (0, 0, 0)",2063,9.226885422771826
-"Armenia (2100) - ARIMA (0, 0, 0)",2064,9.39818430144658
-"Armenia (2100) - ARIMA (0, 0, 0)",2065,9.569483180121336
-"Armenia (2100) - ARIMA (0, 0, 0)",2066,9.740782058796093
-"Armenia (2100) - ARIMA (0, 0, 0)",2067,9.912080937470849
-"Armenia (2100) - ARIMA (0, 0, 0)",2068,10.083379816145605
-"Armenia (2100) - ARIMA (0, 0, 0)",2069,10.25467869482036
-"Armenia (2100) - ARIMA (0, 0, 0)",2070,10.425977573495116
-"Armenia (2100) - ARIMA (0, 0, 0)",2071,10.597276452169872
-"Armenia (2100) - ARIMA (0, 0, 0)",2072,10.768575330844628
-"Armenia (2100) - ARIMA (0, 0, 0)",2073,10.939874209519383
-"Armenia (2100) - ARIMA (0, 0, 0)",2074,11.111173088194139
-"Armenia (2100) - ARIMA (0, 0, 0)",2075,11.282471966868895
-"Armenia (2100) - ARIMA (0, 0, 0)",2076,11.45377084554365
-"Armenia (2100) - ARIMA (0, 0, 0)",2077,11.625069724218406
-"Armenia (2100) - ARIMA (0, 0, 0)",2078,11.796368602893162
-"Armenia (2100) - ARIMA (0, 0, 0)",2079,11.967667481567918
-"Armenia (2100) - ARIMA (0, 0, 0)",2080,12.138966360242675
-"Armenia (2100) - ARIMA (0, 0, 0)",2081,12.31026523891743
-"Armenia (2100) - ARIMA (0, 0, 0)",2082,12.481564117592185
-"Armenia (2100) - ARIMA (0, 0, 0)",2083,12.652862996266942
-"Armenia (2100) - ARIMA (0, 0, 0)",2084,12.824161874941696
-"Armenia (2100) - ARIMA (0, 0, 0)",2085,12.995460753616452
-"Armenia (2100) - ARIMA (0, 0, 0)",2086,13.166759632291209
-"Armenia (2100) - ARIMA (0, 0, 0)",2087,13.338058510965965
-"Armenia (2100) - ARIMA (0, 0, 0)",2088,13.509357389640721
-"Armenia (2100) - ARIMA (0, 0, 0)",2089,13.680656268315476
-"Armenia (2100) - ARIMA (0, 0, 0)",2090,13.851955146990232
-"Armenia (2100) - ARIMA (0, 0, 0)",2091,14.023254025664988
-"Armenia (2100) - ARIMA (0, 0, 0)",2092,14.194552904339742
-"Armenia (2100) - ARIMA (0, 0, 0)",2093,14.365851783014499
-"Armenia (2100) - ARIMA (0, 0, 0)",2094,14.537150661689255
-"Armenia (2100) - ARIMA (0, 0, 0)",2095,14.708449540364011
-"Armenia (2100) - ARIMA (0, 0, 0)",2096,14.879748419038767
-"Armenia (2100) - ARIMA (0, 0, 0)",2097,15.051047297713522
-"Armenia (2100) - ARIMA (0, 0, 0)",2098,15.222346176388278
-"Armenia (2100) - ARIMA (0, 0, 0)",2099,15.393645055063034
-"Armenia (2100) - ARIMA (0, 0, 0)",2100,15.564943933737789
-"Mongolia (2100) - ARIMA (0, 0, 0)",2023,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2024,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2025,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2026,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2027,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2028,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2029,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2030,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2031,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2032,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2033,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2034,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2035,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2036,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2037,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2038,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2039,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2040,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2041,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2042,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2043,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2044,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2045,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2046,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2047,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2048,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2049,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2050,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2051,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2052,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2053,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2054,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2055,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2056,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2057,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2058,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2059,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2060,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2061,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2062,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2063,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2064,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2065,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2066,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2067,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2068,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2069,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2070,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2071,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2072,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2073,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2074,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2075,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2076,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2077,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2078,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2079,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2080,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2081,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2082,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2083,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2084,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2085,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2086,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2087,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2088,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2089,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2090,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2091,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2092,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2093,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2094,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2095,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2096,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2097,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2098,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2099,0.0
-"Mongolia (2100) - ARIMA (0, 0, 0)",2100,0.0
+Japan,1900,
+Japan,1901,
+Japan,1902,
+Japan,1903,
+Japan,1904,
+Japan,1905,
+Japan,1906,
+Japan,1907,
+Japan,1908,
+Japan,1909,
+Japan,1910,
+Japan,1911,
+Japan,1912,
+Japan,1913,
+Japan,1914,
+Japan,1915,
+Japan,1916,
+Japan,1917,
+Japan,1918,
+Japan,1919,
+Japan,1920,
+Japan,1921,
+Japan,1922,
+Japan,1923,
+Japan,1924,
+Japan,1925,
+Japan,1926,
+Japan,1927,
+Japan,1928,
+Japan,1929,
+Japan,1930,
+Japan,1931,
+Japan,1932,
+Japan,1933,
+Japan,1934,
+Japan,1935,
+Japan,1936,
+Japan,1937,
+Japan,1938,
+Japan,1939,
+Japan,1940,
+Japan,1941,
+Japan,1942,
+Japan,1943,
+Japan,1944,
+Japan,1945,
+Japan,1946,
+Japan,1947,
+Japan,1948,
+Japan,1949,
+Japan,1950,
+Japan,1951,
+Japan,1952,
+Japan,1953,
+Japan,1954,
+Japan,1955,
+Japan,1956,
+Japan,1957,
+Japan,1958,
+Japan,1959,
+Japan,1960,
+Japan,1961,
+Japan,1962,
+Japan,1963,
+Japan,1964,
+Japan,1965,0.03
+Japan,1966,0.58
+Japan,1967,0.63
+Japan,1968,1.04
+Japan,1969,1.08
+Japan,1970,4.58
+Japan,1971,8.01
+Japan,1972,9.48
+Japan,1973,9.71
+Japan,1974,19.7
+Japan,1975,25.13
+Japan,1976,34.08
+Japan,1977,31.66
+Japan,1978,59.31
+Japan,1979,70.39
+Japan,1980,82.59
+Japan,1981,87.82
+Japan,1982,102.43
+Japan,1983,114.29
+Japan,1984,134.26
+Japan,1985,159.58
+Japan,1986,165.37
+Japan,1987,188.61
+Japan,1988,173.9
+Japan,1989,185.81
+Japan,1990,194.57
+Japan,1991,208.69
+Japan,1992,217.04
+Japan,1993,247.7
+Japan,1994,258.25
+Japan,1995,286.89
+Japan,1996,296.5
+Japan,1997,321.16
+Japan,1998,325.97
+Japan,1999,317.24
+Japan,2000,319.12
+Japan,2001,320.54
+Japan,2002,314.26
+Japan,2003,230.08
+Japan,2004,285.87
+Japan,2005,293.04
+Japan,2006,304.29
+Japan,2007,279.01
+Japan,2008,251.74
+Japan,2009,274.65
+Japan,2010,292.35
+Japan,2011,162.93
+Japan,2012,17.99
+Japan,2013,14.6
+Japan,2014,0.0
+Japan,2015,4.52
+Japan,2016,17.68
+Japan,2017,29.07
+Japan,2018,49.11
+Japan,2019,65.64
+Japan,2020,43.0
+Japan,2021,61.22
+Japan,2022,51.77
+Japan,2023,42.9486031846564
+Japan,2024,80.6130884439912
+Japan,2025,118.277573703326
+Japan,2026,155.9420589626608
+Japan,2027,193.60654422199562
+Japan,2028,231.27102948133043
+Japan,2029,268.9355147406652
+Japan,2030,306.6
+Japan,2031,337.26
+Japan,2032,367.92
+Japan,2033,398.58000000000004
+Japan,2034,429.24
+Japan,2035,459.9
+Japan,2036,490.56
+Japan,2037,521.22
+Japan,2038,551.88
+Japan,2039,582.54
+Japan,2040,613.2
+Japan,2041,643.86
+Japan,2042,674.52
+Japan,2043,705.18
+Japan,2044,735.8399999999999
+Japan,2045,766.5
+Japan,2046,797.16
+Japan,2047,827.8199999999999
+Japan,2048,858.4799999999999
+Japan,2049,889.14
+Japan,2050,919.8
+Japan,2051,950.4599999999999
+Japan,2052,981.12
+Japan,2053,1011.78
+Japan,2054,1042.44
+Japan,2055,1073.1
+Japan,2056,1103.7599999999998
+Japan,2057,1134.42
+Japan,2058,1165.08
+Japan,2059,1195.7399999999998
+Japan,2060,1226.4
+Japan,2061,1257.06
+Japan,2062,1287.7199999999998
+Japan,2063,1318.3799999999999
+Japan,2064,1349.04
+Japan,2065,1379.6999999999998
+Japan,2066,1410.3599999999997
+Japan,2067,1441.02
+Japan,2068,1471.6799999999998
+Japan,2069,1502.3399999999997
+Japan,2070,1533.0
+Japan,2071,1563.6599999999999
+Japan,2072,1594.3199999999997
+Japan,2073,1624.98
+Japan,2074,1655.6399999999999
+Japan,2075,1686.2999999999997
+Japan,2076,1716.96
+Japan,2077,1747.62
+Japan,2078,1778.2799999999997
+Japan,2079,1808.94
+Japan,2080,1839.6
+Japan,2081,1870.2599999999998
+Japan,2082,1900.9199999999996
+Japan,2083,1931.58
+Japan,2084,1962.2399999999998
+Japan,2085,1992.8999999999996
+Japan,2086,2023.56
+Japan,2087,2054.22
+Japan,2088,2084.8799999999997
+Japan,2089,2115.54
+Japan,2090,2146.2
+Japan,2091,2176.8599999999997
+Japan,2092,2207.52
+Japan,2093,2238.18
+Japan,2094,2268.8399999999997
+Japan,2095,2299.5
+Japan,2096,2330.16
+Japan,2097,2360.8199999999997
+Japan,2098,2391.4799999999996
+Japan,2099,2422.14
+Japan,2100,2452.7999999999997
+South Korea,1900,
+South Korea,1901,
+South Korea,1902,
+South Korea,1903,
+South Korea,1904,
+South Korea,1905,
+South Korea,1906,
+South Korea,1907,
+South Korea,1908,
+South Korea,1909,
+South Korea,1910,
+South Korea,1911,
+South Korea,1912,
+South Korea,1913,
+South Korea,1914,
+South Korea,1915,
+South Korea,1916,
+South Korea,1917,
+South Korea,1918,
+South Korea,1919,
+South Korea,1920,
+South Korea,1921,
+South Korea,1922,
+South Korea,1923,
+South Korea,1924,
+South Korea,1925,
+South Korea,1926,
+South Korea,1927,
+South Korea,1928,
+South Korea,1929,
+South Korea,1930,
+South Korea,1931,
+South Korea,1932,
+South Korea,1933,
+South Korea,1934,
+South Korea,1935,
+South Korea,1936,
+South Korea,1937,
+South Korea,1938,
+South Korea,1939,
+South Korea,1940,
+South Korea,1941,
+South Korea,1942,
+South Korea,1943,
+South Korea,1944,
+South Korea,1945,
+South Korea,1946,
+South Korea,1947,
+South Korea,1948,
+South Korea,1949,
+South Korea,1950,
+South Korea,1951,
+South Korea,1952,
+South Korea,1953,
+South Korea,1954,
+South Korea,1955,
+South Korea,1956,
+South Korea,1957,
+South Korea,1958,
+South Korea,1959,
+South Korea,1960,
+South Korea,1961,
+South Korea,1962,
+South Korea,1963,
+South Korea,1964,
+South Korea,1965,0.0
+South Korea,1966,0.0
+South Korea,1967,0.0
+South Korea,1968,0.0
+South Korea,1969,0.0
+South Korea,1970,0.0
+South Korea,1971,0.0
+South Korea,1972,0.0
+South Korea,1973,0.0
+South Korea,1974,0.0
+South Korea,1975,0.0
+South Korea,1976,0.0
+South Korea,1977,0.07
+South Korea,1978,2.32
+South Korea,1979,3.15
+South Korea,1980,3.48
+South Korea,1981,2.9
+South Korea,1982,3.78
+South Korea,1983,8.97
+South Korea,1984,11.79
+South Korea,1985,16.75
+South Korea,1986,28.31
+South Korea,1987,39.31
+South Korea,1988,40.1
+South Korea,1989,47.37
+South Korea,1990,52.89
+South Korea,1991,56.31
+South Korea,1992,56.53
+South Korea,1993,58.14
+South Korea,1994,58.65
+South Korea,1995,67.03
+South Korea,1996,73.92
+South Korea,1997,77.09
+South Korea,1998,89.69
+South Korea,1999,103.06
+South Korea,2000,103.52
+South Korea,2001,106.53
+South Korea,2002,113.15
+South Korea,2003,123.19
+South Korea,2004,124.18
+South Korea,2005,137.59
+South Korea,2006,141.18
+South Korea,2007,136.6
+South Korea,2008,144.26
+South Korea,2009,141.12
+South Korea,2010,141.89
+South Korea,2011,147.76
+South Korea,2012,143.55
+South Korea,2013,132.46
+South Korea,2014,149.17
+South Korea,2015,157.16
+South Korea,2016,154.2
+South Korea,2017,141.28
+South Korea,2018,127.08
+South Korea,2019,138.68
+South Korea,2020,152.58
+South Korea,2021,150.52
+South Korea,2022,168.58
+South Korea,2023,176.69865544754353
+South Korea,2024,187.5702760978945
+South Korea,2025,198.4418967482454
+South Korea,2026,209.31351739859633
+South Korea,2027,220.18513804894724
+South Korea,2028,231.05675869929817
+South Korea,2029,241.9283793496491
+South Korea,2030,252.8
+South Korea,2031,256.83333333333337
+South Korea,2032,260.8666666666667
+South Korea,2033,264.9
+South Korea,2034,268.93333333333334
+South Korea,2035,272.9666666666667
+South Korea,2036,277.0
+South Korea,2037,293.3385714285714
+South Korea,2038,309.6771428571429
+South Korea,2039,326.0157142857143
+South Korea,2040,342.3542857142857
+South Korea,2041,358.6928571428572
+South Korea,2042,375.0314285714286
+South Korea,2043,391.37
+South Korea,2044,407.7085714285714
+South Korea,2045,424.0471428571429
+South Korea,2046,440.3857142857143
+South Korea,2047,456.72428571428577
+South Korea,2048,473.0628571428572
+South Korea,2049,489.4014285714286
+South Korea,2050,505.74
+South Korea,2051,522.0785714285714
+South Korea,2052,538.4171428571428
+South Korea,2053,554.7557142857142
+South Korea,2054,571.0942857142858
+South Korea,2055,587.4328571428572
+South Korea,2056,603.7714285714286
+South Korea,2057,620.1100000000001
+South Korea,2058,636.4485714285715
+South Korea,2059,652.787142857143
+South Korea,2060,669.1257142857144
+South Korea,2061,685.4642857142858
+South Korea,2062,701.8028571428572
+South Korea,2063,718.1414285714286
+South Korea,2064,734.48
+South Korea,2065,750.8185714285714
+South Korea,2066,767.1571428571428
+South Korea,2067,783.4957142857144
+South Korea,2068,799.8342857142858
+South Korea,2069,816.1728571428572
+South Korea,2070,832.5114285714286
+South Korea,2071,848.85
+South Korea,2072,865.1885714285715
+South Korea,2073,881.527142857143
+South Korea,2074,897.8657142857144
+South Korea,2075,914.2042857142858
+South Korea,2076,930.5428571428572
+South Korea,2077,946.8814285714286
+South Korea,2078,963.2200000000001
+South Korea,2079,979.5585714285716
+South Korea,2080,995.897142857143
+South Korea,2081,1012.2357142857144
+South Korea,2082,1028.574285714286
+South Korea,2083,1044.9128571428573
+South Korea,2084,1061.2514285714287
+South Korea,2085,1077.5900000000001
+South Korea,2086,1093.9285714285716
+South Korea,2087,1110.267142857143
+South Korea,2088,1126.6057142857144
+South Korea,2089,1142.9442857142858
+South Korea,2090,1159.2828571428572
+South Korea,2091,1175.6214285714286
+South Korea,2092,1191.96
+South Korea,2093,1208.2985714285714
+South Korea,2094,1224.6371428571429
+South Korea,2095,1240.9757142857143
+South Korea,2096,1257.3142857142857
+South Korea,2097,1273.6528571428573
+South Korea,2098,1289.9914285714287
+South Korea,2099,1306.3300000000002
+South Korea,2100,1322.6685714285716
+United Arab Emirates,1900,
+United Arab Emirates,1901,
+United Arab Emirates,1902,
+United Arab Emirates,1903,
+United Arab Emirates,1904,
+United Arab Emirates,1905,
+United Arab Emirates,1906,
+United Arab Emirates,1907,
+United Arab Emirates,1908,
+United Arab Emirates,1909,
+United Arab Emirates,1910,
+United Arab Emirates,1911,
+United Arab Emirates,1912,
+United Arab Emirates,1913,
+United Arab Emirates,1914,
+United Arab Emirates,1915,
+United Arab Emirates,1916,
+United Arab Emirates,1917,
+United Arab Emirates,1918,
+United Arab Emirates,1919,
+United Arab Emirates,1920,
+United Arab Emirates,1921,
+United Arab Emirates,1922,
+United Arab Emirates,1923,
+United Arab Emirates,1924,
+United Arab Emirates,1925,
+United Arab Emirates,1926,
+United Arab Emirates,1927,
+United Arab Emirates,1928,
+United Arab Emirates,1929,
+United Arab Emirates,1930,
+United Arab Emirates,1931,
+United Arab Emirates,1932,
+United Arab Emirates,1933,
+United Arab Emirates,1934,
+United Arab Emirates,1935,
+United Arab Emirates,1936,
+United Arab Emirates,1937,
+United Arab Emirates,1938,
+United Arab Emirates,1939,
+United Arab Emirates,1940,
+United Arab Emirates,1941,
+United Arab Emirates,1942,
+United Arab Emirates,1943,
+United Arab Emirates,1944,
+United Arab Emirates,1945,
+United Arab Emirates,1946,
+United Arab Emirates,1947,
+United Arab Emirates,1948,
+United Arab Emirates,1949,
+United Arab Emirates,1950,
+United Arab Emirates,1951,
+United Arab Emirates,1952,
+United Arab Emirates,1953,
+United Arab Emirates,1954,
+United Arab Emirates,1955,
+United Arab Emirates,1956,
+United Arab Emirates,1957,
+United Arab Emirates,1958,
+United Arab Emirates,1959,
+United Arab Emirates,1960,
+United Arab Emirates,1961,
+United Arab Emirates,1962,
+United Arab Emirates,1963,
+United Arab Emirates,1964,
+United Arab Emirates,1965,0.0
+United Arab Emirates,1966,0.0
+United Arab Emirates,1967,0.0
+United Arab Emirates,1968,0.0
+United Arab Emirates,1969,0.0
+United Arab Emirates,1970,0.0
+United Arab Emirates,1971,0.0
+United Arab Emirates,1972,0.0
+United Arab Emirates,1973,0.0
+United Arab Emirates,1974,0.0
+United Arab Emirates,1975,0.0
+United Arab Emirates,1976,0.0
+United Arab Emirates,1977,0.0
+United Arab Emirates,1978,0.0
+United Arab Emirates,1979,0.0
+United Arab Emirates,1980,0.0
+United Arab Emirates,1981,0.0
+United Arab Emirates,1982,0.0
+United Arab Emirates,1983,0.0
+United Arab Emirates,1984,0.0
+United Arab Emirates,1985,0.0
+United Arab Emirates,1986,0.0
+United Arab Emirates,1987,0.0
+United Arab Emirates,1988,0.0
+United Arab Emirates,1989,0.0
+United Arab Emirates,1990,0.0
+United Arab Emirates,1991,0.0
+United Arab Emirates,1992,0.0
+United Arab Emirates,1993,0.0
+United Arab Emirates,1994,0.0
+United Arab Emirates,1995,0.0
+United Arab Emirates,1996,0.0
+United Arab Emirates,1997,0.0
+United Arab Emirates,1998,0.0
+United Arab Emirates,1999,0.0
+United Arab Emirates,2000,0.0
+United Arab Emirates,2001,0.0
+United Arab Emirates,2002,0.0
+United Arab Emirates,2003,0.0
+United Arab Emirates,2004,0.0
+United Arab Emirates,2005,0.0
+United Arab Emirates,2006,0.0
+United Arab Emirates,2007,0.0
+United Arab Emirates,2008,0.0
+United Arab Emirates,2009,0.0
+United Arab Emirates,2010,0.0
+United Arab Emirates,2011,0.0
+United Arab Emirates,2012,0.0
+United Arab Emirates,2013,0.0
+United Arab Emirates,2014,0.0
+United Arab Emirates,2015,0.0
+United Arab Emirates,2016,0.0
+United Arab Emirates,2017,0.0
+United Arab Emirates,2018,0.0
+United Arab Emirates,2019,0.0
+United Arab Emirates,2020,1.63
+United Arab Emirates,2021,10.55
+United Arab Emirates,2022,20.1
+United Arab Emirates,2023,25.626323241467404
+United Arab Emirates,2024,26.87130573193397
+United Arab Emirates,2025,29.630779218908998
+United Arab Emirates,2026,34.22280852666138
+United Arab Emirates,2027,38.68712611266652
+United Arab Emirates,2028,42.02091301735034
+United Arab Emirates,2029,44.95927817979964
+United Arab Emirates,2030,48.39772782775943
+United Arab Emirates,2031,52.27677565501807
+United Arab Emirates,2032,56.045186743205775
+United Arab Emirates,2033,59.50852050093236
+United Arab Emirates,2034,62.90993155944232
+United Arab Emirates,2035,66.46492988547766
+United Arab Emirates,2036,70.12025327171271
+United Arab Emirates,2037,73.72703436517
+United Arab Emirates,2038,77.25463090472982
+United Arab Emirates,2039,80.7778109180644
+United Arab Emirates,2040,84.34570632185924
+United Arab Emirates,2041,87.93480792439843
+United Arab Emirates,2042,91.50644646829574
+United Arab Emirates,2043,95.05834987174688
+United Arab Emirates,2044,98.61230661661958
+United Arab Emirates,2045,102.17872042647299
+United Arab Emirates,2046,105.74911144239753
+United Arab Emirates,2047,109.31383404970934
+United Arab Emirates,2048,112.87385933291367
+United Arab Emirates,2049,116.43526220052269
+United Arab Emirates,2050,120.0
+United Arab Emirates,2051,123.56531583629067
+United Arab Emirates,2052,127.12891159743756
+United Arab Emirates,2053,130.6914516626572
+United Arab Emirates,2054,134.25456361872114
+United Arab Emirates,2055,137.81853423976588
+United Arab Emirates,2056,141.38252599959242
+United Arab Emirates,2057,144.94602173846317
+United Arab Emirates,2058,148.5092986153502
+United Arab Emirates,2059,152.07277602226986
+United Arab Emirates,2060,155.63646555723116
+United Arab Emirates,2061,159.20012548196007
+United Arab Emirates,2062,162.7636483710981
+United Arab Emirates,2063,166.32713163686998
+United Arab Emirates,2064,169.8906789768866
+United Arab Emirates,2065,173.45427627836523
+United Arab Emirates,2066,177.01785670288433
+United Arab Emirates,2067,180.58140073065326
+United Arab Emirates,2068,184.14493953295195
+United Arab Emirates,2069,187.70849755855804
+United Arab Emirates,2070,191.27206665664127
+United Arab Emirates,2071,194.83562906128182
+United Arab Emirates,2072,198.39918217061188
+United Arab Emirates,2073,201.96273534656257
+United Arab Emirates,2074,205.5262940150539
+United Arab Emirates,2075,209.0898549302667
+United Arab Emirates,2076,212.65341355139668
+United Arab Emirates,2077,216.21696989690201
+United Arab Emirates,2078,219.780526644053
+United Arab Emirates,2079,223.34408489622564
+United Arab Emirates,2080,226.90764353862704
+United Arab Emirates,2081,230.4712014586155
+United Arab Emirates,2082,234.03475884852992
+United Arab Emirates,2083,237.59831644255243
+United Arab Emirates,2084,241.1618744331569
+United Arab Emirates,2085,244.72543246881386
+United Arab Emirates,2086,248.2889902900658
+United Arab Emirates,2087,251.8525479955998
+United Arab Emirates,2088,255.41610577902523
+United Arab Emirates,2089,258.9796636628994
+United Arab Emirates,2090,262.5432215427851
+United Arab Emirates,2091,266.106779361956
+United Arab Emirates,2092,269.67033715820355
+United Arab Emirates,2093,273.2338949806056
+United Arab Emirates,2094,276.7974528273697
+United Arab Emirates,2095,280.3610106688962
+United Arab Emirates,2096,283.9245684939202
+United Arab Emirates,2097,287.48812631515545
+United Arab Emirates,2098,291.05168414451583
+United Arab Emirates,2099,294.61524197948523
+United Arab Emirates,2100,298.17879981201213
+Armenia,1992,
+Armenia,1993,
+Armenia,1994,
+Armenia,1995,
+Armenia,1996,
+Armenia,1997,
+Armenia,1998,
+Armenia,1999,
+Armenia,2000,1.84
+Armenia,2001,1.99
+Armenia,2002,2.09
+Armenia,2003,1.82
+Armenia,2004,2.2
+Armenia,2005,2.5
+Armenia,2006,2.42
+Armenia,2007,2.35
+Armenia,2008,2.27
+Armenia,2009,2.29
+Armenia,2010,2.29
+Armenia,2011,2.36
+Armenia,2012,2.12
+Armenia,2013,2.17
+Armenia,2014,2.27
+Armenia,2015,2.57
+Armenia,2016,2.19
+Armenia,2017,2.41
+Armenia,2018,1.9
+Armenia,2019,2.03
+Armenia,2020,2.55
+Armenia,2021,1.85
+Armenia,2022,2.2036313971068378
+Armenia,2023,2.933268257396154
+Armenia,2024,3.66290511768547
+Armenia,2025,4.392541977974786
+Armenia,2026,5.1221788382641025
+Armenia,2027,5.851815698553419
+Armenia,2028,6.581452558842734
+Armenia,2029,7.311089419132051
+Armenia,2030,8.040726279421367
+Armenia,2031,8.770363139710684
+Armenia,2032,9.5
+Armenia,2033,10.522222222222222
+Armenia,2034,11.544444444444444
+Armenia,2035,12.566666666666666
+Armenia,2036,13.588888888888889
+Armenia,2037,14.61111111111111
+Armenia,2038,15.633333333333333
+Armenia,2039,16.655555555555555
+Armenia,2040,17.677777777777777
+Armenia,2041,18.7
+Armenia,2042,19.72222222222222
+Armenia,2043,20.744444444444444
+Armenia,2044,21.766666666666666
+Armenia,2045,22.788888888888888
+Armenia,2046,23.81111111111111
+Armenia,2047,24.833333333333332
+Armenia,2048,25.855555555555554
+Armenia,2049,26.877777777777776
+Armenia,2050,27.9
+Armenia,2051,28.92222222222222
+Armenia,2052,29.944444444444443
+Armenia,2053,30.966666666666665
+Armenia,2054,31.988888888888887
+Armenia,2055,33.011111111111106
+Armenia,2056,34.03333333333333
+Armenia,2057,35.05555555555556
+Armenia,2058,36.077777777777776
+Armenia,2059,37.099999999999994
+Armenia,2060,38.12222222222222
+Armenia,2061,39.144444444444446
+Armenia,2062,40.166666666666664
+Armenia,2063,41.18888888888888
+Armenia,2064,42.21111111111111
+Armenia,2065,43.233333333333334
+Armenia,2066,44.25555555555555
+Armenia,2067,45.27777777777777
+Armenia,2068,46.3
+Armenia,2069,47.32222222222222
+Armenia,2070,48.34444444444444
+Armenia,2071,49.36666666666666
+Armenia,2072,50.388888888888886
+Armenia,2073,51.41111111111111
+Armenia,2074,52.43333333333333
+Armenia,2075,53.45555555555555
+Armenia,2076,54.477777777777774
+Armenia,2077,55.5
+Armenia,2078,56.52222222222222
+Armenia,2079,57.54444444444444
+Armenia,2080,58.56666666666666
+Armenia,2081,59.58888888888889
+Armenia,2082,60.61111111111111
+Armenia,2083,61.633333333333326
+Armenia,2084,62.65555555555555
+Armenia,2085,63.67777777777778
+Armenia,2086,64.69999999999999
+Armenia,2087,65.72222222222221
+Armenia,2088,66.74444444444444
+Armenia,2089,67.76666666666667
+Armenia,2090,68.78888888888889
+Armenia,2091,69.8111111111111
+Armenia,2092,70.83333333333333
+Armenia,2093,71.85555555555555
+Armenia,2094,72.87777777777777
+Armenia,2095,73.89999999999999
+Armenia,2096,74.92222222222222
+Armenia,2097,75.94444444444444
+Armenia,2098,76.96666666666667
+Armenia,2099,77.98888888888888
+Armenia,2100,79.0111111111111
+Mongolia,1900,
+Mongolia,1901,
+Mongolia,1902,
+Mongolia,1903,
+Mongolia,1904,
+Mongolia,1905,
+Mongolia,1906,
+Mongolia,1907,
+Mongolia,1908,
+Mongolia,1909,
+Mongolia,1910,
+Mongolia,1911,
+Mongolia,1912,
+Mongolia,1913,
+Mongolia,1914,
+Mongolia,1915,
+Mongolia,1916,
+Mongolia,1917,
+Mongolia,1918,
+Mongolia,1919,
+Mongolia,1920,
+Mongolia,1921,
+Mongolia,1922,
+Mongolia,1923,
+Mongolia,1924,
+Mongolia,1925,
+Mongolia,1926,
+Mongolia,1927,
+Mongolia,1928,
+Mongolia,1929,
+Mongolia,1930,
+Mongolia,1931,
+Mongolia,1932,
+Mongolia,1933,
+Mongolia,1934,
+Mongolia,1935,
+Mongolia,1936,
+Mongolia,1937,
+Mongolia,1938,
+Mongolia,1939,
+Mongolia,1940,
+Mongolia,1941,
+Mongolia,1942,
+Mongolia,1943,
+Mongolia,1944,
+Mongolia,1945,
+Mongolia,1946,
+Mongolia,1947,
+Mongolia,1948,
+Mongolia,1949,
+Mongolia,1950,
+Mongolia,1951,
+Mongolia,1952,
+Mongolia,1953,
+Mongolia,1954,
+Mongolia,1955,
+Mongolia,1956,
+Mongolia,1957,
+Mongolia,1958,
+Mongolia,1959,
+Mongolia,1960,
+Mongolia,1961,
+Mongolia,1962,
+Mongolia,1963,
+Mongolia,1964,
+Mongolia,1965,
+Mongolia,1966,
+Mongolia,1967,
+Mongolia,1968,
+Mongolia,1969,
+Mongolia,1970,
+Mongolia,1971,
+Mongolia,1972,
+Mongolia,1973,
+Mongolia,1974,
+Mongolia,1975,
+Mongolia,1976,
+Mongolia,1977,
+Mongolia,1978,
+Mongolia,1979,
+Mongolia,1980,
+Mongolia,1981,0.0
+Mongolia,1982,0.0
+Mongolia,1983,0.0
+Mongolia,1984,0.0
+Mongolia,1985,0.0
+Mongolia,1986,0.0
+Mongolia,1987,0.0
+Mongolia,1988,0.0
+Mongolia,1989,0.0
+Mongolia,1990,0.0
+Mongolia,1991,0.0
+Mongolia,1992,0.0
+Mongolia,1993,0.0
+Mongolia,1994,0.0
+Mongolia,1995,0.0
+Mongolia,1996,0.0
+Mongolia,1997,0.0
+Mongolia,1998,0.0
+Mongolia,1999,0.0
+Mongolia,2000,0.0
+Mongolia,2001,0.0
+Mongolia,2002,0.0
+Mongolia,2003,0.0
+Mongolia,2004,0.0
+Mongolia,2005,0.0
+Mongolia,2006,0.0
+Mongolia,2007,0.0
+Mongolia,2008,0.0
+Mongolia,2009,0.0
+Mongolia,2010,0.0
+Mongolia,2011,0.0
+Mongolia,2012,0.0
+Mongolia,2013,0.0
+Mongolia,2014,0.0
+Mongolia,2015,0.0
+Mongolia,2016,0.0
+Mongolia,2017,0.0
+Mongolia,2018,0.0
+Mongolia,2019,0.0
+Mongolia,2020,0.0
+Mongolia,2021,0.0
+Mongolia,2022,0.0
+Mongolia,2023,0.0
+Mongolia,2024,0.0
+Mongolia,2025,0.0
+Mongolia,2026,0.0
+Mongolia,2027,0.0
+Mongolia,2028,0.0
+Mongolia,2029,0.0
+Mongolia,2030,0.0
+Mongolia,2031,0.0
+Mongolia,2032,0.0
+Mongolia,2033,0.0
+Mongolia,2034,0.0
+Mongolia,2035,0.0
+Mongolia,2036,0.0
+Mongolia,2037,0.0
+Mongolia,2038,0.0
+Mongolia,2039,0.0
+Mongolia,2040,0.0
+Mongolia,2041,0.0
+Mongolia,2042,0.0
+Mongolia,2043,0.0
+Mongolia,2044,0.0
+Mongolia,2045,0.0
+Mongolia,2046,0.0
+Mongolia,2047,0.0
+Mongolia,2048,0.0
+Mongolia,2049,0.0
+Mongolia,2050,0.0
+Mongolia,2051,0.0
+Mongolia,2052,0.0
+Mongolia,2053,0.0
+Mongolia,2054,0.0
+Mongolia,2055,0.0
+Mongolia,2056,0.0
+Mongolia,2057,0.0
+Mongolia,2058,0.0
+Mongolia,2059,0.0
+Mongolia,2060,0.0
+Mongolia,2061,0.0
+Mongolia,2062,0.0
+Mongolia,2063,0.0
+Mongolia,2064,0.0
+Mongolia,2065,0.0
+Mongolia,2066,0.0
+Mongolia,2067,0.0
+Mongolia,2068,0.0
+Mongolia,2069,0.0
+Mongolia,2070,0.0
+Mongolia,2071,0.0
+Mongolia,2072,0.0
+Mongolia,2073,0.0
+Mongolia,2074,0.0
+Mongolia,2075,0.0
+Mongolia,2076,0.0
+Mongolia,2077,0.0
+Mongolia,2078,0.0
+Mongolia,2079,0.0
+Mongolia,2080,0.0
+Mongolia,2081,0.0
+Mongolia,2082,0.0
+Mongolia,2083,0.0
+Mongolia,2084,0.0
+Mongolia,2085,0.0
+Mongolia,2086,0.0
+Mongolia,2087,0.0
+Mongolia,2088,0.0
+Mongolia,2089,0.0
+Mongolia,2090,0.0
+Mongolia,2091,0.0
+Mongolia,2092,0.0
+Mongolia,2093,0.0
+Mongolia,2094,0.0
+Mongolia,2095,0.0
+Mongolia,2096,0.0
+Mongolia,2097,0.0
+Mongolia,2098,0.0
+Mongolia,2099,0.0
+Mongolia,2100,0.0

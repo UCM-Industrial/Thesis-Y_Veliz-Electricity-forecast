@@ -1,0 +1,2035 @@
+Country,Date,nuclear_electricity
+China,1900,
+China,1901,
+China,1902,
+China,1903,
+China,1904,
+China,1905,
+China,1906,
+China,1907,
+China,1908,
+China,1909,
+China,1910,
+China,1911,
+China,1912,
+China,1913,
+China,1914,
+China,1915,
+China,1916,
+China,1917,
+China,1918,
+China,1919,
+China,1920,
+China,1921,
+China,1922,
+China,1923,
+China,1924,
+China,1925,
+China,1926,
+China,1927,
+China,1928,
+China,1929,
+China,1930,
+China,1931,
+China,1932,
+China,1933,
+China,1934,
+China,1935,
+China,1936,
+China,1937,
+China,1938,
+China,1939,
+China,1940,
+China,1941,
+China,1942,
+China,1943,
+China,1944,
+China,1945,
+China,1946,
+China,1947,
+China,1948,
+China,1949,
+China,1950,
+China,1951,
+China,1952,
+China,1953,
+China,1954,
+China,1955,
+China,1956,
+China,1957,
+China,1958,
+China,1959,
+China,1960,
+China,1961,
+China,1962,
+China,1963,
+China,1964,
+China,1965,0
+China,1966,0
+China,1967,0
+China,1968,0
+China,1969,0
+China,1970,0
+China,1971,0
+China,1972,0
+China,1973,0
+China,1974,0
+China,1975,0
+China,1976,0
+China,1977,0
+China,1978,0
+China,1979,0
+China,1980,0
+China,1981,0
+China,1982,0
+China,1983,0
+China,1984,0
+China,1985,0
+China,1986,0
+China,1987,0
+China,1988,0
+China,1989,0
+China,1990,0
+China,1991,0
+China,1992,0
+China,1993,1.6
+China,1994,14.76
+China,1995,12.83
+China,1996,14.34
+China,1997,14.42
+China,1998,14.1
+China,1999,14.95
+China,2000,16.74
+China,2001,17.47
+China,2002,25.13
+China,2003,43.34
+China,2004,50.47
+China,2005,53.09
+China,2006,54.84
+China,2007,62.13
+China,2008,68.39
+China,2009,70.05
+China,2010,74.74
+China,2011,87.2
+China,2012,98.32
+China,2013,111.5
+China,2014,133.22
+China,2015,171.38
+China,2016,213.18
+China,2017,248.1
+China,2018,295
+China,2019,348.7
+China,2020,366.2
+China,2021,407.5
+China,2022,417.8
+China,2023,438.9216246
+China,2024,526.0608123
+China,2025,613.2
+China,2026,724.38
+China,2027,835.56
+China,2028,946.74
+China,2029,1057.92
+China,2030,1169.1
+China,2031,1280.28
+China,2032,1391.46
+China,2033,1502.64
+China,2034,1613.82
+China,2035,1725
+China,2036,1843.6
+China,2037,1962.2
+China,2038,2080.8
+China,2039,2199.4
+China,2040,2318
+China,2041,2436.6
+China,2042,2555.2
+China,2043,2673.8
+China,2044,2792.4
+China,2045,2911
+China,2046,3029.6
+China,2047,3148.2
+China,2048,3266.8
+China,2049,3385.4
+China,2050,3504
+China,2051,3622.6
+China,2052,3741.2
+China,2053,3859.8
+China,2054,3978.4
+China,2055,4097
+China,2056,4215.6
+China,2057,4334.2
+China,2058,4452.8
+China,2059,4571.4
+China,2060,4690
+China,2061,4808.6
+China,2062,4927.2
+China,2063,5045.8
+China,2064,5164.4
+China,2065,5283
+China,2066,5401.6
+China,2067,5520.2
+China,2068,5638.8
+China,2069,5757.4
+China,2070,5876
+China,2071,5994.6
+China,2072,6113.2
+China,2073,6231.8
+China,2074,6350.4
+China,2075,6469
+China,2076,6587.6
+China,2077,6706.2
+China,2078,6824.8
+China,2079,6943.4
+China,2080,7062
+China,2081,7180.6
+China,2082,7299.2
+China,2083,7417.8
+China,2084,7536.4
+China,2085,7655
+China,2086,7773.6
+China,2087,7892.2
+China,2088,8010.8
+China,2089,8129.4
+China,2090,8248
+China,2091,8366.6
+China,2092,8485.2
+China,2093,8603.8
+China,2094,8722.4
+China,2095,8841
+China,2096,8959.6
+China,2097,9078.2
+China,2098,9196.8
+China,2099,9315.4
+China,2100,9434
+India,1900,
+India,1901,
+India,1902,
+India,1903,
+India,1904,
+India,1905,
+India,1906,
+India,1907,
+India,1908,
+India,1909,
+India,1910,
+India,1911,
+India,1912,
+India,1913,
+India,1914,
+India,1915,
+India,1916,
+India,1917,
+India,1918,
+India,1919,
+India,1920,
+India,1921,
+India,1922,
+India,1923,
+India,1924,
+India,1925,
+India,1926,
+India,1927,
+India,1928,
+India,1929,
+India,1930,
+India,1931,
+India,1932,
+India,1933,
+India,1934,
+India,1935,
+India,1936,
+India,1937,
+India,1938,
+India,1939,
+India,1940,
+India,1941,
+India,1942,
+India,1943,
+India,1944,
+India,1945,
+India,1946,
+India,1947,
+India,1948,
+India,1949,
+India,1950,
+India,1951,
+India,1952,
+India,1953,
+India,1954,
+India,1955,
+India,1956,
+India,1957,
+India,1958,
+India,1959,
+India,1960,
+India,1961,
+India,1962,
+India,1963,
+India,1964,
+India,1965,0
+India,1966,0
+India,1967,0
+India,1968,0
+India,1969,0.73
+India,1970,1.31
+India,1971,0.97
+India,1972,0.92
+India,1973,1.95
+India,1974,1.8
+India,1975,2.14
+India,1976,2.66
+India,1977,1.85
+India,1978,2.26
+India,1979,2.35
+India,1980,2.45
+India,1981,2.47
+India,1982,2.16
+India,1983,3.08
+India,1984,4.04
+India,1985,4.51
+India,1986,5.02
+India,1987,5.32
+India,1988,6.08
+India,1989,4.02
+India,1990,6.4
+India,1991,5.41
+India,1992,6.4
+India,1993,6.23
+India,1994,4.95
+India,1995,7.62
+India,1996,8.4
+India,1997,10.07
+India,1998,11.37
+India,1999,12.73
+India,2000,15.77
+India,2001,18.89
+India,2002,19.35
+India,2003,18.14
+India,2004,21.26
+India,2005,17.73
+India,2006,17.63
+India,2007,17.83
+India,2008,15.23
+India,2009,16.82
+India,2010,23.08
+India,2011,32.22
+India,2012,33.14
+India,2013,33.31
+India,2014,34.69
+India,2015,38.31
+India,2016,37.9
+India,2017,37.41
+India,2018,39.05
+India,2019,45.16
+India,2020,44.61
+India,2021,43.92
+India,2022,46.19
+India,2023,47.60533931
+India,2024,66.2634219
+India,2025,84.92150449
+India,2026,103.5795871
+India,2027,122.2376697
+India,2028,140.8957522
+India,2029,159.5538348
+India,2030,178.2119174
+India,2031,196.87
+India,2032,341.1158621
+India,2033,485.3617241
+India,2034,629.6075862
+India,2035,773.8534483
+India,2036,918.0993103
+India,2037,1062.345172
+India,2038,1206.591034
+India,2039,1350.836897
+India,2040,1495.082759
+India,2041,1639.328621
+India,2042,1783.574483
+India,2043,1927.820345
+India,2044,2072.066207
+India,2045,2216.312069
+India,2046,2360.557931
+India,2047,2504.803793
+India,2048,2649.049655
+India,2049,2793.295517
+India,2050,2937.541379
+India,2051,3081.787241
+India,2052,3226.033103
+India,2053,3370.278966
+India,2054,3514.524828
+India,2055,3658.77069
+India,2056,3803.016552
+India,2057,3947.262414
+India,2058,4091.508276
+India,2059,4235.754138
+India,2060,4380
+India,2061,4524.245862
+India,2062,4668.491724
+India,2063,4812.737586
+India,2064,4956.983448
+India,2065,5101.22931
+India,2066,5245.475172
+India,2067,5389.721034
+India,2068,5533.966897
+India,2069,5678.212759
+India,2070,5822.458621
+India,2071,5966.704483
+India,2072,6110.950345
+India,2073,6255.196207
+India,2074,6399.442069
+India,2075,6543.687931
+India,2076,6687.933793
+India,2077,6832.179655
+India,2078,6976.425517
+India,2079,7120.671379
+India,2080,7264.917241
+India,2081,7409.163103
+India,2082,7553.408966
+India,2083,7697.654828
+India,2084,7841.90069
+India,2085,7986.146552
+India,2086,8130.392414
+India,2087,8274.638276
+India,2088,8418.884138
+India,2089,8563.13
+India,2090,8707.375862
+India,2091,8851.621724
+India,2092,8995.867586
+India,2093,9140.113448
+India,2094,9284.35931
+India,2095,9428.605172
+India,2096,9572.851034
+India,2097,9717.096897
+India,2098,9861.342759
+India,2099,10005.58862
+India,2100,10149.83448
+Pakistan,1900,
+Pakistan,1901,
+Pakistan,1902,
+Pakistan,1903,
+Pakistan,1904,
+Pakistan,1905,
+Pakistan,1906,
+Pakistan,1907,
+Pakistan,1908,
+Pakistan,1909,
+Pakistan,1910,
+Pakistan,1911,
+Pakistan,1912,
+Pakistan,1913,
+Pakistan,1914,
+Pakistan,1915,
+Pakistan,1916,
+Pakistan,1917,
+Pakistan,1918,
+Pakistan,1919,
+Pakistan,1920,
+Pakistan,1921,
+Pakistan,1922,
+Pakistan,1923,
+Pakistan,1924,
+Pakistan,1925,
+Pakistan,1926,
+Pakistan,1927,
+Pakistan,1928,
+Pakistan,1929,
+Pakistan,1930,
+Pakistan,1931,
+Pakistan,1932,
+Pakistan,1933,
+Pakistan,1934,
+Pakistan,1935,
+Pakistan,1936,
+Pakistan,1937,
+Pakistan,1938,
+Pakistan,1939,
+Pakistan,1940,
+Pakistan,1941,
+Pakistan,1942,
+Pakistan,1943,
+Pakistan,1944,
+Pakistan,1945,
+Pakistan,1946,
+Pakistan,1947,
+Pakistan,1948,
+Pakistan,1949,
+Pakistan,1950,
+Pakistan,1951,
+Pakistan,1952,
+Pakistan,1953,
+Pakistan,1954,
+Pakistan,1955,
+Pakistan,1956,
+Pakistan,1957,
+Pakistan,1958,
+Pakistan,1959,
+Pakistan,1960,
+Pakistan,1961,
+Pakistan,1962,
+Pakistan,1963,
+Pakistan,1964,
+Pakistan,1965,0
+Pakistan,1966,0
+Pakistan,1967,0
+Pakistan,1968,0
+Pakistan,1969,0
+Pakistan,1970,0
+Pakistan,1971,0.05
+Pakistan,1972,0.2
+Pakistan,1973,0.38
+Pakistan,1974,0.53
+Pakistan,1975,0.61
+Pakistan,1976,0.52
+Pakistan,1977,0.33
+Pakistan,1978,0.17
+Pakistan,1979,0.05
+Pakistan,1980,0.08
+Pakistan,1981,0.17
+Pakistan,1982,0.2
+Pakistan,1983,0.27
+Pakistan,1984,0.33
+Pakistan,1985,0.39
+Pakistan,1986,0.53
+Pakistan,1987,0.31
+Pakistan,1988,0.19
+Pakistan,1989,0.12
+Pakistan,1990,0.42
+Pakistan,1991,0.42
+Pakistan,1992,0.55
+Pakistan,1993,0.41
+Pakistan,1994,0.59
+Pakistan,1995,0.52
+Pakistan,1996,0.33
+Pakistan,1997,0.45
+Pakistan,1998,0.39
+Pakistan,1999,0.08
+Pakistan,2000,0.38
+Pakistan,2001,1.98
+Pakistan,2002,1.8
+Pakistan,2003,1.81
+Pakistan,2004,1.93
+Pakistan,2005,2.41
+Pakistan,2006,2.55
+Pakistan,2007,2.31
+Pakistan,2008,1.74
+Pakistan,2009,2.64
+Pakistan,2010,2.56
+Pakistan,2011,3.84
+Pakistan,2012,5.27
+Pakistan,2013,4.4
+Pakistan,2014,4.58
+Pakistan,2015,4.33
+Pakistan,2016,5.44
+Pakistan,2017,8.11
+Pakistan,2018,9.29
+Pakistan,2019,9.07
+Pakistan,2020,9.64
+Pakistan,2021,15.74
+Pakistan,2022,22.43
+Pakistan,2023,25.28915344
+Pakistan,2024,29.98165893
+Pakistan,2025,37.04659906
+Pakistan,2026,47.40706636
+Pakistan,2027,57.86465963
+Pakistan,2028,65.30016393
+Pakistan,2029,70.51526592
+Pakistan,2030,77
+Pakistan,2031,86.46157553
+Pakistan,2032,96.82993643
+Pakistan,2033,105.0455434
+Pakistan,2034,110.8939754
+Pakistan,2035,117.0933695
+Pakistan,2036,125.7599662
+Pakistan,2037,135.8357869
+Pakistan,2038,144.5908001
+Pakistan,2039,151.0936318
+Pakistan,2040,157.2482545
+Pakistan,2041,165.2696145
+Pakistan,2042,174.9327976
+Pakistan,2043,184.0021709
+Pakistan,2044,191.1134647
+Pakistan,2045,197.4019959
+Pakistan,2046,204.9470943
+Pakistan,2047,214.1491321
+Pakistan,2048,223.3402243
+Pakistan,2049,230.9697383
+Pakistan,2050,237.5092524
+Pakistan,2051,244.7452064
+Pakistan,2052,253.4940556
+Pakistan,2053,262.6557515
+Pakistan,2054,270.6895503
+Pakistan,2055,277.5414852
+Pakistan,2056,284.6184305
+Pakistan,2057,292.9622587
+Pakistan,2058,301.9877001
+Pakistan,2059,310.305322
+Pakistan,2060,317.4850127
+Pakistan,2061,324.5267226
+Pakistan,2062,332.5383572
+Pakistan,2063,341.3627836
+Pakistan,2064,349.8503021
+Pakistan,2065,357.33821
+Pakistan,2066,364.4377572
+Pakistan,2067,372.2010992
+Pakistan,2068,380.7963429
+Pakistan,2069,389.3552299
+Pakistan,2070,397.1083489
+Pakistan,2071,404.3278308
+Pakistan,2072,411.926964
+Pakistan,2073,420.2940347
+Pakistan,2074,428.8461483
+Pakistan,2075,436.8084739
+Pakistan,2076,444.1817118
+Pakistan,2077,451.6929865
+Pakistan,2078,459.8539622
+Pakistan,2079,468.3432574
+Pakistan,2080,476.4545966
+Pakistan,2081,483.9917378
+Pakistan,2082,491.4787524
+Pakistan,2083,499.4689274
+Pakistan,2084,507.86063
+Pakistan,2085,516.0633826
+Pakistan,2086,523.756454
+Pakistan,2087,531.2676079
+Pakistan,2088,539.1285607
+Pakistan,2089,547.4065778
+Pakistan,2090,555.6504128
+Pakistan,2091,563.4790439
+Pakistan,2092,571.0471842
+Pakistan,2093,578.8211619
+Pakistan,2094,586.9844561
+Pakistan,2095,595.2290239
+Pakistan,2096,603.1657574
+Pakistan,2097,610.809378
+Pakistan,2098,618.5351602
+Pakistan,2099,626.5937117
+Pakistan,2100,634.8096767
+Iran,1900,
+Iran,1901,
+Iran,1902,
+Iran,1903,
+Iran,1904,
+Iran,1905,
+Iran,1906,
+Iran,1907,
+Iran,1908,
+Iran,1909,
+Iran,1910,
+Iran,1911,
+Iran,1912,
+Iran,1913,
+Iran,1914,
+Iran,1915,
+Iran,1916,
+Iran,1917,
+Iran,1918,
+Iran,1919,
+Iran,1920,
+Iran,1921,
+Iran,1922,
+Iran,1923,
+Iran,1924,
+Iran,1925,
+Iran,1926,
+Iran,1927,
+Iran,1928,
+Iran,1929,
+Iran,1930,
+Iran,1931,
+Iran,1932,
+Iran,1933,
+Iran,1934,
+Iran,1935,
+Iran,1936,
+Iran,1937,
+Iran,1938,
+Iran,1939,
+Iran,1940,
+Iran,1941,
+Iran,1942,
+Iran,1943,
+Iran,1944,
+Iran,1945,
+Iran,1946,
+Iran,1947,
+Iran,1948,
+Iran,1949,
+Iran,1950,
+Iran,1951,
+Iran,1952,
+Iran,1953,
+Iran,1954,
+Iran,1955,
+Iran,1956,
+Iran,1957,
+Iran,1958,
+Iran,1959,
+Iran,1960,
+Iran,1961,
+Iran,1962,
+Iran,1963,
+Iran,1964,
+Iran,1965,0
+Iran,1966,0
+Iran,1967,0
+Iran,1968,0
+Iran,1969,0
+Iran,1970,0
+Iran,1971,0
+Iran,1972,0
+Iran,1973,0
+Iran,1974,0
+Iran,1975,0
+Iran,1976,0
+Iran,1977,0
+Iran,1978,0
+Iran,1979,0
+Iran,1980,0
+Iran,1981,0
+Iran,1982,0
+Iran,1983,0
+Iran,1984,0
+Iran,1985,0
+Iran,1986,0
+Iran,1987,0
+Iran,1988,0
+Iran,1989,0
+Iran,1990,0
+Iran,1991,0
+Iran,1992,0
+Iran,1993,0
+Iran,1994,0
+Iran,1995,0
+Iran,1996,0
+Iran,1997,0
+Iran,1998,0
+Iran,1999,0
+Iran,2000,0
+Iran,2001,0
+Iran,2002,0
+Iran,2003,0
+Iran,2004,0
+Iran,2005,0
+Iran,2006,0
+Iran,2007,0
+Iran,2008,0
+Iran,2009,0
+Iran,2010,0
+Iran,2011,0.11
+Iran,2012,1.45
+Iran,2013,4.26
+Iran,2014,4.07
+Iran,2015,3.5
+Iran,2016,6.47
+Iran,2017,6.96
+Iran,2018,6.89
+Iran,2019,6.41
+Iran,2020,6.33
+Iran,2021,3.54
+Iran,2022,6.57
+Iran,2023,6.378886659
+Iran,2024,10.31944333
+Iran,2025,14.26
+Iran,2026,16.92666667
+Iran,2027,19.59333333
+Iran,2028,22.26
+Iran,2029,24.92666667
+Iran,2030,27.59333333
+Iran,2031,30.26
+Iran,2032,32.92666667
+Iran,2033,35.59333333
+Iran,2034,38.26
+Iran,2035,40.92666667
+Iran,2036,43.59333333
+Iran,2037,46.26
+Iran,2038,48.92666667
+Iran,2039,51.59333333
+Iran,2040,54.26
+Iran,2041,56.92666667
+Iran,2042,59.59333333
+Iran,2043,62.26
+Iran,2044,64.92666667
+Iran,2045,67.59333333
+Iran,2046,70.26
+Iran,2047,72.92666667
+Iran,2048,75.59333333
+Iran,2049,78.26
+Iran,2050,80.92666667
+Iran,2051,83.59333333
+Iran,2052,86.26
+Iran,2053,88.92666667
+Iran,2054,91.59333333
+Iran,2055,94.26
+Iran,2056,96.92666667
+Iran,2057,99.59333333
+Iran,2058,102.26
+Iran,2059,104.9266667
+Iran,2060,107.5933333
+Iran,2061,110.26
+Iran,2062,112.9266667
+Iran,2063,115.5933333
+Iran,2064,118.26
+Iran,2065,120.9266667
+Iran,2066,123.5933333
+Iran,2067,126.26
+Iran,2068,128.9266667
+Iran,2069,131.5933333
+Iran,2070,134.26
+Iran,2071,136.9266667
+Iran,2072,139.5933333
+Iran,2073,142.26
+Iran,2074,144.9266667
+Iran,2075,147.5933333
+Iran,2076,150.26
+Iran,2077,152.9266667
+Iran,2078,155.5933333
+Iran,2079,158.26
+Iran,2080,160.9266667
+Iran,2081,163.5933333
+Iran,2082,166.26
+Iran,2083,168.9266667
+Iran,2084,171.5933333
+Iran,2085,174.26
+Iran,2086,176.9266667
+Iran,2087,179.5933333
+Iran,2088,182.26
+Iran,2089,184.9266667
+Iran,2090,187.5933333
+Iran,2091,190.26
+Iran,2092,192.9266667
+Iran,2093,195.5933333
+Iran,2094,198.26
+Iran,2095,200.9266667
+Iran,2096,203.5933333
+Iran,2097,206.26
+Iran,2098,208.9266667
+Iran,2099,211.5933333
+Iran,2100,214.26
+Taiwan,1900,
+Taiwan,1901,
+Taiwan,1902,
+Taiwan,1903,
+Taiwan,1904,
+Taiwan,1905,
+Taiwan,1906,
+Taiwan,1907,
+Taiwan,1908,
+Taiwan,1909,
+Taiwan,1910,
+Taiwan,1911,
+Taiwan,1912,
+Taiwan,1913,
+Taiwan,1914,
+Taiwan,1915,
+Taiwan,1916,
+Taiwan,1917,
+Taiwan,1918,
+Taiwan,1919,
+Taiwan,1920,
+Taiwan,1921,
+Taiwan,1922,
+Taiwan,1923,
+Taiwan,1924,
+Taiwan,1925,
+Taiwan,1926,
+Taiwan,1927,
+Taiwan,1928,
+Taiwan,1929,
+Taiwan,1930,
+Taiwan,1931,
+Taiwan,1932,
+Taiwan,1933,
+Taiwan,1934,
+Taiwan,1935,
+Taiwan,1936,
+Taiwan,1937,
+Taiwan,1938,
+Taiwan,1939,
+Taiwan,1940,
+Taiwan,1941,
+Taiwan,1942,
+Taiwan,1943,
+Taiwan,1944,
+Taiwan,1945,
+Taiwan,1946,
+Taiwan,1947,
+Taiwan,1948,
+Taiwan,1949,
+Taiwan,1950,
+Taiwan,1951,
+Taiwan,1952,
+Taiwan,1953,
+Taiwan,1954,
+Taiwan,1955,
+Taiwan,1956,
+Taiwan,1957,
+Taiwan,1958,
+Taiwan,1959,
+Taiwan,1960,
+Taiwan,1961,
+Taiwan,1962,
+Taiwan,1963,
+Taiwan,1964,
+Taiwan,1965,0
+Taiwan,1966,0
+Taiwan,1967,0
+Taiwan,1968,0
+Taiwan,1969,0
+Taiwan,1970,0
+Taiwan,1971,0
+Taiwan,1972,0
+Taiwan,1973,0
+Taiwan,1974,0
+Taiwan,1975,0
+Taiwan,1976,0
+Taiwan,1977,0.1
+Taiwan,1978,2.67
+Taiwan,1979,6.33
+Taiwan,1980,8.2
+Taiwan,1981,10.67
+Taiwan,1982,13.08
+Taiwan,1983,18.9
+Taiwan,1984,24.59
+Taiwan,1985,28.73
+Taiwan,1986,26.94
+Taiwan,1987,33.13
+Taiwan,1988,30.65
+Taiwan,1989,28.28
+Taiwan,1990,32.87
+Taiwan,1991,35.29
+Taiwan,1992,33.85
+Taiwan,1993,34.35
+Taiwan,1994,34.87
+Taiwan,1995,35.32
+Taiwan,1996,37.79
+Taiwan,1997,36.27
+Taiwan,1998,36.87
+Taiwan,1999,38.01
+Taiwan,2000,38.5
+Taiwan,2001,35.49
+Taiwan,2002,39.55
+Taiwan,2003,38.89
+Taiwan,2004,39.49
+Taiwan,2005,39.97
+Taiwan,2006,39.87
+Taiwan,2007,40.54
+Taiwan,2008,40.83
+Taiwan,2009,41.57
+Taiwan,2010,41.63
+Taiwan,2011,42.12
+Taiwan,2012,40.42
+Taiwan,2013,41.64
+Taiwan,2014,42.39
+Taiwan,2015,36.47
+Taiwan,2016,31.66
+Taiwan,2017,22.45
+Taiwan,2018,27.68
+Taiwan,2019,32.32
+Taiwan,2020,31.44
+Taiwan,2021,27.79
+Taiwan,2022,23.76
+Taiwan,2023,21.85148321
+Taiwan,2024,10.99837705
+Taiwan,2025,0
+Taiwan,2026,0
+Taiwan,2027,0
+Taiwan,2028,0
+Taiwan,2029,0
+Taiwan,2030,0
+Taiwan,2031,0
+Taiwan,2032,0
+Taiwan,2033,0
+Taiwan,2034,0
+Taiwan,2035,0
+Taiwan,2036,0
+Taiwan,2037,0
+Taiwan,2038,0
+Taiwan,2039,0
+Taiwan,2040,0
+Taiwan,2041,0
+Taiwan,2042,0
+Taiwan,2043,0
+Taiwan,2044,0
+Taiwan,2045,0
+Taiwan,2046,0
+Taiwan,2047,0
+Taiwan,2048,0
+Taiwan,2049,0
+Taiwan,2050,0
+Taiwan,2051,0
+Taiwan,2052,0
+Taiwan,2053,0
+Taiwan,2054,0
+Taiwan,2055,0
+Taiwan,2056,0
+Taiwan,2057,0
+Taiwan,2058,0
+Taiwan,2059,0
+Taiwan,2060,0
+Taiwan,2061,0
+Taiwan,2062,0
+Taiwan,2063,0
+Taiwan,2064,0
+Taiwan,2065,0
+Taiwan,2066,0
+Taiwan,2067,0
+Taiwan,2068,0
+Taiwan,2069,0
+Taiwan,2070,0
+Taiwan,2071,0
+Taiwan,2072,0
+Taiwan,2073,0
+Taiwan,2074,0
+Taiwan,2075,0
+Taiwan,2076,0
+Taiwan,2077,0
+Taiwan,2078,0
+Taiwan,2079,0
+Taiwan,2080,0
+Taiwan,2081,0
+Taiwan,2082,0
+Taiwan,2083,0
+Taiwan,2084,0
+Taiwan,2085,0
+Taiwan,2086,0
+Taiwan,2087,0
+Taiwan,2088,0
+Taiwan,2089,0
+Taiwan,2090,0
+Taiwan,2091,0
+Taiwan,2092,0
+Taiwan,2093,0
+Taiwan,2094,0
+Taiwan,2095,0
+Taiwan,2096,0
+Taiwan,2097,0
+Taiwan,2098,0
+Taiwan,2099,0
+Taiwan,2100,0
+Kazakhstan,1985,0
+Kazakhstan,1986,0
+Kazakhstan,1987,0
+Kazakhstan,1988,0
+Kazakhstan,1989,0.1
+Kazakhstan,1990,0
+Kazakhstan,1991,0.54
+Kazakhstan,1992,0.46
+Kazakhstan,1993,0.45
+Kazakhstan,1994,0.38
+Kazakhstan,1995,0.08
+Kazakhstan,1996,0.09
+Kazakhstan,1997,0.3
+Kazakhstan,1998,0.09
+Kazakhstan,1999,0
+Kazakhstan,2000,0
+Kazakhstan,2001,0
+Kazakhstan,2002,0
+Kazakhstan,2003,0
+Kazakhstan,2004,0
+Kazakhstan,2005,0
+Kazakhstan,2006,0
+Kazakhstan,2007,0
+Kazakhstan,2008,0
+Kazakhstan,2009,0
+Kazakhstan,2010,0
+Kazakhstan,2011,0
+Kazakhstan,2012,0
+Kazakhstan,2013,0
+Kazakhstan,2014,0
+Kazakhstan,2015,0
+Kazakhstan,2016,0
+Kazakhstan,2017,0
+Kazakhstan,2018,0
+Kazakhstan,2019,0
+Kazakhstan,2020,0
+Kazakhstan,2021,0
+Kazakhstan,2022,0
+Kazakhstan,2023,0.017913279
+Kazakhstan,2024,1.898504399
+Kazakhstan,2025,3.77610207
+Kazakhstan,2026,5.651377124
+Kazakhstan,2027,7.525001346
+Kazakhstan,2028,9.397439034
+Kazakhstan,2029,11.26902516
+Kazakhstan,2030,13.14
+Kazakhstan,2031,13.359
+Kazakhstan,2032,13.578
+Kazakhstan,2033,13.797
+Kazakhstan,2034,14.016
+Kazakhstan,2035,14.235
+Kazakhstan,2036,14.454
+Kazakhstan,2037,14.673
+Kazakhstan,2038,14.892
+Kazakhstan,2039,15.111
+Kazakhstan,2040,15.33
+Kazakhstan,2041,15.549
+Kazakhstan,2042,15.768
+Kazakhstan,2043,15.987
+Kazakhstan,2044,16.206
+Kazakhstan,2045,16.425
+Kazakhstan,2046,16.644
+Kazakhstan,2047,16.863
+Kazakhstan,2048,17.082
+Kazakhstan,2049,17.301
+Kazakhstan,2050,17.52
+Kazakhstan,2051,17.739
+Kazakhstan,2052,17.958
+Kazakhstan,2053,18.177
+Kazakhstan,2054,18.396
+Kazakhstan,2055,18.615
+Kazakhstan,2056,18.834
+Kazakhstan,2057,19.053
+Kazakhstan,2058,19.272
+Kazakhstan,2059,19.491
+Kazakhstan,2060,19.71
+Kazakhstan,2061,19.929
+Kazakhstan,2062,20.148
+Kazakhstan,2063,20.367
+Kazakhstan,2064,20.586
+Kazakhstan,2065,20.805
+Kazakhstan,2066,21.024
+Kazakhstan,2067,21.243
+Kazakhstan,2068,21.462
+Kazakhstan,2069,21.681
+Kazakhstan,2070,21.9
+Kazakhstan,2071,22.119
+Kazakhstan,2072,22.338
+Kazakhstan,2073,22.557
+Kazakhstan,2074,22.776
+Kazakhstan,2075,22.995
+Kazakhstan,2076,23.214
+Kazakhstan,2077,23.433
+Kazakhstan,2078,23.652
+Kazakhstan,2079,23.871
+Kazakhstan,2080,24.09
+Kazakhstan,2081,24.309
+Kazakhstan,2082,24.528
+Kazakhstan,2083,24.747
+Kazakhstan,2084,24.966
+Kazakhstan,2085,25.185
+Kazakhstan,2086,25.404
+Kazakhstan,2087,25.623
+Kazakhstan,2088,25.842
+Kazakhstan,2089,26.061
+Kazakhstan,2090,26.28
+Kazakhstan,2091,26.499
+Kazakhstan,2092,26.718
+Kazakhstan,2093,26.937
+Kazakhstan,2094,27.156
+Kazakhstan,2095,27.375
+Kazakhstan,2096,27.594
+Kazakhstan,2097,27.813
+Kazakhstan,2098,28.032
+Kazakhstan,2099,28.251
+Kazakhstan,2100,28.47
+Japan,1900,
+Japan,1901,
+Japan,1902,
+Japan,1903,
+Japan,1904,
+Japan,1905,
+Japan,1906,
+Japan,1907,
+Japan,1908,
+Japan,1909,
+Japan,1910,
+Japan,1911,
+Japan,1912,
+Japan,1913,
+Japan,1914,
+Japan,1915,
+Japan,1916,
+Japan,1917,
+Japan,1918,
+Japan,1919,
+Japan,1920,
+Japan,1921,
+Japan,1922,
+Japan,1923,
+Japan,1924,
+Japan,1925,
+Japan,1926,
+Japan,1927,
+Japan,1928,
+Japan,1929,
+Japan,1930,
+Japan,1931,
+Japan,1932,
+Japan,1933,
+Japan,1934,
+Japan,1935,
+Japan,1936,
+Japan,1937,
+Japan,1938,
+Japan,1939,
+Japan,1940,
+Japan,1941,
+Japan,1942,
+Japan,1943,
+Japan,1944,
+Japan,1945,
+Japan,1946,
+Japan,1947,
+Japan,1948,
+Japan,1949,
+Japan,1950,
+Japan,1951,
+Japan,1952,
+Japan,1953,
+Japan,1954,
+Japan,1955,
+Japan,1956,
+Japan,1957,
+Japan,1958,
+Japan,1959,
+Japan,1960,
+Japan,1961,
+Japan,1962,
+Japan,1963,
+Japan,1964,
+Japan,1965,0.03
+Japan,1966,0.58
+Japan,1967,0.63
+Japan,1968,1.04
+Japan,1969,1.08
+Japan,1970,4.58
+Japan,1971,8.01
+Japan,1972,9.48
+Japan,1973,9.71
+Japan,1974,19.7
+Japan,1975,25.13
+Japan,1976,34.08
+Japan,1977,31.66
+Japan,1978,59.31
+Japan,1979,70.39
+Japan,1980,82.59
+Japan,1981,87.82
+Japan,1982,102.43
+Japan,1983,114.29
+Japan,1984,134.26
+Japan,1985,159.58
+Japan,1986,165.37
+Japan,1987,188.61
+Japan,1988,173.9
+Japan,1989,185.81
+Japan,1990,194.57
+Japan,1991,208.69
+Japan,1992,217.04
+Japan,1993,247.7
+Japan,1994,258.25
+Japan,1995,286.89
+Japan,1996,296.5
+Japan,1997,321.16
+Japan,1998,325.97
+Japan,1999,317.24
+Japan,2000,319.12
+Japan,2001,320.54
+Japan,2002,314.26
+Japan,2003,230.08
+Japan,2004,285.87
+Japan,2005,293.04
+Japan,2006,304.29
+Japan,2007,279.01
+Japan,2008,251.74
+Japan,2009,274.65
+Japan,2010,292.35
+Japan,2011,162.93
+Japan,2012,17.99
+Japan,2013,14.6
+Japan,2014,0
+Japan,2015,4.52
+Japan,2016,17.68
+Japan,2017,29.07
+Japan,2018,49.11
+Japan,2019,65.64
+Japan,2020,43
+Japan,2021,61.22
+Japan,2022,51.77
+Japan,2023,42.94860318
+Japan,2024,80.61308844
+Japan,2025,118.2775737
+Japan,2026,155.942059
+Japan,2027,193.6065442
+Japan,2028,231.2710295
+Japan,2029,268.9355147
+Japan,2030,306.6
+Japan,2031,337.26
+Japan,2032,367.92
+Japan,2033,398.58
+Japan,2034,429.24
+Japan,2035,459.9
+Japan,2036,490.56
+Japan,2037,521.22
+Japan,2038,551.88
+Japan,2039,582.54
+Japan,2040,613.2
+Japan,2041,643.86
+Japan,2042,674.52
+Japan,2043,705.18
+Japan,2044,735.84
+Japan,2045,766.5
+Japan,2046,797.16
+Japan,2047,827.82
+Japan,2048,858.48
+Japan,2049,889.14
+Japan,2050,919.8
+Japan,2051,950.46
+Japan,2052,981.12
+Japan,2053,1011.78
+Japan,2054,1042.44
+Japan,2055,1073.1
+Japan,2056,1103.76
+Japan,2057,1134.42
+Japan,2058,1165.08
+Japan,2059,1195.74
+Japan,2060,1226.4
+Japan,2061,1257.06
+Japan,2062,1287.72
+Japan,2063,1318.38
+Japan,2064,1349.04
+Japan,2065,1379.7
+Japan,2066,1410.36
+Japan,2067,1441.02
+Japan,2068,1471.68
+Japan,2069,1502.34
+Japan,2070,1533
+Japan,2071,1563.66
+Japan,2072,1594.32
+Japan,2073,1624.98
+Japan,2074,1655.64
+Japan,2075,1686.3
+Japan,2076,1716.96
+Japan,2077,1747.62
+Japan,2078,1778.28
+Japan,2079,1808.94
+Japan,2080,1839.6
+Japan,2081,1870.26
+Japan,2082,1900.92
+Japan,2083,1931.58
+Japan,2084,1962.24
+Japan,2085,1992.9
+Japan,2086,2023.56
+Japan,2087,2054.22
+Japan,2088,2084.88
+Japan,2089,2115.54
+Japan,2090,2146.2
+Japan,2091,2176.86
+Japan,2092,2207.52
+Japan,2093,2238.18
+Japan,2094,2268.84
+Japan,2095,2299.5
+Japan,2096,2330.16
+Japan,2097,2360.82
+Japan,2098,2391.48
+Japan,2099,2422.14
+Japan,2100,2452.8
+South Korea,1900,
+South Korea,1901,
+South Korea,1902,
+South Korea,1903,
+South Korea,1904,
+South Korea,1905,
+South Korea,1906,
+South Korea,1907,
+South Korea,1908,
+South Korea,1909,
+South Korea,1910,
+South Korea,1911,
+South Korea,1912,
+South Korea,1913,
+South Korea,1914,
+South Korea,1915,
+South Korea,1916,
+South Korea,1917,
+South Korea,1918,
+South Korea,1919,
+South Korea,1920,
+South Korea,1921,
+South Korea,1922,
+South Korea,1923,
+South Korea,1924,
+South Korea,1925,
+South Korea,1926,
+South Korea,1927,
+South Korea,1928,
+South Korea,1929,
+South Korea,1930,
+South Korea,1931,
+South Korea,1932,
+South Korea,1933,
+South Korea,1934,
+South Korea,1935,
+South Korea,1936,
+South Korea,1937,
+South Korea,1938,
+South Korea,1939,
+South Korea,1940,
+South Korea,1941,
+South Korea,1942,
+South Korea,1943,
+South Korea,1944,
+South Korea,1945,
+South Korea,1946,
+South Korea,1947,
+South Korea,1948,
+South Korea,1949,
+South Korea,1950,
+South Korea,1951,
+South Korea,1952,
+South Korea,1953,
+South Korea,1954,
+South Korea,1955,
+South Korea,1956,
+South Korea,1957,
+South Korea,1958,
+South Korea,1959,
+South Korea,1960,
+South Korea,1961,
+South Korea,1962,
+South Korea,1963,
+South Korea,1964,
+South Korea,1965,0
+South Korea,1966,0
+South Korea,1967,0
+South Korea,1968,0
+South Korea,1969,0
+South Korea,1970,0
+South Korea,1971,0
+South Korea,1972,0
+South Korea,1973,0
+South Korea,1974,0
+South Korea,1975,0
+South Korea,1976,0
+South Korea,1977,0.07
+South Korea,1978,2.32
+South Korea,1979,3.15
+South Korea,1980,3.48
+South Korea,1981,2.9
+South Korea,1982,3.78
+South Korea,1983,8.97
+South Korea,1984,11.79
+South Korea,1985,16.75
+South Korea,1986,28.31
+South Korea,1987,39.31
+South Korea,1988,40.1
+South Korea,1989,47.37
+South Korea,1990,52.89
+South Korea,1991,56.31
+South Korea,1992,56.53
+South Korea,1993,58.14
+South Korea,1994,58.65
+South Korea,1995,67.03
+South Korea,1996,73.92
+South Korea,1997,77.09
+South Korea,1998,89.69
+South Korea,1999,103.06
+South Korea,2000,103.52
+South Korea,2001,106.53
+South Korea,2002,113.15
+South Korea,2003,123.19
+South Korea,2004,124.18
+South Korea,2005,137.59
+South Korea,2006,141.18
+South Korea,2007,136.6
+South Korea,2008,144.26
+South Korea,2009,141.12
+South Korea,2010,141.89
+South Korea,2011,147.76
+South Korea,2012,143.55
+South Korea,2013,132.46
+South Korea,2014,149.17
+South Korea,2015,157.16
+South Korea,2016,154.2
+South Korea,2017,141.28
+South Korea,2018,127.08
+South Korea,2019,138.68
+South Korea,2020,152.58
+South Korea,2021,150.52
+South Korea,2022,168.58
+South Korea,2023,176.6986554
+South Korea,2024,187.5702761
+South Korea,2025,198.4418967
+South Korea,2026,209.3135174
+South Korea,2027,220.185138
+South Korea,2028,231.0567587
+South Korea,2029,241.9283793
+South Korea,2030,252.8
+South Korea,2031,256.8333333
+South Korea,2032,260.8666667
+South Korea,2033,264.9
+South Korea,2034,268.9333333
+South Korea,2035,272.9666667
+South Korea,2036,277
+South Korea,2037,293.3385714
+South Korea,2038,309.6771429
+South Korea,2039,326.0157143
+South Korea,2040,342.3542857
+South Korea,2041,358.6928571
+South Korea,2042,375.0314286
+South Korea,2043,391.37
+South Korea,2044,407.7085714
+South Korea,2045,424.0471429
+South Korea,2046,440.3857143
+South Korea,2047,456.7242857
+South Korea,2048,473.0628571
+South Korea,2049,489.4014286
+South Korea,2050,505.74
+South Korea,2051,522.0785714
+South Korea,2052,538.4171429
+South Korea,2053,554.7557143
+South Korea,2054,571.0942857
+South Korea,2055,587.4328571
+South Korea,2056,603.7714286
+South Korea,2057,620.11
+South Korea,2058,636.4485714
+South Korea,2059,652.7871429
+South Korea,2060,669.1257143
+South Korea,2061,685.4642857
+South Korea,2062,701.8028571
+South Korea,2063,718.1414286
+South Korea,2064,734.48
+South Korea,2065,750.8185714
+South Korea,2066,767.1571429
+South Korea,2067,783.4957143
+South Korea,2068,799.8342857
+South Korea,2069,816.1728571
+South Korea,2070,832.5114286
+South Korea,2071,848.85
+South Korea,2072,865.1885714
+South Korea,2073,881.5271429
+South Korea,2074,897.8657143
+South Korea,2075,914.2042857
+South Korea,2076,930.5428571
+South Korea,2077,946.8814286
+South Korea,2078,963.22
+South Korea,2079,979.5585714
+South Korea,2080,995.8971429
+South Korea,2081,1012.235714
+South Korea,2082,1028.574286
+South Korea,2083,1044.912857
+South Korea,2084,1061.251429
+South Korea,2085,1077.59
+South Korea,2086,1093.928571
+South Korea,2087,1110.267143
+South Korea,2088,1126.605714
+South Korea,2089,1142.944286
+South Korea,2090,1159.282857
+South Korea,2091,1175.621429
+South Korea,2092,1191.96
+South Korea,2093,1208.298571
+South Korea,2094,1224.637143
+South Korea,2095,1240.975714
+South Korea,2096,1257.314286
+South Korea,2097,1273.652857
+South Korea,2098,1289.991429
+South Korea,2099,1306.33
+South Korea,2100,1322.668571
+United Arab Emirates,1900,
+United Arab Emirates,1901,
+United Arab Emirates,1902,
+United Arab Emirates,1903,
+United Arab Emirates,1904,
+United Arab Emirates,1905,
+United Arab Emirates,1906,
+United Arab Emirates,1907,
+United Arab Emirates,1908,
+United Arab Emirates,1909,
+United Arab Emirates,1910,
+United Arab Emirates,1911,
+United Arab Emirates,1912,
+United Arab Emirates,1913,
+United Arab Emirates,1914,
+United Arab Emirates,1915,
+United Arab Emirates,1916,
+United Arab Emirates,1917,
+United Arab Emirates,1918,
+United Arab Emirates,1919,
+United Arab Emirates,1920,
+United Arab Emirates,1921,
+United Arab Emirates,1922,
+United Arab Emirates,1923,
+United Arab Emirates,1924,
+United Arab Emirates,1925,
+United Arab Emirates,1926,
+United Arab Emirates,1927,
+United Arab Emirates,1928,
+United Arab Emirates,1929,
+United Arab Emirates,1930,
+United Arab Emirates,1931,
+United Arab Emirates,1932,
+United Arab Emirates,1933,
+United Arab Emirates,1934,
+United Arab Emirates,1935,
+United Arab Emirates,1936,
+United Arab Emirates,1937,
+United Arab Emirates,1938,
+United Arab Emirates,1939,
+United Arab Emirates,1940,
+United Arab Emirates,1941,
+United Arab Emirates,1942,
+United Arab Emirates,1943,
+United Arab Emirates,1944,
+United Arab Emirates,1945,
+United Arab Emirates,1946,
+United Arab Emirates,1947,
+United Arab Emirates,1948,
+United Arab Emirates,1949,
+United Arab Emirates,1950,
+United Arab Emirates,1951,
+United Arab Emirates,1952,
+United Arab Emirates,1953,
+United Arab Emirates,1954,
+United Arab Emirates,1955,
+United Arab Emirates,1956,
+United Arab Emirates,1957,
+United Arab Emirates,1958,
+United Arab Emirates,1959,
+United Arab Emirates,1960,
+United Arab Emirates,1961,
+United Arab Emirates,1962,
+United Arab Emirates,1963,
+United Arab Emirates,1964,
+United Arab Emirates,1965,0
+United Arab Emirates,1966,0
+United Arab Emirates,1967,0
+United Arab Emirates,1968,0
+United Arab Emirates,1969,0
+United Arab Emirates,1970,0
+United Arab Emirates,1971,0
+United Arab Emirates,1972,0
+United Arab Emirates,1973,0
+United Arab Emirates,1974,0
+United Arab Emirates,1975,0
+United Arab Emirates,1976,0
+United Arab Emirates,1977,0
+United Arab Emirates,1978,0
+United Arab Emirates,1979,0
+United Arab Emirates,1980,0
+United Arab Emirates,1981,0
+United Arab Emirates,1982,0
+United Arab Emirates,1983,0
+United Arab Emirates,1984,0
+United Arab Emirates,1985,0
+United Arab Emirates,1986,0
+United Arab Emirates,1987,0
+United Arab Emirates,1988,0
+United Arab Emirates,1989,0
+United Arab Emirates,1990,0
+United Arab Emirates,1991,0
+United Arab Emirates,1992,0
+United Arab Emirates,1993,0
+United Arab Emirates,1994,0
+United Arab Emirates,1995,0
+United Arab Emirates,1996,0
+United Arab Emirates,1997,0
+United Arab Emirates,1998,0
+United Arab Emirates,1999,0
+United Arab Emirates,2000,0
+United Arab Emirates,2001,0
+United Arab Emirates,2002,0
+United Arab Emirates,2003,0
+United Arab Emirates,2004,0
+United Arab Emirates,2005,0
+United Arab Emirates,2006,0
+United Arab Emirates,2007,0
+United Arab Emirates,2008,0
+United Arab Emirates,2009,0
+United Arab Emirates,2010,0
+United Arab Emirates,2011,0
+United Arab Emirates,2012,0
+United Arab Emirates,2013,0
+United Arab Emirates,2014,0
+United Arab Emirates,2015,0
+United Arab Emirates,2016,0
+United Arab Emirates,2017,0
+United Arab Emirates,2018,0
+United Arab Emirates,2019,0
+United Arab Emirates,2020,1.63
+United Arab Emirates,2021,10.55
+United Arab Emirates,2022,20.1
+United Arab Emirates,2023,25.62632324
+United Arab Emirates,2024,26.87130573
+United Arab Emirates,2025,29.63077922
+United Arab Emirates,2026,34.22280853
+United Arab Emirates,2027,38.68712611
+United Arab Emirates,2028,42.02091302
+United Arab Emirates,2029,44.95927818
+United Arab Emirates,2030,48.39772783
+United Arab Emirates,2031,52.27677566
+United Arab Emirates,2032,56.04518674
+United Arab Emirates,2033,59.5085205
+United Arab Emirates,2034,62.90993156
+United Arab Emirates,2035,66.46492989
+United Arab Emirates,2036,70.12025327
+United Arab Emirates,2037,73.72703437
+United Arab Emirates,2038,77.2546309
+United Arab Emirates,2039,80.77781092
+United Arab Emirates,2040,84.34570632
+United Arab Emirates,2041,87.93480792
+United Arab Emirates,2042,91.50644647
+United Arab Emirates,2043,95.05834987
+United Arab Emirates,2044,98.61230662
+United Arab Emirates,2045,102.1787204
+United Arab Emirates,2046,105.7491114
+United Arab Emirates,2047,109.313834
+United Arab Emirates,2048,112.8738593
+United Arab Emirates,2049,116.4352622
+United Arab Emirates,2050,120
+United Arab Emirates,2051,123.5653158
+United Arab Emirates,2052,127.1289116
+United Arab Emirates,2053,130.6914517
+United Arab Emirates,2054,134.2545636
+United Arab Emirates,2055,137.8185342
+United Arab Emirates,2056,141.382526
+United Arab Emirates,2057,144.9460217
+United Arab Emirates,2058,148.5092986
+United Arab Emirates,2059,152.072776
+United Arab Emirates,2060,155.6364656
+United Arab Emirates,2061,159.2001255
+United Arab Emirates,2062,162.7636484
+United Arab Emirates,2063,166.3271316
+United Arab Emirates,2064,169.890679
+United Arab Emirates,2065,173.4542763
+United Arab Emirates,2066,177.0178567
+United Arab Emirates,2067,180.5814007
+United Arab Emirates,2068,184.1449395
+United Arab Emirates,2069,187.7084976
+United Arab Emirates,2070,191.2720667
+United Arab Emirates,2071,194.8356291
+United Arab Emirates,2072,198.3991822
+United Arab Emirates,2073,201.9627353
+United Arab Emirates,2074,205.526294
+United Arab Emirates,2075,209.0898549
+United Arab Emirates,2076,212.6534136
+United Arab Emirates,2077,216.2169699
+United Arab Emirates,2078,219.7805266
+United Arab Emirates,2079,223.3440849
+United Arab Emirates,2080,226.9076435
+United Arab Emirates,2081,230.4712015
+United Arab Emirates,2082,234.0347588
+United Arab Emirates,2083,237.5983164
+United Arab Emirates,2084,241.1618744
+United Arab Emirates,2085,244.7254325
+United Arab Emirates,2086,248.2889903
+United Arab Emirates,2087,251.852548
+United Arab Emirates,2088,255.4161058
+United Arab Emirates,2089,258.9796637
+United Arab Emirates,2090,262.5432215
+United Arab Emirates,2091,266.1067794
+United Arab Emirates,2092,269.6703372
+United Arab Emirates,2093,273.233895
+United Arab Emirates,2094,276.7974528
+United Arab Emirates,2095,280.3610107
+United Arab Emirates,2096,283.9245685
+United Arab Emirates,2097,287.4881263
+United Arab Emirates,2098,291.0516841
+United Arab Emirates,2099,294.615242
+United Arab Emirates,2100,298.1787998
+Armenia,1992,
+Armenia,1993,
+Armenia,1994,
+Armenia,1995,
+Armenia,1996,
+Armenia,1997,
+Armenia,1998,
+Armenia,1999,
+Armenia,2000,1.84
+Armenia,2001,1.99
+Armenia,2002,2.09
+Armenia,2003,1.82
+Armenia,2004,2.2
+Armenia,2005,2.5
+Armenia,2006,2.42
+Armenia,2007,2.35
+Armenia,2008,2.27
+Armenia,2009,2.29
+Armenia,2010,2.29
+Armenia,2011,2.36
+Armenia,2012,2.12
+Armenia,2013,2.17
+Armenia,2014,2.27
+Armenia,2015,2.57
+Armenia,2016,2.19
+Armenia,2017,2.41
+Armenia,2018,1.9
+Armenia,2019,2.03
+Armenia,2020,2.55
+Armenia,2021,1.85
+Armenia,2022,2.203631397
+Armenia,2023,2.933268257
+Armenia,2024,3.662905118
+Armenia,2025,4.392541978
+Armenia,2026,5.122178838
+Armenia,2027,5.851815699
+Armenia,2028,6.581452559
+Armenia,2029,7.311089419
+Armenia,2030,8.040726279
+Armenia,2031,8.77036314
+Armenia,2032,9.5
+Armenia,2033,10.52222222
+Armenia,2034,11.54444444
+Armenia,2035,12.56666667
+Armenia,2036,13.58888889
+Armenia,2037,14.61111111
+Armenia,2038,15.63333333
+Armenia,2039,16.65555556
+Armenia,2040,17.67777778
+Armenia,2041,18.7
+Armenia,2042,19.72222222
+Armenia,2043,20.74444444
+Armenia,2044,21.76666667
+Armenia,2045,22.78888889
+Armenia,2046,23.81111111
+Armenia,2047,24.83333333
+Armenia,2048,25.85555556
+Armenia,2049,26.87777778
+Armenia,2050,27.9
+Armenia,2051,28.92222222
+Armenia,2052,29.94444444
+Armenia,2053,30.96666667
+Armenia,2054,31.98888889
+Armenia,2055,33.01111111
+Armenia,2056,34.03333333
+Armenia,2057,35.05555556
+Armenia,2058,36.07777778
+Armenia,2059,37.1
+Armenia,2060,38.12222222
+Armenia,2061,39.14444444
+Armenia,2062,40.16666667
+Armenia,2063,41.18888889
+Armenia,2064,42.21111111
+Armenia,2065,43.23333333
+Armenia,2066,44.25555556
+Armenia,2067,45.27777778
+Armenia,2068,46.3
+Armenia,2069,47.32222222
+Armenia,2070,48.34444444
+Armenia,2071,49.36666667
+Armenia,2072,50.38888889
+Armenia,2073,51.41111111
+Armenia,2074,52.43333333
+Armenia,2075,53.45555556
+Armenia,2076,54.47777778
+Armenia,2077,55.5
+Armenia,2078,56.52222222
+Armenia,2079,57.54444444
+Armenia,2080,58.56666667
+Armenia,2081,59.58888889
+Armenia,2082,60.61111111
+Armenia,2083,61.63333333
+Armenia,2084,62.65555556
+Armenia,2085,63.67777778
+Armenia,2086,64.7
+Armenia,2087,65.72222222
+Armenia,2088,66.74444444
+Armenia,2089,67.76666667
+Armenia,2090,68.78888889
+Armenia,2091,69.81111111
+Armenia,2092,70.83333333
+Armenia,2093,71.85555556
+Armenia,2094,72.87777778
+Armenia,2095,73.9
+Armenia,2096,74.92222222
+Armenia,2097,75.94444444
+Armenia,2098,76.96666667
+Armenia,2099,77.98888889
+Armenia,2100,79.01111111
+Mongolia,1900,
+Mongolia,1901,
+Mongolia,1902,
+Mongolia,1903,
+Mongolia,1904,
+Mongolia,1905,
+Mongolia,1906,
+Mongolia,1907,
+Mongolia,1908,
+Mongolia,1909,
+Mongolia,1910,
+Mongolia,1911,
+Mongolia,1912,
+Mongolia,1913,
+Mongolia,1914,
+Mongolia,1915,
+Mongolia,1916,
+Mongolia,1917,
+Mongolia,1918,
+Mongolia,1919,
+Mongolia,1920,
+Mongolia,1921,
+Mongolia,1922,
+Mongolia,1923,
+Mongolia,1924,
+Mongolia,1925,
+Mongolia,1926,
+Mongolia,1927,
+Mongolia,1928,
+Mongolia,1929,
+Mongolia,1930,
+Mongolia,1931,
+Mongolia,1932,
+Mongolia,1933,
+Mongolia,1934,
+Mongolia,1935,
+Mongolia,1936,
+Mongolia,1937,
+Mongolia,1938,
+Mongolia,1939,
+Mongolia,1940,
+Mongolia,1941,
+Mongolia,1942,
+Mongolia,1943,
+Mongolia,1944,
+Mongolia,1945,
+Mongolia,1946,
+Mongolia,1947,
+Mongolia,1948,
+Mongolia,1949,
+Mongolia,1950,
+Mongolia,1951,
+Mongolia,1952,
+Mongolia,1953,
+Mongolia,1954,
+Mongolia,1955,
+Mongolia,1956,
+Mongolia,1957,
+Mongolia,1958,
+Mongolia,1959,
+Mongolia,1960,
+Mongolia,1961,
+Mongolia,1962,
+Mongolia,1963,
+Mongolia,1964,
+Mongolia,1965,
+Mongolia,1966,
+Mongolia,1967,
+Mongolia,1968,
+Mongolia,1969,
+Mongolia,1970,
+Mongolia,1971,
+Mongolia,1972,
+Mongolia,1973,
+Mongolia,1974,
+Mongolia,1975,
+Mongolia,1976,
+Mongolia,1977,
+Mongolia,1978,
+Mongolia,1979,
+Mongolia,1980,
+Mongolia,1981,0
+Mongolia,1982,0
+Mongolia,1983,0
+Mongolia,1984,0
+Mongolia,1985,0
+Mongolia,1986,0
+Mongolia,1987,0
+Mongolia,1988,0
+Mongolia,1989,0
+Mongolia,1990,0
+Mongolia,1991,0
+Mongolia,1992,0
+Mongolia,1993,0
+Mongolia,1994,0
+Mongolia,1995,0
+Mongolia,1996,0
+Mongolia,1997,0
+Mongolia,1998,0
+Mongolia,1999,0
+Mongolia,2000,0
+Mongolia,2001,0
+Mongolia,2002,0
+Mongolia,2003,0
+Mongolia,2004,0
+Mongolia,2005,0
+Mongolia,2006,0
+Mongolia,2007,0
+Mongolia,2008,0
+Mongolia,2009,0
+Mongolia,2010,0
+Mongolia,2011,0
+Mongolia,2012,0
+Mongolia,2013,0
+Mongolia,2014,0
+Mongolia,2015,0
+Mongolia,2016,0
+Mongolia,2017,0
+Mongolia,2018,0
+Mongolia,2019,0
+Mongolia,2020,0
+Mongolia,2021,0
+Mongolia,2022,0
+Mongolia,2023,0
+Mongolia,2024,0
+Mongolia,2025,0
+Mongolia,2026,0
+Mongolia,2027,0
+Mongolia,2028,0
+Mongolia,2029,0
+Mongolia,2030,0
+Mongolia,2031,0
+Mongolia,2032,0
+Mongolia,2033,0
+Mongolia,2034,0
+Mongolia,2035,0
+Mongolia,2036,0
+Mongolia,2037,0
+Mongolia,2038,0
+Mongolia,2039,0
+Mongolia,2040,0
+Mongolia,2041,0
+Mongolia,2042,0
+Mongolia,2043,0
+Mongolia,2044,0
+Mongolia,2045,0
+Mongolia,2046,0
+Mongolia,2047,0
+Mongolia,2048,0
+Mongolia,2049,0
+Mongolia,2050,0
+Mongolia,2051,0
+Mongolia,2052,0
+Mongolia,2053,0
+Mongolia,2054,0
+Mongolia,2055,0
+Mongolia,2056,0
+Mongolia,2057,0
+Mongolia,2058,0
+Mongolia,2059,0
+Mongolia,2060,0
+Mongolia,2061,0
+Mongolia,2062,0
+Mongolia,2063,0
+Mongolia,2064,0
+Mongolia,2065,0
+Mongolia,2066,0
+Mongolia,2067,0
+Mongolia,2068,0
+Mongolia,2069,0
+Mongolia,2070,0
+Mongolia,2071,0
+Mongolia,2072,0
+Mongolia,2073,0
+Mongolia,2074,0
+Mongolia,2075,0
+Mongolia,2076,0
+Mongolia,2077,0
+Mongolia,2078,0
+Mongolia,2079,0
+Mongolia,2080,0
+Mongolia,2081,0
+Mongolia,2082,0
+Mongolia,2083,0
+Mongolia,2084,0
+Mongolia,2085,0
+Mongolia,2086,0
+Mongolia,2087,0
+Mongolia,2088,0
+Mongolia,2089,0
+Mongolia,2090,0
+Mongolia,2091,0
+Mongolia,2092,0
+Mongolia,2093,0
+Mongolia,2094,0
+Mongolia,2095,0
+Mongolia,2096,0
+Mongolia,2097,0
+Mongolia,2098,0
+Mongolia,2099,0
+Mongolia,2100,0

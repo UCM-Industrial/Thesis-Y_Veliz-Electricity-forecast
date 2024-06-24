@@ -263,11 +263,16 @@ class MainWindow(QMainWindow):
         group_data = pd.DataFrame()
         for country in selected_countries:
             country_data = self.df[(self.df['Country'] == country) & (self.df['Date'] >= start_year) & (self.df['Date'] <= end_year)]
+
             if group_data.empty:
                 group_data = country_data.copy()
+                group_data.set_index('Date', inplace=True)
             else:
-                group_data = group_data.set_index('Date').add(country_data.set_index('Date'), fill_value=0).reset_index()
+                country_data.set_index('Date', inplace=True)
+                numeric_cols = country_data.select_dtypes(include=['number']).columns
+                group_data[numeric_cols] = group_data[numeric_cols].add(country_data[numeric_cols], fill_value=0)
 
+        group_data.reset_index(inplace=True)
         group_data['Country'] = group_name
 
         self.df = pd.concat([self.df, group_data], ignore_index=True)
@@ -275,6 +280,7 @@ class MainWindow(QMainWindow):
         self.update_combos()
         self.console.append(f"Group '{group_name}' created and added to the dataset.")
         self.country_search.setPlaceholderText("Search country...")
+
 
     def run_adf_test(self):
         """
@@ -579,14 +585,6 @@ class MainWindow(QMainWindow):
             ax.set_xlim([start_year, end_year])
             ax.set_ylim([0, max_value * 1.01])
 
-        for line in self.active_lines:
-            if line['active']:
-                linestyle = '-' if line['type'] == 'solid' else '--' if line['type'] == 'dashed' else ':'
-                if line['axis'] == 'x-axis':
-                    ax.axvline(x=line['value'], color=line['color'], linestyle=linestyle, label=line['name'])
-                else:
-                    ax.axhline(y=line['value'], color=line['color'], linestyle=linestyle, label=line['name'])
-
         self.canvas.draw()
 
     def apply_plot_settings(self, x_range, y_range, title, legend_size, legend_position, xlabel, ylabel, xlabel_size, ylabel_size):
@@ -647,27 +645,24 @@ class MainWindow(QMainWindow):
         variable = self.variable_combo.currentText()
         save_data = pd.DataFrame()
 
-        countries = [key.split(" ")[0] for key in selected_forecast_keys]
-        for country in countries:
+        for forecast_key in selected_forecast_keys:
+            country = forecast_key.split(' (')[0]  # Extract the country name correctly
             if save_type in ["Historical", "Both"]:
                 historical_data = self.df[(self.df['Country'] == country) & (self.df['Date'].notna())][['Country', 'Date', variable]]
                 save_data = pd.concat([save_data, historical_data], ignore_index=True)
 
             if save_type in ["Forecast", "Both"]:
-                forecast_key = next((key for key in selected_forecast_keys if country in key), None)
-                if forecast_key:
-                    forecast_values = self.forecast_results[forecast_key]['forecast_values']
-                    forecast_years = forecast_values.index
-                    forecast_df = pd.DataFrame({
-                        'Country': country,
-                        'Date': forecast_years,
-                        variable: forecast_values.values
-                    })
-                    save_data = pd.concat([save_data, forecast_df], ignore_index=True)
+                forecast_values = self.forecast_results[forecast_key]['forecast_values']
+                forecast_years = forecast_values.index
+                forecast_df = pd.DataFrame({
+                    'Country': country,
+                    'Date': forecast_years,
+                    variable: forecast_values.values
+                })
+                save_data = pd.concat([save_data, forecast_df], ignore_index=True)
 
         save_data.to_csv(save_path, index=False)
         self.console.append(f"Data saved to {save_path}")
-
 
     def download_plot(self):
         """
