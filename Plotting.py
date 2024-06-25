@@ -153,7 +153,7 @@ def plot_data_stacked_bar(df, forecast_results, forecast_keys, variable, plot_ty
     for forecast_key in forecast_keys:
         forecast = forecast_results[forecast_key]
         country = forecast['country']
-        historical_data = df[(df['Country'] == country) & (df['Date'] <= 2022)][['Date', variable]].set_index('Date')
+        historical_data = df[df['Country'] == country][['Date', variable]].set_index('Date')
         forecast_values = forecast['forecast_values'] if plot_type != "Historical" else None
 
         temp_combined_data = pd.DataFrame(index=range(int(historical_data.index.min()), forecast['forecast_until_year'] + 1))
