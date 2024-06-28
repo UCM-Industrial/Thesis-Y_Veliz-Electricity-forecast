@@ -100,7 +100,7 @@ def forecast_future(arima_results, df, start_year, forecast_until_year=2100, rep
             if pd.isnull(last_data_year) or not isinstance(last_data_year, (int, np.integer)):
                 raise ValueError(f"The last year of the filtered data is invalid: {last_data_year}")
 
-            forecast_years = pd.date_range(start=pd.to_datetime(str(int(last_data_year) + 1)), end=pd.to_datetime(str(forecast_until_year + 1)), freq='A').year
+            forecast_years = pd.date_range(start=pd.to_datetime(str(int(last_data_year) + 1)), end=pd.to_datetime(str(forecast_until_year + 1)), freq='YE').year
             steps_to_forecast_until = len(forecast_years)
             model = result['model_object']
             forecast = model.get_forecast(steps=steps_to_forecast_until)

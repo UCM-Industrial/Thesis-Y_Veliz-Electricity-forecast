@@ -420,7 +420,6 @@ class SidePanelWindow(QWidget):
         """
         Apply the plot settings and update the graph with selected lines.
         """
-        # Apply plot settings
         x_range = self.get_range(self.x_axis_input.text(), None)
         y_range = self.get_range(self.y_axis_input.text(), None)
         title = self.title_input.text()
@@ -471,10 +470,10 @@ class SidePanelWindow(QWidget):
 
         self.start_correction_checkbox = QCheckBox("Start Correction")
         self.layout.addWidget(self.start_correction_checkbox, 15, 0, 1, 3)
-
+        
         self.apply_correction_button = QPushButton("Apply Correction")
         self.apply_correction_button.clicked.connect(self.main_window.apply_forecast_corrections)
-        self.layout.addWidget(self.apply_correction_button, 16, 0, 1, 3)
+        self.layout.addWidget(self.apply_correction_button, 18, 0, 1, 3)
 
     def init_line_settings_ui(self):
         """

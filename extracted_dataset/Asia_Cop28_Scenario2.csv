@@ -1,0 +1,914 @@
+Country,Date,nuclear_electricity
+Japan,1900,
+Japan,1901,
+Japan,1902,
+Japan,1903,
+Japan,1904,
+Japan,1905,
+Japan,1906,
+Japan,1907,
+Japan,1908,
+Japan,1909,
+Japan,1910,
+Japan,1911,
+Japan,1912,
+Japan,1913,
+Japan,1914,
+Japan,1915,
+Japan,1916,
+Japan,1917,
+Japan,1918,
+Japan,1919,
+Japan,1920,
+Japan,1921,
+Japan,1922,
+Japan,1923,
+Japan,1924,
+Japan,1925,
+Japan,1926,
+Japan,1927,
+Japan,1928,
+Japan,1929,
+Japan,1930,
+Japan,1931,
+Japan,1932,
+Japan,1933,
+Japan,1934,
+Japan,1935,
+Japan,1936,
+Japan,1937,
+Japan,1938,
+Japan,1939,
+Japan,1940,
+Japan,1941,
+Japan,1942,
+Japan,1943,
+Japan,1944,
+Japan,1945,
+Japan,1946,
+Japan,1947,
+Japan,1948,
+Japan,1949,
+Japan,1950,
+Japan,1951,
+Japan,1952,
+Japan,1953,
+Japan,1954,
+Japan,1955,
+Japan,1956,
+Japan,1957,
+Japan,1958,
+Japan,1959,
+Japan,1960,
+Japan,1961,
+Japan,1962,
+Japan,1963,
+Japan,1964,
+Japan,1965,0.03
+Japan,1966,0.58
+Japan,1967,0.63
+Japan,1968,1.04
+Japan,1969,1.08
+Japan,1970,4.58
+Japan,1971,8.01
+Japan,1972,9.48
+Japan,1973,9.71
+Japan,1974,19.7
+Japan,1975,25.13
+Japan,1976,34.08
+Japan,1977,31.66
+Japan,1978,59.31
+Japan,1979,70.39
+Japan,1980,82.59
+Japan,1981,87.82
+Japan,1982,102.43
+Japan,1983,114.29
+Japan,1984,134.26
+Japan,1985,159.58
+Japan,1986,165.37
+Japan,1987,188.61
+Japan,1988,173.9
+Japan,1989,185.81
+Japan,1990,194.57
+Japan,1991,208.69
+Japan,1992,217.04
+Japan,1993,247.7
+Japan,1994,258.25
+Japan,1995,286.89
+Japan,1996,296.5
+Japan,1997,321.16
+Japan,1998,325.97
+Japan,1999,317.24
+Japan,2000,319.12
+Japan,2001,320.54
+Japan,2002,314.26
+Japan,2003,230.08
+Japan,2004,285.87
+Japan,2005,293.04
+Japan,2006,304.29
+Japan,2007,279.01
+Japan,2008,251.74
+Japan,2009,274.65
+Japan,2010,292.35
+Japan,2011,162.93
+Japan,2012,17.99
+Japan,2013,14.6
+Japan,2014,0.0
+Japan,2015,4.52
+Japan,2016,17.68
+Japan,2017,29.07
+Japan,2018,49.11
+Japan,2019,65.64
+Japan,2020,43.0
+Japan,2021,61.22
+Japan,2022,51.77
+Japan,2023,43.304807790442055
+Japan,2024,72.54231489795086
+Japan,2025,101.77982200545965
+Japan,2026,131.01732911296844
+Japan,2027,160.25483622047724
+Japan,2028,189.49234332798605
+Japan,2029,218.72985043549482
+Japan,2030,247.96735754300363
+Japan,2031,277.20486465051243
+Japan,2032,306.59999999999997
+Japan,2033,340.66666666666663
+Japan,2034,374.7333333333333
+Japan,2035,408.79999999999995
+Japan,2036,442.8666666666666
+Japan,2037,476.9333333333333
+Japan,2038,510.99999999999994
+Japan,2039,545.0666666666666
+Japan,2040,579.1333333333332
+Japan,2041,613.1999999999999
+Japan,2042,647.2666666666667
+Japan,2043,681.3333333333333
+Japan,2044,715.3999999999999
+Japan,2045,749.4666666666666
+Japan,2046,783.5333333333333
+Japan,2047,817.5999999999999
+Japan,2048,851.6666666666665
+Japan,2049,885.7333333333332
+Japan,2050,919.8
+Japan,2051,919.8
+Japan,2052,919.8
+Japan,2053,919.8
+Japan,2054,919.8
+Japan,2055,919.8
+Japan,2056,919.8
+Japan,2057,919.8
+Japan,2058,919.8
+Japan,2059,919.8
+Japan,2060,919.8
+Japan,2061,919.8
+Japan,2062,919.8
+Japan,2063,919.8
+Japan,2064,919.8
+Japan,2065,919.8
+Japan,2066,919.8
+Japan,2067,919.8
+Japan,2068,919.8
+Japan,2069,919.8
+Japan,2070,919.8
+Japan,2071,919.8
+Japan,2072,919.8
+Japan,2073,919.8
+Japan,2074,919.8
+Japan,2075,919.8
+Japan,2076,919.8
+Japan,2077,919.8
+Japan,2078,919.8
+Japan,2079,919.8
+Japan,2080,919.8
+Japan,2081,919.8
+Japan,2082,919.8
+Japan,2083,919.8
+Japan,2084,919.8
+Japan,2085,919.8
+Japan,2086,919.8
+Japan,2087,919.8
+Japan,2088,919.8
+Japan,2089,919.8
+Japan,2090,919.8
+Japan,2091,919.8
+Japan,2092,919.8
+Japan,2093,919.8
+Japan,2094,919.8
+Japan,2095,919.8
+Japan,2096,919.8
+Japan,2097,919.8
+Japan,2098,919.8
+Japan,2099,919.8
+Japan,2100,919.8
+South Korea,1900,
+South Korea,1901,
+South Korea,1902,
+South Korea,1903,
+South Korea,1904,
+South Korea,1905,
+South Korea,1906,
+South Korea,1907,
+South Korea,1908,
+South Korea,1909,
+South Korea,1910,
+South Korea,1911,
+South Korea,1912,
+South Korea,1913,
+South Korea,1914,
+South Korea,1915,
+South Korea,1916,
+South Korea,1917,
+South Korea,1918,
+South Korea,1919,
+South Korea,1920,
+South Korea,1921,
+South Korea,1922,
+South Korea,1923,
+South Korea,1924,
+South Korea,1925,
+South Korea,1926,
+South Korea,1927,
+South Korea,1928,
+South Korea,1929,
+South Korea,1930,
+South Korea,1931,
+South Korea,1932,
+South Korea,1933,
+South Korea,1934,
+South Korea,1935,
+South Korea,1936,
+South Korea,1937,
+South Korea,1938,
+South Korea,1939,
+South Korea,1940,
+South Korea,1941,
+South Korea,1942,
+South Korea,1943,
+South Korea,1944,
+South Korea,1945,
+South Korea,1946,
+South Korea,1947,
+South Korea,1948,
+South Korea,1949,
+South Korea,1950,
+South Korea,1951,
+South Korea,1952,
+South Korea,1953,
+South Korea,1954,
+South Korea,1955,
+South Korea,1956,
+South Korea,1957,
+South Korea,1958,
+South Korea,1959,
+South Korea,1960,
+South Korea,1961,
+South Korea,1962,
+South Korea,1963,
+South Korea,1964,
+South Korea,1965,0.0
+South Korea,1966,0.0
+South Korea,1967,0.0
+South Korea,1968,0.0
+South Korea,1969,0.0
+South Korea,1970,0.0
+South Korea,1971,0.0
+South Korea,1972,0.0
+South Korea,1973,0.0
+South Korea,1974,0.0
+South Korea,1975,0.0
+South Korea,1976,0.0
+South Korea,1977,0.07
+South Korea,1978,2.32
+South Korea,1979,3.15
+South Korea,1980,3.48
+South Korea,1981,2.9
+South Korea,1982,3.78
+South Korea,1983,8.97
+South Korea,1984,11.79
+South Korea,1985,16.75
+South Korea,1986,28.31
+South Korea,1987,39.31
+South Korea,1988,40.1
+South Korea,1989,47.37
+South Korea,1990,52.89
+South Korea,1991,56.31
+South Korea,1992,56.53
+South Korea,1993,58.14
+South Korea,1994,58.65
+South Korea,1995,67.03
+South Korea,1996,73.92
+South Korea,1997,77.09
+South Korea,1998,89.69
+South Korea,1999,103.06
+South Korea,2000,103.52
+South Korea,2001,106.53
+South Korea,2002,113.15
+South Korea,2003,123.19
+South Korea,2004,124.18
+South Korea,2005,137.59
+South Korea,2006,141.18
+South Korea,2007,136.6
+South Korea,2008,144.26
+South Korea,2009,141.12
+South Korea,2010,141.89
+South Korea,2011,147.76
+South Korea,2012,143.55
+South Korea,2013,132.46
+South Korea,2014,149.17
+South Korea,2015,157.16
+South Korea,2016,154.2
+South Korea,2017,141.28
+South Korea,2018,127.08
+South Korea,2019,138.68
+South Korea,2020,152.58
+South Korea,2021,150.52
+South Korea,2022,168.58
+South Korea,2023,177.1840582342154
+South Korea,2024,189.35279681813336
+South Korea,2025,201.52153540205128
+South Korea,2026,213.69027398596924
+South Korea,2027,225.8590125698872
+South Korea,2028,238.02775115380513
+South Korea,2029,250.19648973772308
+South Korea,2030,262.36522832164104
+South Korea,2031,274.533966905559
+South Korea,2032,286.7027054894769
+South Korea,2033,298.87144407339485
+South Korea,2034,311.0401826573128
+South Korea,2035,323.20892124123077
+South Korea,2036,335.3776598251487
+South Korea,2037,347.5463984090667
+South Korea,2038,359.71513699298464
+South Korea,2039,371.8838755769026
+South Korea,2040,384.05261416082055
+South Korea,2041,396.22135274473845
+South Korea,2042,408.3900913286564
+South Korea,2043,420.55882991257437
+South Korea,2044,432.72756849649227
+South Korea,2045,444.8963070804102
+South Korea,2046,457.0650456643282
+South Korea,2047,469.23378424824614
+South Korea,2048,481.4025228321641
+South Korea,2049,493.57126141608205
+South Korea,2050,505.74
+South Korea,2051,505.74
+South Korea,2052,505.74
+South Korea,2053,505.74
+South Korea,2054,505.74
+South Korea,2055,505.74
+South Korea,2056,505.74
+South Korea,2057,505.74
+South Korea,2058,505.74
+South Korea,2059,505.74
+South Korea,2060,505.74
+South Korea,2061,505.74
+South Korea,2062,505.74
+South Korea,2063,505.74
+South Korea,2064,505.74
+South Korea,2065,505.74
+South Korea,2066,505.74
+South Korea,2067,505.74
+South Korea,2068,505.74
+South Korea,2069,505.74
+South Korea,2070,505.74
+South Korea,2071,505.74
+South Korea,2072,505.74
+South Korea,2073,505.74
+South Korea,2074,505.74
+South Korea,2075,505.74
+South Korea,2076,505.74
+South Korea,2077,505.74
+South Korea,2078,505.74
+South Korea,2079,505.74
+South Korea,2080,505.74
+South Korea,2081,505.74
+South Korea,2082,505.74
+South Korea,2083,505.74
+South Korea,2084,505.74
+South Korea,2085,505.74
+South Korea,2086,505.74
+South Korea,2087,505.74
+South Korea,2088,505.74
+South Korea,2089,505.74
+South Korea,2090,505.74
+South Korea,2091,505.74
+South Korea,2092,505.74
+South Korea,2093,505.74
+South Korea,2094,505.74
+South Korea,2095,505.74
+South Korea,2096,505.74
+South Korea,2097,505.74
+South Korea,2098,505.74
+South Korea,2099,505.74
+South Korea,2100,505.74
+United Arab Emirates,1900,
+United Arab Emirates,1901,
+United Arab Emirates,1902,
+United Arab Emirates,1903,
+United Arab Emirates,1904,
+United Arab Emirates,1905,
+United Arab Emirates,1906,
+United Arab Emirates,1907,
+United Arab Emirates,1908,
+United Arab Emirates,1909,
+United Arab Emirates,1910,
+United Arab Emirates,1911,
+United Arab Emirates,1912,
+United Arab Emirates,1913,
+United Arab Emirates,1914,
+United Arab Emirates,1915,
+United Arab Emirates,1916,
+United Arab Emirates,1917,
+United Arab Emirates,1918,
+United Arab Emirates,1919,
+United Arab Emirates,1920,
+United Arab Emirates,1921,
+United Arab Emirates,1922,
+United Arab Emirates,1923,
+United Arab Emirates,1924,
+United Arab Emirates,1925,
+United Arab Emirates,1926,
+United Arab Emirates,1927,
+United Arab Emirates,1928,
+United Arab Emirates,1929,
+United Arab Emirates,1930,
+United Arab Emirates,1931,
+United Arab Emirates,1932,
+United Arab Emirates,1933,
+United Arab Emirates,1934,
+United Arab Emirates,1935,
+United Arab Emirates,1936,
+United Arab Emirates,1937,
+United Arab Emirates,1938,
+United Arab Emirates,1939,
+United Arab Emirates,1940,
+United Arab Emirates,1941,
+United Arab Emirates,1942,
+United Arab Emirates,1943,
+United Arab Emirates,1944,
+United Arab Emirates,1945,
+United Arab Emirates,1946,
+United Arab Emirates,1947,
+United Arab Emirates,1948,
+United Arab Emirates,1949,
+United Arab Emirates,1950,
+United Arab Emirates,1951,
+United Arab Emirates,1952,
+United Arab Emirates,1953,
+United Arab Emirates,1954,
+United Arab Emirates,1955,
+United Arab Emirates,1956,
+United Arab Emirates,1957,
+United Arab Emirates,1958,
+United Arab Emirates,1959,
+United Arab Emirates,1960,
+United Arab Emirates,1961,
+United Arab Emirates,1962,
+United Arab Emirates,1963,
+United Arab Emirates,1964,
+United Arab Emirates,1965,0.0
+United Arab Emirates,1966,0.0
+United Arab Emirates,1967,0.0
+United Arab Emirates,1968,0.0
+United Arab Emirates,1969,0.0
+United Arab Emirates,1970,0.0
+United Arab Emirates,1971,0.0
+United Arab Emirates,1972,0.0
+United Arab Emirates,1973,0.0
+United Arab Emirates,1974,0.0
+United Arab Emirates,1975,0.0
+United Arab Emirates,1976,0.0
+United Arab Emirates,1977,0.0
+United Arab Emirates,1978,0.0
+United Arab Emirates,1979,0.0
+United Arab Emirates,1980,0.0
+United Arab Emirates,1981,0.0
+United Arab Emirates,1982,0.0
+United Arab Emirates,1983,0.0
+United Arab Emirates,1984,0.0
+United Arab Emirates,1985,0.0
+United Arab Emirates,1986,0.0
+United Arab Emirates,1987,0.0
+United Arab Emirates,1988,0.0
+United Arab Emirates,1989,0.0
+United Arab Emirates,1990,0.0
+United Arab Emirates,1991,0.0
+United Arab Emirates,1992,0.0
+United Arab Emirates,1993,0.0
+United Arab Emirates,1994,0.0
+United Arab Emirates,1995,0.0
+United Arab Emirates,1996,0.0
+United Arab Emirates,1997,0.0
+United Arab Emirates,1998,0.0
+United Arab Emirates,1999,0.0
+United Arab Emirates,2000,0.0
+United Arab Emirates,2001,0.0
+United Arab Emirates,2002,0.0
+United Arab Emirates,2003,0.0
+United Arab Emirates,2004,0.0
+United Arab Emirates,2005,0.0
+United Arab Emirates,2006,0.0
+United Arab Emirates,2007,0.0
+United Arab Emirates,2008,0.0
+United Arab Emirates,2009,0.0
+United Arab Emirates,2010,0.0
+United Arab Emirates,2011,0.0
+United Arab Emirates,2012,0.0
+United Arab Emirates,2013,0.0
+United Arab Emirates,2014,0.0
+United Arab Emirates,2015,0.0
+United Arab Emirates,2016,0.0
+United Arab Emirates,2017,0.0
+United Arab Emirates,2018,0.0
+United Arab Emirates,2019,0.0
+United Arab Emirates,2020,1.63
+United Arab Emirates,2021,10.55
+United Arab Emirates,2022,20.1
+United Arab Emirates,2023,24.788767970445942
+United Arab Emirates,2024,25.903782585374948
+United Arab Emirates,2025,29.296116416219025
+United Arab Emirates,2026,35.52851694866272
+United Arab Emirates,2027,41.413058235525945
+United Arab Emirates,2028,45.14096192544699
+United Arab Emirates,2029,48.158939631071
+United Arab Emirates,2030,52.383152438397495
+United Arab Emirates,2031,57.64220159650776
+United Arab Emirates,2032,62.50906353762801
+United Arab Emirates,2033,66.47254436663525
+United Arab Emirates,2034,70.31244071598245
+United Arab Emirates,2035,74.73458478457584
+United Arab Emirates,2036,79.50175566354982
+United Arab Emirates,2037,84.01119389396474
+United Arab Emirates,2038,88.16319600964827
+United Arab Emirates,2039,92.3386149726783
+United Arab Emirates,2040,96.77643816638087
+United Arab Emirates,2041,101.31397246018797
+United Arab Emirates,2042,105.71064580372918
+United Arab Emirates,2043,109.97462229262453
+United Arab Emirates,2044,114.27914821470353
+United Arab Emirates,2045,118.69520023734299
+United Arab Emirates,2046,123.13205687203885
+United Arab Emirates,2047,127.49948975207332
+United Arab Emirates,2048,131.8215042671383
+United Arab Emirates,2049,136.17235387333446
+United Arab Emirates,2050,140.568
+United Arab Emirates,2051,140.568
+United Arab Emirates,2052,140.568
+United Arab Emirates,2053,140.568
+United Arab Emirates,2054,140.568
+United Arab Emirates,2055,140.568
+United Arab Emirates,2056,140.568
+United Arab Emirates,2057,140.568
+United Arab Emirates,2058,140.568
+United Arab Emirates,2059,140.568
+United Arab Emirates,2060,140.568
+United Arab Emirates,2061,140.568
+United Arab Emirates,2062,140.568
+United Arab Emirates,2063,140.568
+United Arab Emirates,2064,140.568
+United Arab Emirates,2065,140.568
+United Arab Emirates,2066,140.568
+United Arab Emirates,2067,140.568
+United Arab Emirates,2068,140.568
+United Arab Emirates,2069,140.568
+United Arab Emirates,2070,140.568
+United Arab Emirates,2071,140.568
+United Arab Emirates,2072,140.568
+United Arab Emirates,2073,140.568
+United Arab Emirates,2074,140.568
+United Arab Emirates,2075,140.568
+United Arab Emirates,2076,140.568
+United Arab Emirates,2077,140.568
+United Arab Emirates,2078,140.568
+United Arab Emirates,2079,140.568
+United Arab Emirates,2080,140.568
+United Arab Emirates,2081,140.568
+United Arab Emirates,2082,140.568
+United Arab Emirates,2083,140.568
+United Arab Emirates,2084,140.568
+United Arab Emirates,2085,140.568
+United Arab Emirates,2086,140.568
+United Arab Emirates,2087,140.568
+United Arab Emirates,2088,140.568
+United Arab Emirates,2089,140.568
+United Arab Emirates,2090,140.568
+United Arab Emirates,2091,140.568
+United Arab Emirates,2092,140.568
+United Arab Emirates,2093,140.568
+United Arab Emirates,2094,140.568
+United Arab Emirates,2095,140.568
+United Arab Emirates,2096,140.568
+United Arab Emirates,2097,140.568
+United Arab Emirates,2098,140.568
+United Arab Emirates,2099,140.568
+United Arab Emirates,2100,140.568
+Armenia,1992,
+Armenia,1993,
+Armenia,1994,
+Armenia,1995,
+Armenia,1996,
+Armenia,1997,
+Armenia,1998,
+Armenia,1999,
+Armenia,2000,1.84
+Armenia,2001,1.99
+Armenia,2002,2.09
+Armenia,2003,1.82
+Armenia,2004,2.2
+Armenia,2005,2.5
+Armenia,2006,2.42
+Armenia,2007,2.35
+Armenia,2008,2.27
+Armenia,2009,2.29
+Armenia,2010,2.29
+Armenia,2011,2.36
+Armenia,2012,2.12
+Armenia,2013,2.17
+Armenia,2014,2.27
+Armenia,2015,2.57
+Armenia,2016,2.19
+Armenia,2017,2.41
+Armenia,2018,1.9
+Armenia,2019,2.03
+Armenia,2020,2.55
+Armenia,2021,1.85
+Armenia,2022,2.2036313971068378
+Armenia,2023,2.596358847210165
+Armenia,2024,2.9890862973134924
+Armenia,2025,3.3818137474168193
+Armenia,2026,3.7745411975201466
+Armenia,2027,4.167268647623474
+Armenia,2028,4.559996097726801
+Armenia,2029,4.952723547830129
+Armenia,2030,5.3454509979334555
+Armenia,2031,5.738178448036782
+Armenia,2032,6.13090589814011
+Armenia,2033,6.523633348243437
+Armenia,2034,6.916360798346764
+Armenia,2035,7.309088248450092
+Armenia,2036,7.7018156985534185
+Armenia,2037,8.094543148656747
+Armenia,2038,8.487270598760073
+Armenia,2039,8.8799980488634
+Armenia,2040,9.272725498966729
+Armenia,2041,9.665452949070055
+Armenia,2042,10.058180399173382
+Armenia,2043,10.450907849276708
+Armenia,2044,10.843635299380036
+Armenia,2045,11.236362749483364
+Armenia,2046,11.62909019958669
+Armenia,2047,12.021817649690018
+Armenia,2048,12.414545099793346
+Armenia,2049,12.807272549896673
+Armenia,2050,13.2
+Armenia,2051,13.2
+Armenia,2052,13.2
+Armenia,2053,13.2
+Armenia,2054,13.2
+Armenia,2055,13.2
+Armenia,2056,13.2
+Armenia,2057,13.2
+Armenia,2058,13.2
+Armenia,2059,13.2
+Armenia,2060,13.2
+Armenia,2061,13.2
+Armenia,2062,13.2
+Armenia,2063,13.2
+Armenia,2064,13.2
+Armenia,2065,13.2
+Armenia,2066,13.2
+Armenia,2067,13.2
+Armenia,2068,13.2
+Armenia,2069,13.2
+Armenia,2070,13.2
+Armenia,2071,13.2
+Armenia,2072,13.2
+Armenia,2073,13.2
+Armenia,2074,13.2
+Armenia,2075,13.2
+Armenia,2076,13.2
+Armenia,2077,13.2
+Armenia,2078,13.2
+Armenia,2079,13.2
+Armenia,2080,13.2
+Armenia,2081,13.2
+Armenia,2082,13.2
+Armenia,2083,13.2
+Armenia,2084,13.2
+Armenia,2085,13.2
+Armenia,2086,13.2
+Armenia,2087,13.2
+Armenia,2088,13.2
+Armenia,2089,13.2
+Armenia,2090,13.2
+Armenia,2091,13.2
+Armenia,2092,13.2
+Armenia,2093,13.2
+Armenia,2094,13.2
+Armenia,2095,13.2
+Armenia,2096,13.2
+Armenia,2097,13.2
+Armenia,2098,13.2
+Armenia,2099,13.2
+Armenia,2100,13.2
+Mongolia,1900,
+Mongolia,1901,
+Mongolia,1902,
+Mongolia,1903,
+Mongolia,1904,
+Mongolia,1905,
+Mongolia,1906,
+Mongolia,1907,
+Mongolia,1908,
+Mongolia,1909,
+Mongolia,1910,
+Mongolia,1911,
+Mongolia,1912,
+Mongolia,1913,
+Mongolia,1914,
+Mongolia,1915,
+Mongolia,1916,
+Mongolia,1917,
+Mongolia,1918,
+Mongolia,1919,
+Mongolia,1920,
+Mongolia,1921,
+Mongolia,1922,
+Mongolia,1923,
+Mongolia,1924,
+Mongolia,1925,
+Mongolia,1926,
+Mongolia,1927,
+Mongolia,1928,
+Mongolia,1929,
+Mongolia,1930,
+Mongolia,1931,
+Mongolia,1932,
+Mongolia,1933,
+Mongolia,1934,
+Mongolia,1935,
+Mongolia,1936,
+Mongolia,1937,
+Mongolia,1938,
+Mongolia,1939,
+Mongolia,1940,
+Mongolia,1941,
+Mongolia,1942,
+Mongolia,1943,
+Mongolia,1944,
+Mongolia,1945,
+Mongolia,1946,
+Mongolia,1947,
+Mongolia,1948,
+Mongolia,1949,
+Mongolia,1950,
+Mongolia,1951,
+Mongolia,1952,
+Mongolia,1953,
+Mongolia,1954,
+Mongolia,1955,
+Mongolia,1956,
+Mongolia,1957,
+Mongolia,1958,
+Mongolia,1959,
+Mongolia,1960,
+Mongolia,1961,
+Mongolia,1962,
+Mongolia,1963,
+Mongolia,1964,
+Mongolia,1965,
+Mongolia,1966,
+Mongolia,1967,
+Mongolia,1968,
+Mongolia,1969,
+Mongolia,1970,
+Mongolia,1971,
+Mongolia,1972,
+Mongolia,1973,
+Mongolia,1974,
+Mongolia,1975,
+Mongolia,1976,
+Mongolia,1977,
+Mongolia,1978,
+Mongolia,1979,
+Mongolia,1980,
+Mongolia,1981,0.0
+Mongolia,1982,0.0
+Mongolia,1983,0.0
+Mongolia,1984,0.0
+Mongolia,1985,0.0
+Mongolia,1986,0.0
+Mongolia,1987,0.0
+Mongolia,1988,0.0
+Mongolia,1989,0.0
+Mongolia,1990,0.0
+Mongolia,1991,0.0
+Mongolia,1992,0.0
+Mongolia,1993,0.0
+Mongolia,1994,0.0
+Mongolia,1995,0.0
+Mongolia,1996,0.0
+Mongolia,1997,0.0
+Mongolia,1998,0.0
+Mongolia,1999,0.0
+Mongolia,2000,0.0
+Mongolia,2001,0.0
+Mongolia,2002,0.0
+Mongolia,2003,0.0
+Mongolia,2004,0.0
+Mongolia,2005,0.0
+Mongolia,2006,0.0
+Mongolia,2007,0.0
+Mongolia,2008,0.0
+Mongolia,2009,0.0
+Mongolia,2010,0.0
+Mongolia,2011,0.0
+Mongolia,2012,0.0
+Mongolia,2013,0.0
+Mongolia,2014,0.0
+Mongolia,2015,0.0
+Mongolia,2016,0.0
+Mongolia,2017,0.0
+Mongolia,2018,0.0
+Mongolia,2019,0.0
+Mongolia,2020,0.0
+Mongolia,2021,0.0
+Mongolia,2022,0.0
+Mongolia,2023,0.0
+Mongolia,2024,0.0
+Mongolia,2025,0.0
+Mongolia,2026,0.0
+Mongolia,2027,0.0
+Mongolia,2028,0.0
+Mongolia,2029,0.0
+Mongolia,2030,0.0
+Mongolia,2031,0.0
+Mongolia,2032,0.0
+Mongolia,2033,0.0
+Mongolia,2034,0.0
+Mongolia,2035,0.0
+Mongolia,2036,0.0
+Mongolia,2037,0.0
+Mongolia,2038,0.0
+Mongolia,2039,0.0
+Mongolia,2040,0.0
+Mongolia,2041,0.0
+Mongolia,2042,0.0
+Mongolia,2043,0.0
+Mongolia,2044,0.0
+Mongolia,2045,0.0
+Mongolia,2046,0.0
+Mongolia,2047,0.0
+Mongolia,2048,0.0
+Mongolia,2049,0.0
+Mongolia,2050,0.0
+Mongolia,2051,0.0
+Mongolia,2052,0.0
+Mongolia,2053,0.0
+Mongolia,2054,0.0
+Mongolia,2055,0.0
+Mongolia,2056,0.0
+Mongolia,2057,0.0
+Mongolia,2058,0.0
+Mongolia,2059,0.0
+Mongolia,2060,0.0
+Mongolia,2061,0.0
+Mongolia,2062,0.0
+Mongolia,2063,0.0
+Mongolia,2064,0.0
+Mongolia,2065,0.0
+Mongolia,2066,0.0
+Mongolia,2067,0.0
+Mongolia,2068,0.0
+Mongolia,2069,0.0
+Mongolia,2070,0.0
+Mongolia,2071,0.0
+Mongolia,2072,0.0
+Mongolia,2073,0.0
+Mongolia,2074,0.0
+Mongolia,2075,0.0
+Mongolia,2076,0.0
+Mongolia,2077,0.0
+Mongolia,2078,0.0
+Mongolia,2079,0.0
+Mongolia,2080,0.0
+Mongolia,2081,0.0
+Mongolia,2082,0.0
+Mongolia,2083,0.0
+Mongolia,2084,0.0
+Mongolia,2085,0.0
+Mongolia,2086,0.0
+Mongolia,2087,0.0
+Mongolia,2088,0.0
+Mongolia,2089,0.0
+Mongolia,2090,0.0
+Mongolia,2091,0.0
+Mongolia,2092,0.0
+Mongolia,2093,0.0
+Mongolia,2094,0.0
+Mongolia,2095,0.0
+Mongolia,2096,0.0
+Mongolia,2097,0.0
+Mongolia,2098,0.0
+Mongolia,2099,0.0
+Mongolia,2100,0.0

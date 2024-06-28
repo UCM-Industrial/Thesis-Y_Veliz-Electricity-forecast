@@ -563,12 +563,9 @@ class MainWindow(QMainWindow):
                 self.console.append("The 'Show Confidence Interval' option is only available for one country at a time.")
                 return
 
-            add_forecast_start_line = True
             if chart_type == "Lines":
                 max_value = -float('inf')
-                for forecast_key in selected_forecasts:
-                    max_value = max(max_value, plot_data(self.df, self.forecast_results, forecast_key, variable, plot_type, ax, add_forecast_start_line, show_confidence_interval))
-                    add_forecast_start_line = False
+                max_value = max(max_value, plot_data(self.df, self.forecast_results, selected_forecasts, variable, plot_type, ax))
             elif chart_type == "Stacked Bars":
                 max_value = plot_data_stacked_bar(self.df, self.forecast_results, selected_forecasts, variable, plot_type, ax)
 
@@ -576,7 +573,7 @@ class MainWindow(QMainWindow):
                 start_year = self.start_year_spin.value()
                 end_year = self.end_year_spin.value()
             elif plot_type == "Forecast":
-                start_year = 2023
+                start_year = self.end_year_spin.value()
                 end_year = self.forecast_until_year
             elif plot_type == "Both":
                 start_year = self.start_year_spin.value()
