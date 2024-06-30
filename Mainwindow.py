@@ -1,14 +1,13 @@
 import sys
 import os
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QPushButton, QComboBox, QTextEdit, QFileDialog, QLabel, QSpinBox, QListWidget, QListWidgetItem, QLineEdit, QGridLayout)
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QPushButton, QComboBox, QTextEdit, QFileDialog, QLabel, QSpinBox, QListWidget, QListWidgetItem, QLineEdit, QGridLayout, QMessageBox)
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import pandas as pd
-from Adf_test import perform_adf_test_with_differencing
+from Adf_test import perform_adf_test
 from Sarimax import optimize_sarimax_models, forecast_future as forecast_future_sarimax
-from Arimax import optimize_arimax_models, forecast_future as forecast_future_arimax
 from Arima import optimize_arima_models, forecast_future as forecast_future_arima
 from Plotting import plot_data, plot_data_stacked_bar, plot_historical_data, plot_historical_data_bar
 from SidePanel import SidePanelWindow
@@ -61,6 +60,11 @@ class MainWindow(QMainWindow):
         self.clear_button.clicked.connect(self.clear_all)
         self.clear_button.setFixedSize(30, 30)
         layout.addWidget(self.clear_button, 0, 3)
+
+        self.clear_console_button = QPushButton("🧽")
+        self.clear_console_button.clicked.connect(self.clear_console)
+        self.clear_console_button.setFixedSize(30, 30)
+        layout.addWidget(self.clear_console_button, 0, 4)
 
         self.country_search = QLineEdit()
         self.country_search.setPlaceholderText("Search country...")
@@ -134,14 +138,13 @@ class MainWindow(QMainWindow):
         self.adf_results = None
         self.filtered_data = None
         self.sarimax_results = None
-        self.arimax_results = None
         self.arima_results = None
         self.forecast_results = {}
         self.sidePanelWindow = None
         self.forecast_until_year = 2100
         self.replace_negative_forecast = False
-        
-        self.active_lines = [] 
+
+        self.active_lines = []  
 
         self.save_dialog = SaveDialog(self)
         
@@ -184,11 +187,47 @@ class MainWindow(QMainWindow):
         file_name, _ = QFileDialog.getOpenFileName(self, "Load CSV File", self.dataset_dir, "CSV Files (*.csv);;All Files (*)", options=options)
         if file_name:
             try:
-                self.df = pd.read_csv(file_name)
-                self.update_combos()
+                new_df = pd.read_csv(file_name)
                 self.console.append(f"File {file_name} loaded successfully.")
+
+                if 'Country' in new_df.columns:
+                    new_format_df = new_df
+                else:
+                    new_format_df = self.convert_new_format_to_original(new_df)
+
+                if self.df is not None:
+                    reply = QMessageBox.question(self, 'Merge Datasets', 
+                                                'Do you want to merge the new dataset with the existing one?', 
+                                                QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+
+                    if reply == QMessageBox.Yes:
+                        self.df = pd.concat([self.df, new_format_df], ignore_index=True)
+                    else:
+                        self.df = new_format_df
+                else:
+                    self.df = new_format_df
+
+                self.update_combos()
             except Exception as e:
                 self.console.append(f"Error loading file: {e}")
+
+    def convert_new_format_to_original(self, new_df):
+        """
+        Convert the new format to the original format.
+
+        Args:
+            new_df (pd.DataFrame): The new format DataFrame.
+
+        Returns:
+            pd.DataFrame: The original format DataFrame.
+        """
+        melted_df = new_df.melt(id_vars=['Date', 'Variable'], var_name='Country', value_name='Value')
+        
+        variable_name = melted_df['Variable'].iloc[0]
+        melted_df = melted_df.rename(columns={'Value': variable_name})
+        melted_df = melted_df.drop(columns=['Variable'])
+        
+        return melted_df
 
     def update_combos(self):
         """
@@ -205,7 +244,8 @@ class MainWindow(QMainWindow):
                 country_item.setCheckState(Qt.Unchecked)
                 self.country_list.addItem(country_item)
 
-            variables = self.df.columns[2:].tolist()
+            non_variable_columns = ['Country', 'Date']
+            variables = [col for col in self.df.columns if col not in non_variable_columns]
             self.variable_combo.clear()
             self.variable_combo.addItems(variables)
 
@@ -299,7 +339,7 @@ class MainWindow(QMainWindow):
             self.console.append("Please select at least one country.")
             return
 
-        self.adf_results = pd.DataFrame(columns=['Country', 'Variable', 'ADF Statistic', 'p-value', 'Num Lags', 'Num Observations', '1%', '5%', '10%', 'Differencing', 'p-value diff', 'Error'])
+        self.adf_results = pd.DataFrame(columns=['Country', 'Variable', 'ADF Statistic', 'p-value', 'Num Lags', 'Num Observations', '1%', '5%', '10%', 'Stationary', 'Error'])
 
         for country in selected_countries:
             self.filtered_data = self.df[(self.df['Country'] == country) & (self.df['Date'] >= start_year) & (self.df['Date'] <= end_year)].copy()
@@ -310,16 +350,16 @@ class MainWindow(QMainWindow):
 
             self.filtered_data.set_index('Date', inplace=True)
 
-            adf_result = perform_adf_test_with_differencing(self.filtered_data[[variable]].dropna())
+            adf_result = perform_adf_test(self.filtered_data[[variable]].dropna())
             if not adf_result.empty:
                 adf_result['Country'] = country
                 adf_result['Variable'] = variable
                 self.adf_results = pd.concat([self.adf_results, adf_result], ignore_index=True)
 
-        self.console.clear()
+        self.console.append("<hr style='border: 1px solid black;'>")
         self.console.append(self.format_adf_results(self.adf_results))
 
-    def run_sarimax(self, p_range=None, d_range=None, q_range=None, seasonal_period=None):
+    def run_sarimax(self, p_range=None, d_range=None, q_range=None, seasonal_period=None, enable_seasonality=True):
         """
         Run the SARIMAX model optimization and forecasting.
 
@@ -328,6 +368,7 @@ class MainWindow(QMainWindow):
             d_range (range): Range of d values.
             q_range (range): Range of q values.
             seasonal_period (int): Seasonal period.
+            enable_seasonality (bool): Whether to enable seasonality.
         """
         if self.adf_results is None or self.df is None:
             self.console.append("You must first run the ADF test.")
@@ -342,47 +383,11 @@ class MainWindow(QMainWindow):
         start_year = self.start_year_spin.value()
         end_year = self.end_year_spin.value()
 
-        sarimax_results = optimize_sarimax_models(self.adf_results, self.df, selected_countries, p_range, d_range, q_range, seasonal_period, start_year, end_year)
-        self.console.clear()
+        sarimax_results = optimize_sarimax_models(self.adf_results, self.df, selected_countries, p_range, d_range, q_range, seasonal_period, start_year, end_year, enable_seasonality)
+        self.console.append("<hr style='border: 1px solid black;'>")
         self.console.append(self.format_sarimax_results(sarimax_results))
 
         forecast_results = forecast_future_sarimax(sarimax_results, self.df, start_year, self.forecast_until_year, self.replace_negative_forecast)
-        self.forecast_results.update(forecast_results)
-
-        self.apply_forecast_corrections()
-        self.update_forecasted_countries_list()
-
-    def run_arimax(self, p_range=None, d_range=None, q_range=None):
-        """
-        Run the ARIMAX model optimization and forecasting.
-
-        Args:
-            p_range (range): Range of p values.
-            d_range (range): Range of d values.
-            q_range (range): Range of q values.
-        """
-        if self.adf_results is None or self.df is None:
-            self.console.append("You must first run the ADF test.")
-            return
-
-        p_range = p_range if p_range is not None else range(0, 2)
-        d_range = d_range if d_range is not None else range(0, 2)
-        q_range = q_range if q_range is not None else range(0, 2)
-
-        selected_countries = self.get_selected_countries(self.country_list)
-        start_year = self.start_year_spin.value()
-        end_year = self.end_year_spin.value()
-
-        for country in selected_countries:
-            if self.adf_results[self.adf_results['Country'] == country].empty:
-                self.console.append(f"No ADF results found for country {country}.")
-                return
-
-        arimax_results = optimize_arimax_models(self.adf_results, self.df, selected_countries, p_range, d_range, q_range, start_year, end_year)
-        self.console.clear()
-        self.console.append(self.format_arimax_results(arimax_results))
-
-        forecast_results = forecast_future_arimax(arimax_results, self.df, start_year, self.forecast_until_year, self.replace_negative_forecast)
         self.forecast_results.update(forecast_results)
 
         self.apply_forecast_corrections()
@@ -415,7 +420,7 @@ class MainWindow(QMainWindow):
                 return
 
         arima_results = optimize_arima_models(self.adf_results, self.df, selected_countries, p_range, d_range, q_range, start_year, end_year)
-        self.console.clear()
+        self.console.append("<hr style='border: 1px solid black;'>")
         self.console.append(self.format_arima_results(arima_results))
 
         forecast_results = forecast_future_arima(arima_results, self.df, start_year, self.forecast_until_year, self.replace_negative_forecast)
@@ -478,20 +483,20 @@ class MainWindow(QMainWindow):
 
         if target_year in forecast_years:
             start_year = start_target_year if start_target_year else forecast_years.min()
+            current_value = forecast_values.loc[start_year]
+            correction_factor = (target_value - current_value) / (target_year - start_year)
+
             if start:
                 for year in forecast_years:
                     if start_year <= year <= target_year:
                         forecast_values.loc[year] = target_value
             else:
-                current_value = forecast_values.loc[target_year]
-                correction_factor = (target_value - current_value) / (target_year - start_year)
-
                 for year in forecast_years:
                     if start_year <= year <= target_year:
-                        forecast_values.loc[year] += correction_factor * (year - start_year)
+                        forecast_values.loc[year] = current_value + correction_factor * (year - start_year)
                     elif year > target_year:
                         if continuous:
-                            forecast_values.loc[year] += correction_factor * (year - start_year)
+                            forecast_values.loc[year] = forecast_values.loc[target_year] + correction_factor * (year - target_year)
                         elif short:
                             forecast_values.loc[year] = target_value
 
@@ -584,54 +589,13 @@ class MainWindow(QMainWindow):
 
         self.canvas.draw()
 
-    def apply_plot_settings(self, x_range, y_range, title, legend_size, legend_position, xlabel, ylabel, xlabel_size, ylabel_size):
-        """
-        Apply plot settings to the current plot.
-
-        Args:
-            x_range (tuple): Range for the x-axis.
-            y_range (tuple): Range for the y-axis.
-            title (str): Title of the plot.
-            legend_size (int): Font size for the legend.
-            legend_position (str): Position for the legend.
-            xlabel (str): Label for the x-axis.
-            ylabel (str): Label for the y-axis.
-            xlabel_size (int): Font size for the x-axis label.
-            ylabel_size (int): Font size for the y-axis label.
-        """
-        if self.canvas.figure.axes:
-            ax = self.canvas.figure.axes[0]
-            if x_range and len(x_range) == 2:
-                ax.set_xlim(x_range)
-            if y_range and len(y_range) == 2:
-                ax.set_ylim(y_range)
-            if title:
-                ax.set_title(title, fontsize=16, fontweight='bold')
-            if legend_size:
-                legend_position_mapping = {
-                    "upperleft": "upper left",
-                    "bottomleft": "lower left",
-                    "upperright": "upper right",
-                    "bottomright": "lower right"
-                }
-                legend_pos = legend_position_mapping.get(legend_position, "upper right")
-                ax.legend(fontsize=legend_size, loc=legend_pos)
-            if xlabel:
-                ax.set_xlabel(xlabel, fontsize=xlabel_size if xlabel_size else 14)
-            if ylabel:
-                ax.set_ylabel(ylabel, fontsize=ylabel_size if ylabel_size else 14)
-            if xlabel_size and not xlabel:
-                ax.xaxis.label.set_size(xlabel_size)
-            if ylabel_size and not ylabel:
-                ax.yaxis.label.set_size(ylabel_size)
-            self.canvas.draw()
-
-    def save_forecast(self, save_type, save_path):
+    def save_forecast(self, save_type, format_type, save_path):
         """
         Save the selected type of data to a CSV file.
 
         Args:
             save_type (str): The type of data to save ("Historical", "Forecast", "Both").
+            format_type (str): The format type to save ("Format 1 (Original)", "Format 2 (New)").
             save_path (str): The path to save the CSV file.
         """
         selected_forecast_keys = self.get_selected_countries(self.forecasted_country_list)
@@ -643,7 +607,7 @@ class MainWindow(QMainWindow):
         save_data = pd.DataFrame()
 
         for forecast_key in selected_forecast_keys:
-            country = forecast_key.split(' (')[0]  # Extract the country name correctly
+            country = forecast_key.split(' (')[0]  
             if save_type in ["Historical", "Both"]:
                 historical_data = self.df[(self.df['Country'] == country) & (self.df['Date'].notna())][['Country', 'Date', variable]]
                 save_data = pd.concat([save_data, historical_data], ignore_index=True)
@@ -657,6 +621,10 @@ class MainWindow(QMainWindow):
                     variable: forecast_values.values
                 })
                 save_data = pd.concat([save_data, forecast_df], ignore_index=True)
+
+        if format_type == "Format 2 (New)":
+            save_data = save_data.pivot(index='Date', columns='Country', values=variable).reset_index()
+            save_data.insert(1, 'Variable', variable)
 
         save_data.to_csv(save_path, index=False)
         self.console.append(f"Data saved to {save_path}")
@@ -723,25 +691,6 @@ class MainWindow(QMainWindow):
                 formatted_results += f"<b>Failed to model {country}:</b> {result['error']}<br>"
         return formatted_results
 
-    def format_arimax_results(self, arimax_results):
-        """
-        Format ARIMAX results as HTML.
-
-        Args:
-            arimax_results (dict): The ARIMAX results.
-
-        Returns:
-            str: The formatted results in HTML.
-        """
-        formatted_results = ""
-        for country, result in arimax_results.items():
-            if 'model_object' in result:
-                summary_html = result['model_summary'].as_html()
-                formatted_results += f"<b>ARIMAX results for {country}:</b><br>{summary_html}<br>"
-            else:
-                formatted_results += f"<b>Failed to model {country}:</b> {result['error']}<br>"
-        return formatted_results
-
     def format_arima_results(self, arima_results):
         """
         Format ARIMA results as HTML.
@@ -793,6 +742,12 @@ class MainWindow(QMainWindow):
 
         self.update_forecasted_countries_list()
         self.console.append("Selected models successfully deleted.")
+
+    def clear_console(self):
+        """
+        Clear the console.
+        """
+        self.console.clear()
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from statsmodels.tsa.statespace.sarimax import SARIMAX
 
-def optimize_sarimax(series, p_range, d_range, q_range, seasonal_period):
+def optimize_sarimax(series, p_range, d_range, q_range, seasonal_period, enable_seasonality):
     """
     Optimize SARIMAX model parameters.
 
@@ -12,6 +12,7 @@ def optimize_sarimax(series, p_range, d_range, q_range, seasonal_period):
         d_range (range): Range of d values.
         q_range (range): Range of q values.
         seasonal_period (int): Seasonal period.
+        enable_seasonality (bool): Whether to enable seasonality.
 
     Returns:
         tuple: Best AIC, best order, best seasonal order, best model.
@@ -33,20 +34,20 @@ def optimize_sarimax(series, p_range, d_range, q_range, seasonal_period):
                             try:
                                 temp_model = SARIMAX(series,
                                                      order=(p, d, q),
-                                                     seasonal_order=(P_, D_, Q_, m),
+                                                     seasonal_order=(P_, D_, Q_, m) if enable_seasonality else (0, 0, 0, 0),
                                                      enforce_stationarity=False,
                                                      enforce_invertibility=False)
                                 results = temp_model.fit(disp=False)
                                 if results.aic < best_aic:
                                     best_aic = results.aic
                                     best_order = (p, d, q)
-                                    best_seasonal_order = (P_, D_, Q_, m)
+                                    best_seasonal_order = (P_, D_, Q_, m) if enable_seasonality else (0, 0, 0, 0)
                                     best_mdl = results
                             except:
                                 continue
     return best_aic, best_order, best_seasonal_order, best_mdl
 
-def optimize_sarimax_models(adf_results, df, selected_countries, p_range, d_range, q_range, seasonal_period, start_year, end_year):
+def optimize_sarimax_models(adf_results, df, selected_countries, p_range, d_range, q_range, seasonal_period, start_year, end_year, enable_seasonality):
     """
     Optimize SARIMAX models for multiple countries.
 
@@ -60,6 +61,7 @@ def optimize_sarimax_models(adf_results, df, selected_countries, p_range, d_rang
         seasonal_period (int): Seasonal period.
         start_year (int): Start year for the data.
         end_year (int): End year for the data.
+        enable_seasonality (bool): Whether to enable seasonality.
 
     Returns:
         dict: SARIMAX results for each country.
@@ -75,7 +77,7 @@ def optimize_sarimax_models(adf_results, df, selected_countries, p_range, d_rang
             continue
 
         try:
-            aic, order, seasonal_order, model = optimize_sarimax(data_series, p_range, d_range, q_range, seasonal_period)
+            aic, order, seasonal_order, model = optimize_sarimax(data_series, p_range, d_range, q_range, seasonal_period, enable_seasonality)
             if model is not None:
                 sarimax_results[country] = {
                     'aic': aic, 

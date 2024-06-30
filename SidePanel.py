@@ -46,7 +46,7 @@ class SidePanelWindow(QWidget):
         self.layout.addWidget(self.title_section1, 0, 1)
 
         self.model_combo = QComboBox()
-        self.model_combo.addItems(["SARIMAX", "ARIMAX", "ARIMA"])
+        self.model_combo.addItems(["SARIMAX", "ARIMA"])
         self.model_combo.currentTextChanged.connect(self.update_model_parameters)
         self.layout.addWidget(self.model_combo, 1, 0, 1, 3)
 
@@ -70,20 +70,24 @@ class SidePanelWindow(QWidget):
         self.seasonal_period_input = QLineEdit("12")
         self.layout.addWidget(self.seasonal_period_input, 5, 1, 1, 2)
 
+        self.enable_seasonality_checkbox = QCheckBox("Enable Seasonality")
+        self.enable_seasonality_checkbox.setChecked(True)
+        self.layout.addWidget(self.enable_seasonality_checkbox, 6, 0, 1, 3)
+
         self.forecast_until_label = QLabel("Forecast year:")
-        self.layout.addWidget(self.forecast_until_label, 6, 0)
+        self.layout.addWidget(self.forecast_until_label, 7, 0)
         self.forecast_until_input = QLineEdit("2100")
-        self.layout.addWidget(self.forecast_until_input, 6, 1, 1, 2)
+        self.layout.addWidget(self.forecast_until_input, 7, 1, 1, 2)
 
         self.replace_negative_forecast_checkbox = QCheckBox("0 values")
-        self.layout.addWidget(self.replace_negative_forecast_checkbox, 7, 0, 1, 3)
+        self.layout.addWidget(self.replace_negative_forecast_checkbox, 8, 0, 1, 3)
 
         self.show_confidence_interval_checkbox = QCheckBox("Show Confidence Interval")
-        self.layout.addWidget(self.show_confidence_interval_checkbox, 8, 0, 1, 3)
+        self.layout.addWidget(self.show_confidence_interval_checkbox, 9, 0, 1, 3)
 
         self.apply_button = QPushButton("Apply Settings")
         self.apply_button.clicked.connect(self.apply_model)
-        self.layout.addWidget(self.apply_button, 9, 0, 1, 3)
+        self.layout.addWidget(self.apply_button, 10, 0, 1, 3)
 
     def init_plot_settings_ui(self):
         """
@@ -189,6 +193,7 @@ class SidePanelWindow(QWidget):
         self.q_range_input.setVisible(True)
         self.seasonal_period_label.setVisible(self.model_combo.currentText() == "SARIMAX")
         self.seasonal_period_input.setVisible(self.model_combo.currentText() == "SARIMAX")
+        self.enable_seasonality_checkbox.setVisible(self.model_combo.currentText() == "SARIMAX")
         self.forecast_until_label.setVisible(True)
         self.forecast_until_input.setVisible(True)
         self.replace_negative_forecast_checkbox.setVisible(True)
@@ -203,7 +208,7 @@ class SidePanelWindow(QWidget):
         self.apply_correction_button.setVisible(True)
         self.apply_button.setVisible(True)
         self.start_target_year_label.setVisible(True)
-        self.start_target_year_input.setVisible(True)        
+        self.start_target_year_input.setVisible(True)
 
         self.title_section2.setVisible(False)
         self.left_arrow_button2.setVisible(False)
@@ -259,6 +264,7 @@ class SidePanelWindow(QWidget):
         self.q_range_input.setVisible(False)
         self.seasonal_period_label.setVisible(False)
         self.seasonal_period_input.setVisible(False)
+        self.enable_seasonality_checkbox.setVisible(False)
         self.forecast_until_label.setVisible(False)
         self.forecast_until_input.setVisible(False)
         self.replace_negative_forecast_checkbox.setVisible(False)
@@ -273,7 +279,7 @@ class SidePanelWindow(QWidget):
         self.apply_correction_button.setVisible(False)
         self.apply_button.setVisible(False)
         self.start_target_year_label.setVisible(False)
-        self.start_target_year_input.setVisible(False)        
+        self.start_target_year_input.setVisible(False)
 
         self.title_section2.setVisible(True)
         self.left_arrow_button2.setVisible(True)
@@ -321,19 +327,18 @@ class SidePanelWindow(QWidget):
             model_name (str): The name of the model.
         """
         is_sarimax = model_name == "SARIMAX"
-        is_arimax = model_name == "ARIMAX"
-        is_arima = model_name == "ARIMA"
-        self.p_range_label.setVisible(is_sarimax or is_arimax or is_arima)
-        self.p_range_input.setVisible(is_sarimax or is_arimax or is_arima)
-        self.d_range_label.setVisible(is_sarimax or is_arimax or is_arima)
-        self.d_range_input.setVisible(is_sarimax or is_arimax or is_arima)
-        self.q_range_label.setVisible(is_sarimax or is_arimax or is_arima)
-        self.q_range_input.setVisible(is_sarimax or is_arimax or is_arima)
+        self.p_range_label.setVisible(True)
+        self.p_range_input.setVisible(True)
+        self.d_range_label.setVisible(True)
+        self.d_range_input.setVisible(True)
+        self.q_range_label.setVisible(True)
+        self.q_range_input.setVisible(True)
         self.seasonal_period_label.setVisible(is_sarimax)
         self.seasonal_period_input.setVisible(is_sarimax)
-        self.forecast_until_label.setVisible(is_sarimax or is_arimax or is_arima)
-        self.forecast_until_input.setVisible(is_sarimax or is_arimax or is_arima)
-        self.replace_negative_forecast_checkbox.setVisible(is_sarimax or is_arimax or is_arima)
+        self.enable_seasonality_checkbox.setVisible(is_sarimax)
+        self.forecast_until_label.setVisible(True)
+        self.forecast_until_input.setVisible(True)
+        self.replace_negative_forecast_checkbox.setVisible(True)
 
     def apply_model(self):
         """
@@ -342,8 +347,6 @@ class SidePanelWindow(QWidget):
         model_name = self.model_combo.currentText()
         if model_name == "SARIMAX":
             self.apply_sarimax()
-        elif model_name == "ARIMAX":
-            self.apply_arimax()
         elif model_name == "ARIMA":
             self.apply_arima()
 
@@ -355,28 +358,14 @@ class SidePanelWindow(QWidget):
         d_range = self.get_range(self.d_range_input.text(), [0, 2])
         q_range = self.get_range(self.q_range_input.text(), [0, 2])
         seasonal_period = int(self.seasonal_period_input.text()) if self.seasonal_period_input.text() else 11
+        enable_seasonality = self.enable_seasonality_checkbox.isChecked()
 
         forecast_until_year = int(self.forecast_until_input.text()) if self.forecast_until_input.text() else 2100
         self.main_window.forecast_until_year = forecast_until_year
 
         self.main_window.replace_negative_forecast = self.replace_negative_forecast_checkbox.isChecked()
 
-        self.main_window.run_sarimax(p_range, d_range, q_range, seasonal_period)
-
-    def apply_arimax(self):
-        """
-        Apply ARIMAX model settings.
-        """
-        p_range = self.get_range(self.p_range_input.text(), [0, 2])
-        d_range = self.get_range(self.d_range_input.text(), [0, 2])
-        q_range = self.get_range(self.q_range_input.text(), [0, 2])
-
-        forecast_until_year = int(self.forecast_until_input.text()) if self.forecast_until_input.text() else 2100
-        self.main_window.forecast_until_year = forecast_until_year
-
-        self.main_window.replace_negative_forecast = self.replace_negative_forecast_checkbox.isChecked()
-
-        self.main_window.run_arimax(p_range, d_range, q_range)
+        self.main_window.run_sarimax(p_range, d_range, q_range, seasonal_period, enable_seasonality)
 
     def apply_arima(self):
         """
@@ -425,12 +414,31 @@ class SidePanelWindow(QWidget):
         title = self.title_input.text()
         legend_size = int(self.legend_size_input.text()) if self.legend_size_input.text() else None
         legend_position = self.legend_position_combo.currentText().replace(" ", "").lower()
+        legend_position = self.map_legend_position(legend_position)
         xlabel = self.xlabel_input.text()
         ylabel = self.ylabel_input.text()
         xlabel_size = int(self.xlabel_size_input.text()) if self.xlabel_size_input.text() else None
         ylabel_size = int(self.ylabel_size_input.text()) if self.ylabel_size_input.text() else None
 
-        self.main_window.apply_plot_settings(x_range, y_range, title, legend_size, legend_position, xlabel, ylabel, xlabel_size, ylabel_size)
+        if self.main_window.canvas.figure.axes:
+            ax = self.main_window.canvas.figure.axes[0]
+            if x_range and len(x_range) == 2:
+                ax.set_xlim(x_range)
+            if y_range and len(y_range) == 2:
+                ax.set_ylim(y_range)
+            if title:
+                ax.set_title(title, fontsize=16, fontweight='bold')
+            if legend_size:
+                ax.legend(fontsize=legend_size, loc=legend_position)
+            if xlabel:
+                ax.set_xlabel(xlabel, fontsize=xlabel_size if xlabel_size else 14)
+            if ylabel:
+                ax.set_ylabel(ylabel, fontsize=ylabel_size if ylabel_size else 14)
+            if xlabel_size and not xlabel:
+                ax.xaxis.label.set_size(xlabel_size)
+            if ylabel_size and not ylabel:
+                ax.yaxis.label.set_size(ylabel_size)
+            self.main_window.canvas.draw()
 
         for index in range(self.line_list.count()):
             item = self.line_list.item(index)
@@ -448,29 +456,29 @@ class SidePanelWindow(QWidget):
         Initialize UI elements for correction settings.
         """
         self.target_year_label = QLabel("Target Year:")
-        self.layout.addWidget(self.target_year_label, 10, 0)
+        self.layout.addWidget(self.target_year_label, 11, 0)
         self.target_year_input = QLineEdit("")
-        self.layout.addWidget(self.target_year_input, 10, 1, 1, 2)
+        self.layout.addWidget(self.target_year_input, 11, 1, 1, 2)
 
-        self.start_target_year_label = QLabel("Start Target Year:") 
-        self.layout.addWidget(self.start_target_year_label, 11, 0)
+        self.start_target_year_label = QLabel("Start Target Year:")
+        self.layout.addWidget(self.start_target_year_label, 12, 0)
         self.start_target_year_input = QLineEdit("")
-        self.layout.addWidget(self.start_target_year_input, 11, 1, 1, 2)
+        self.layout.addWidget(self.start_target_year_input, 12, 1, 1, 2)
 
         self.target_value_label = QLabel("Target Value:")
-        self.layout.addWidget(self.target_value_label, 12, 0)
+        self.layout.addWidget(self.target_value_label, 13, 0)
         self.target_value_input = QLineEdit("")
-        self.layout.addWidget(self.target_value_input, 12, 1, 1, 2)
+        self.layout.addWidget(self.target_value_input, 13, 1, 1, 2)
 
         self.continuous_correction_checkbox = QCheckBox("Continuous Correction")
-        self.layout.addWidget(self.continuous_correction_checkbox, 13, 0, 1, 3)
+        self.layout.addWidget(self.continuous_correction_checkbox, 14, 0, 1, 3)
 
         self.short_correction_checkbox = QCheckBox("Short Correction")
-        self.layout.addWidget(self.short_correction_checkbox, 14, 0, 1, 3)
+        self.layout.addWidget(self.short_correction_checkbox, 15, 0, 1, 3)
 
         self.start_correction_checkbox = QCheckBox("Start Correction")
-        self.layout.addWidget(self.start_correction_checkbox, 15, 0, 1, 3)
-        
+        self.layout.addWidget(self.start_correction_checkbox, 16, 0, 1, 3)
+
         self.apply_correction_button = QPushButton("Apply Correction")
         self.apply_correction_button.clicked.connect(self.main_window.apply_forecast_corrections)
         self.layout.addWidget(self.apply_correction_button, 18, 0, 1, 3)
@@ -548,7 +556,7 @@ class SidePanelWindow(QWidget):
             self.update_line_list()
         except ValueError:
             self.main_window.console.append("Invalid value for the line.")
-                  
+
     def draw_lines(self):
         """
         Draw the active lines on the plot.
@@ -563,7 +571,7 @@ class SidePanelWindow(QWidget):
                     ax.axhline(y=line['value'], color=line['color'], linestyle=linestyle, label=line['name'])
                 ax.lines[-1].set_visible(True)
         self.main_window.canvas.draw()
-        
+
     def clear_lines(self):
         """
         Hide all lines from the plot added by the SidePanel.
@@ -574,10 +582,26 @@ class SidePanelWindow(QWidget):
                 line.set_visible(False)
         self.main_window.canvas.draw()
         
+    def map_legend_position(self, position):
+        """
+        Map the legend position from combo box to valid matplotlib legend positions.
+        """
+        position_mapping = {
+            "upperleft": "upper left",
+            "bottomleft": "lower left",
+            "upperright": "upper right",
+            "bottomright": "lower right"
+        }
+        return position_mapping.get(position, "upper right")
+
     def update_legend(self):
         """
         Update the legend to reflect the current active lines.
         """
+        legend_size = int(self.legend_size_input.text()) if self.legend_size_input.text() else 10
+        legend_position = self.legend_position_combo.currentText().replace(" ", "").lower()
+        legend_position = self.map_legend_position(legend_position)
+
         ax = self.main_window.canvas.figure.gca()
         handles, labels = ax.get_legend_handles_labels()
         visible_handles_labels = []
@@ -591,7 +615,7 @@ class SidePanelWindow(QWidget):
 
         if visible_handles_labels:
             handles, labels = zip(*visible_handles_labels)
-            ax.legend(handles, labels)
+            ax.legend(handles, labels, fontsize=legend_size, loc=legend_position)
         else:
             ax.legend().remove()
         self.main_window.canvas.draw()
