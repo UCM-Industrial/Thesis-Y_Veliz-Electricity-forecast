@@ -1,0 +1,12 @@
+# WasteStorage input
+state_order:
+    - Wastestorage_state
+WasteStorage_state:
+    type: state
+    duration: 9e99 year
+    processes:
+        waste:
+            type: Combine_packages
+
+
+

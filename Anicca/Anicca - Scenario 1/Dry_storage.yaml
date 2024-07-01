@@ -1,0 +1,12 @@
+# Dry_storage input
+state_order:
+    - Wastestorage_state
+WasteStorage_state:
+    type: state
+    duration: 9e99 year
+    residence_times: 
+        UOX_45_SPENT: 40 year
+tags:
+    - Dry_storage
+    - Test
+    - Storage

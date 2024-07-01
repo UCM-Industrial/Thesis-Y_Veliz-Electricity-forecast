@@ -1,0 +1,200 @@
+# Scenario 1                            
+Scenario:
+    title: Benchmark
+    start date: 2000
+    file: Electricity.xls  
+    time steps:
+        - 300x 1 year
+        - 500x 1 year
+        - 100x 10 year
+        - 100x 100 year
+        - 100x 1000 year
+        - 100x 10000 year
+
+    nuclide data: 
+        decay: true
+        spontaneous fission: true
+        specified_isotopes: origen
+        fuel_libraries:   
+            UOX_45: UOX_45
+
+components: 
+
+    U_mine:
+        type: Facility
+        time: 2030
+        state_order:
+            - Umine
+        Umine:
+            type: state
+            duration: 350 year
+            processes:
+                NAT:
+                    type: Conversion
+                    material_out:
+                        NAT: 1
+                    cycle: on demand
+            residence_times:
+                NAT: 210 year
+        tags:
+            - Test
+
+    Fabrication:
+        type: Facility
+        time: 2030
+        state_order: 
+            - Fab
+        Fab:
+            type: state
+            duration: 500 year
+            processes:
+                UOX_45:
+                    type: Enrichment
+                    Material_in:
+                        NAT: x
+                    Material_out:
+                        UOX_45: 1
+                        DepU: 0.0025
+                    cycle: on demand
+                    fabrication_time: 2 years
+            residence_times:
+                DepU: 0 year
+        tags:
+            - Test
+            - Fabrication
+
+    NORTH_AMERICA:
+        type: Facility
+        file: NORTH_AMERICA.yaml   
+    ASIA:
+        type: Facility
+        file: ASIA.yaml     
+    ASIA_COP:
+        type: Facility
+        file: ASIA_COP.yaml      
+    EAST_EUROPE:
+        type: Facility
+        file: EAST_EUROPE.yaml     
+    EAST_EUROPE_COP:
+        type: Facility
+        file: EAST_EUROPE_COP.yaml  
+    WEST_EUROPE:
+        type: Facility
+        file: WEST_EUROPE.yaml     
+    WEST_EUROPE_COP:
+        type: Facility
+        file: WEST_EUROPE_COP.yaml      
+
+    DepU_pool:
+        type: Facility
+        time: 2030
+        file: FinalDisposal.yaml  
+        tags:
+            - Test        
+    FD:
+        type: Facility
+        time: 2030
+        file: FinalDisposal.yaml
+        tags:
+            - Test
+            
+connections:
+
+    NORTH_AMERICA:
+        - UOX_45_SPENT to FD
+        - UOX_45 from Fabrication
+    ASIA:
+        - UOX_45_SPENT to FD
+        - UOX_45 from Fabrication
+    ASIA_COP:
+        - UOX_45_SPENT to FD
+        - UOX_45 from Fabrication       
+    EAST_EUROPE:
+        - UOX_45_SPENT to FD
+        - UOX_45 from Fabrication
+    EAST_EUROPE_COP:
+        - UOX_45_SPENT to FD
+        - UOX_45 from Fabrication  
+    WEST_EUROPE:
+        - UOX_45_SPENT to FD
+        - UOX_45 from Fabrication
+    WEST_EUROPE_COP:
+        - UOX_45_SPENT to FD
+        - UOX_45 from Fabrication   
+        
+    Fabrication:
+        - NAT from U_mine  
+        - DepU to DepU_pool
+     
+Viewers:
+    Packages:
+        type: TxtFile
+        outputfile: Packages.xlsx
+        variables: [Packages]
+        observables:
+            - NORTH_AMERICA
+            - ASIA    
+            - ASIA_COP  
+            - EAST_EUROPE
+            - EAST_EUROPE_COP
+            - WEST_EUROPE
+            - WEST_EUROPE_COP
+            - Fabrication
+            - Test
+            - FD
+            
+    Fab_flow:
+        type: TxtFile
+        outputfile: Fab_flow.xlsx
+        variables: [Packages]
+        observables:
+            - Fabrication to NORTH_AMERICA
+            - Fabrication to ASIA
+            - Fabrication to ASIA_COP
+            - Fabrication to EAST_EUROPE
+            - Fabrication to EAST_EUROPE_COP
+            - Fabrication to WEST_EUROPE
+            - Fabrication to WEST_EUROPE_COP
+            
+    ISO:
+        type: TxtFile
+        outputfile: ISO_MOX_RMA_ADS.xlsx
+        variables: [922320, 922330, 922340, 922350, 922360, 922380, 
+                    942360, 942380, 942390, 942400, 942410, 942420,
+                    952410, 952421, 952430, 932370, 932390, 962420,
+                    962430, 962440, 962450, 962460, 962470, 962480, 551370, 380900, 601480, total_weight]
+        observables:
+             - Fabrication
+             - REACTOR
+             - FD
+             - Test
+   
+    HM:
+        type: TxtFile
+        outputfile: HM_MOX_RMA_ADS.xlsx
+        variables: [38, 55, 60, 90, 91, 92, 93, 94, 95, 96, 97, 98, UOX_45, UOX_45_SPENT, total_weight, Fission_product, minor_actinide]
+        observables:
+            - Fabrication
+            - REACTOR 
+            - FD
+            - Test
+        
+    SWU:
+        type: TxtFile
+        outputfile: SWU.xlsx
+        variables: [Swu]
+        observables:
+            - Fabrication
+        
+    RT_DISPOSAL:
+        type: TxtFile
+        outputfile: RT.xlsx
+        variables: [Radio_toxicity, Total_weight, heat, alpha_heat]
+        observables: [ FD, Fabrication, Test, REACTOR]  
+        
+    power:
+        type: TxtFile
+        outputfile: Total_power.xlsx
+        variables: [electrical_power, thermal_power, installed_power]
+        observables: [REACTOR]
+        

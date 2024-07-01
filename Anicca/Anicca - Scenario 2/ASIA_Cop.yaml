@@ -1,0 +1,26 @@
+# PWR_UOX general input
+time: 2025
+initial_installed_power : 0 GW # Not applied
+electric_power : 1 GW
+thermal_power : 3 GW
+reactor_core_mass: 89
+reactor_core_fuel:  
+    - UOX_45: 1 
+state_order:
+    - UOX_state1  
+UOX_state1:
+     type: state
+     duration: 350 year 
+     residence_times: 
+         UOX_45_SPENT: 5 year
+     processes:
+         UOX_process:
+             type: Irradiation
+             burnup_info: true
+             delay: 0 years
+             material_in: 
+                 UOX_45: 1
+             cycle: 1.0 year          
+tags:
+    - REACTOR
+
