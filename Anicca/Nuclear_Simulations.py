@@ -5,10 +5,14 @@ import matplotlib.pyplot as plt
 class GraphPlotter:
     def __init__(self, base_dir):
         """
-        Initialize the GraphPlotter with dynamic directory paths.
+        Initializes the GraphPlotter with dynamic directory paths.
 
-        Parameters:
-        base_dir (str): The base directory path where scenario folders are located.
+        This method sets up the initial directory paths based on the provided base directory.
+        It initializes the base directory, and placeholders for the selected scenario directory,
+        dataset directory, and graphs directory.
+
+        Args:
+            base_dir (str): The base directory path where scenario folders are located.
         """
         self.base_dir = base_dir
         self.selected_scenario_dir = ""
@@ -17,48 +21,61 @@ class GraphPlotter:
 
     def create_directory(self, directory_path):
         """
-        Create a directory if it does not exist.
+        Creates a directory if it does not exist.
 
-        Parameters:
-        directory_path (str): The path of the directory to create.
+        This method checks if a directory at the specified path exists, and if not, creates it.
+        This ensures that the required directory structure is in place for saving graphs.
+
+        Args:
+            directory_path (str): The path of the directory to create.
         """
         os.makedirs(directory_path, exist_ok=True)
 
     def list_directories(self, directory_path):
         """
-        List all directories in a directory.
+        Lists all directories in a specified directory.
 
-        Parameters:
-        directory_path (str): The path of the directory to search.
+        This method scans the given directory path and returns a list of all
+        subdirectories. It filters out files and only includes directories.
+
+        Args:
+            directory_path (str): The path of the directory to search.
 
         Returns:
-        list: A list of directory names.
+            list: A list of directory names found in the specified path.
         """
         return [d for d in os.listdir(directory_path) if os.path.isdir(os.path.join(directory_path, d))]
 
     def list_files(self, directory_path, extension='.xlsx'):
         """
-        List all files in a directory with a specific extension.
+        Lists all files in a directory with a specific extension.
 
-        Parameters:
-        directory_path (str): The path of the directory to search.
-        extension (str): The file extension to filter by.
+        This method scans the given directory path and returns a list of all
+        files that have the specified extension. It is used to find all relevant
+        Excel files in the dataset directory.
+
+        Args:
+            directory_path (str): The path of the directory to search.
+            extension (str, optional): The file extension to filter by. Defaults to '.xlsx'.
 
         Returns:
-        list: A list of filenames with the specified extension.
+            list: A list of filenames with the specified extension.
         """
         return [f for f in os.listdir(directory_path) if f.endswith(extension)]
 
     def select_option(self, prompt, options):
         """
-        Display a list of options and prompt the user to select one.
+        Displays a list of options and prompts the user to select one.
 
-        Parameters:
-        prompt (str): The prompt message to display.
-        options (list): A list of options to display.
+        This method presents a prompt message and a list of options to the user.
+        It waits for the user to input a selection and returns the index of the selected option.
+
+        Args:
+            prompt (str): The prompt message to display.
+            options (list): A list of options to display.
 
         Returns:
-        int: The index of the selected option.
+            int: The index of the selected option.
         """
         print(prompt)
         for i, option in enumerate(options):
@@ -67,7 +84,12 @@ class GraphPlotter:
 
     def select_scenario(self):
         """
-        Prompt the user to select a scenario folder.
+        Prompts the user to select a scenario folder and sets up directories.
+
+        This method lists all scenario directories in the base directory and prompts
+        the user to select one. Based on the user's selection, it sets up the paths
+        for the dataset directory and graphs directory. It also creates the graphs
+        directory if it does not exist.
         """
         scenarios = self.list_directories(self.base_dir)
         selected_scenario_index = self.select_option("Select a scenario folder:", scenarios)
@@ -82,7 +104,19 @@ class GraphPlotter:
 
     def plot_single_graph(self):
         """
-        Plot a single graph based on user-selected file, sheet, and variable.
+        Plots a single graph based on user-selected file, sheet, and variable.
+
+        This method:
+        1. Lists all available Excel files in the dataset directory.
+        2. Prompts the user to select one of these files.
+        3. Loads the selected Excel file and lists all available sheets.
+        4. Prompts the user to select one of these sheets.
+        5. Loads the selected sheet into a DataFrame and lists all columns.
+        6. Prompts the user to select one of these columns (variables).
+        7. Extracts the selected column and the first column (assumed to be the x-axis) for plotting.
+        8. Creates and displays a line plot for the selected variable against the x-axis.
+
+        The graph includes labels, a legend, a title, and grid lines for better readability.
         """
         files = self.list_files(self.dataset_dir)
         selected_file_index = self.select_option("Available files are:", files)
@@ -126,7 +160,19 @@ class GraphPlotter:
 
     def plot_multiple_graphs(self):
         """
-        Plot multiple graphs for all files, sheets, and variables in the directory.
+        Plots multiple graphs for all files, sheets, and variables in the directory.
+
+        This method:
+        1. Lists all available Excel files in the dataset directory.
+        2. Iterates through each file and loads it.
+        3. Lists all sheets in the current file and iterates through each sheet.
+        4. Loads the current sheet into a DataFrame and lists all columns.
+        5. Iterates through each column (except the first one assumed to be the x-axis).
+        6. Extracts the selected column and the first column (assumed to be the x-axis) for plotting.
+        7. Creates a line plot for each variable against the x-axis and saves the plot as a PNG file.
+
+        The saved graphs include labels, legends, titles, and grid lines for better readability.
+        Each graph is saved in the graphs directory with a filename indicating the file, sheet, and variable.
         """
         files = self.list_files(self.dataset_dir)
         for file in files:
@@ -157,8 +203,14 @@ class GraphPlotter:
 
 def main():
     """
-    Main function to execute the script. Prompts the user to choose a scenario,
-    and then between single or multiple graph plotting, and executes the corresponding function.
+    Main function to execute the script. 
+
+    This function:
+    1. Initializes the base directory path.
+    2. Creates an instance of GraphPlotter with the base directory.
+    3. Prompts the user to select a scenario folder.
+    4. Prompts the user to choose between single or multiple graph plotting.
+    5. Executes the corresponding plotting method based on user choice.
     """
     base_dir = os.path.dirname(__file__)
     plotter = GraphPlotter(base_dir)
