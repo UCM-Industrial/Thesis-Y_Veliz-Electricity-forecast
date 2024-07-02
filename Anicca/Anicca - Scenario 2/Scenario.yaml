@@ -1,7 +1,7 @@
 # Scenario 1                            
 Scenario:
     title: Benchmark
-    start date: 2000
+    start date: 1998
     file: Electricity.xls  
     time steps:
         - 300x 1 year
@@ -22,7 +22,7 @@ components:
 
     U_mine:
         type: Facility
-        time: 2030
+        time: 1998
         state_order:
             - Umine
         Umine:
@@ -41,7 +41,7 @@ components:
 
     Fabrication:
         type: Facility
-        time: 2030
+        time: 1998
         state_order: 
             - Fab
         Fab:
@@ -172,9 +172,8 @@ Viewers:
     HM:
         type: TxtFile
         outputfile: HM_MOX_RMA_ADS.xlsx
-        variables: [38, 55, 60, 90, 91, 92, 93, 94, 95, 96, 97, 98, UOX_45, UOX_45_SPENT, total_weight, Fission_product, minor_actinide]
+        variables: [38, 55, 60, 90, 91, 92, 93, 94, 95, 96, 97, 98, total_weight, Fission_product, minor_actinide]
         observables:
-            - Fabrication
             - REACTOR 
             - FD
             - Test

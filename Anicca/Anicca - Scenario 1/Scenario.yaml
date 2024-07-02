@@ -1,7 +1,7 @@
 # Scenario 1                            
 Scenario:
     title: Benchmark
-    start date: 2000
+    start date: 1998
     file: Electricity.xls  
     time steps:
         - 300x 1 year
@@ -22,7 +22,7 @@ components:
 
     U_mine:
         type: Facility
-        time: 2030
+        time: 1998
         state_order:
             - Umine
         Umine:
@@ -37,11 +37,11 @@ components:
             residence_times:
                 NAT: 210 year
         tags:
-            - Test
+            - World
 
     Fabrication:
         type: Facility
-        time: 2030
+        time: 1998
         state_order: 
             - Fab
         Fab:
@@ -60,7 +60,7 @@ components:
             residence_times:
                 DepU: 0 year
         tags:
-            - Test
+            - World
             - Fabrication
 
     NORTH_AMERICA:
@@ -90,13 +90,13 @@ components:
         time: 2030
         file: FinalDisposal.yaml  
         tags:
-            - Test        
+            - World        
     FD:
         type: Facility
         time: 2030
         file: FinalDisposal.yaml
         tags:
-            - Test
+            - World
             
 connections:
 
@@ -140,7 +140,7 @@ Viewers:
             - WEST_EUROPE
             - WEST_EUROPE_COP
             - Fabrication
-            - Test
+            - World
             - FD
             
     Fab_flow:
@@ -167,17 +167,16 @@ Viewers:
              - Fabrication
              - REACTOR
              - FD
-             - Test
+             - World
    
     HM:
         type: TxtFile
         outputfile: HM_MOX_RMA_ADS.xlsx
-        variables: [38, 55, 60, 90, 91, 92, 93, 94, 95, 96, 97, 98, UOX_45, UOX_45_SPENT, total_weight, Fission_product, minor_actinide]
+        variables: [38, 55, 60, 90, 91, 92, 93, 94, 95, 96, 97, 98, total_weight, Fission_product, minor_actinide]
         observables:
-            - Fabrication
             - REACTOR 
             - FD
-            - Test
+            - World
         
     SWU:
         type: TxtFile
@@ -190,7 +189,7 @@ Viewers:
         type: TxtFile
         outputfile: RT.xlsx
         variables: [Radio_toxicity, Total_weight, heat, alpha_heat]
-        observables: [ FD, Fabrication, Test, REACTOR]  
+        observables: [ FD, Fabrication, World, REACTOR]  
         
     power:
         type: TxtFile

@@ -1,5 +1,5 @@
 # PWR_UOX general input
-time: 2025
+time: 1998
 initial_installed_power : 0 GW # Not applied
 electric_power : 1 GW
 thermal_power : 3 GW
