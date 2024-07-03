@@ -5,9 +5,7 @@ import matplotlib.container
 import os
 
 class SidePanelWindow(QWidget):
-    """
-    Side panel window for settings.
-    """
+
     def __init__(self, main_window):
         super().__init__()
         self.main_window = main_window
@@ -30,9 +28,7 @@ class SidePanelWindow(QWidget):
         self.show_model_settings()
 
     def init_model_settings_ui(self):
-        """
-        Initialize UI elements for model settings.
-        """
+
         self.left_arrow_button = QPushButton("←")
         self.left_arrow_button.clicked.connect(self.show_plot_settings)
         self.layout.addWidget(self.left_arrow_button, 0, 0)
@@ -90,9 +86,7 @@ class SidePanelWindow(QWidget):
         self.layout.addWidget(self.apply_button, 10, 0, 1, 3)
 
     def init_plot_settings_ui(self):
-        """
-        Initialize UI elements for plot settings.
-        """
+
         self.left_arrow_button2 = QPushButton("←")
         self.left_arrow_button2.clicked.connect(self.show_model_settings)
         self.left_arrow_button2.setVisible(False)
@@ -178,9 +172,7 @@ class SidePanelWindow(QWidget):
         self.layout.addWidget(self.apply_plot_button, 10, 0, 1, 3)
 
     def show_model_settings(self):
-        """
-        Show the model settings UI elements.
-        """
+
         self.title_section1.setVisible(True)
         self.left_arrow_button.setVisible(True)
         self.right_arrow_button.setVisible(True)
@@ -249,9 +241,7 @@ class SidePanelWindow(QWidget):
         self.line_type_combo.setVisible(False)
 
     def show_plot_settings(self):
-        """
-        Show the plot settings UI elements.
-        """
+
         self.title_section1.setVisible(False)
         self.left_arrow_button.setVisible(False)
         self.right_arrow_button.setVisible(False)
@@ -320,12 +310,7 @@ class SidePanelWindow(QWidget):
         self.line_type_combo.setVisible(True)
 
     def update_model_parameters(self, model_name):
-        """
-        Update model parameters based on selected model.
 
-        Args:
-            model_name (str): The name of the model.
-        """
         is_sarimax = model_name == "SARIMAX"
         self.p_range_label.setVisible(True)
         self.p_range_input.setVisible(True)
@@ -341,9 +326,7 @@ class SidePanelWindow(QWidget):
         self.replace_negative_forecast_checkbox.setVisible(True)
 
     def apply_model(self):
-        """
-        Apply the selected model settings.
-        """
+
         model_name = self.model_combo.currentText()
         if model_name == "SARIMAX":
             self.apply_sarimax()
@@ -351,9 +334,7 @@ class SidePanelWindow(QWidget):
             self.apply_arima()
 
     def apply_sarimax(self):
-        """
-        Apply SARIMAX model settings.
-        """
+
         p_range = self.get_range(self.p_range_input.text(), [0, 2])
         d_range = self.get_range(self.d_range_input.text(), [0, 2])
         q_range = self.get_range(self.q_range_input.text(), [0, 2])
@@ -368,9 +349,7 @@ class SidePanelWindow(QWidget):
         self.main_window.run_sarimax(p_range, d_range, q_range, seasonal_period, enable_seasonality)
 
     def apply_arima(self):
-        """
-        Apply ARIMA model settings.
-        """
+
         p_range = self.get_range(self.p_range_input.text(), [0, 2])
         d_range = self.get_range(self.d_range_input.text(), [0, 2])
         q_range = self.get_range(self.q_range_input.text(), [0, 2])
@@ -383,16 +362,7 @@ class SidePanelWindow(QWidget):
         self.main_window.run_arima(p_range, d_range, q_range)
 
     def get_range(self, text, default):
-        """
-        Get a range of values from a text input.
 
-        Args:
-            text (str): The text input.
-            default (list): The default range.
-
-        Returns:
-            list: The range of values.
-        """
         if text:
             try:
                 values = list(map(int, text.split(',')))
@@ -406,9 +376,7 @@ class SidePanelWindow(QWidget):
             return default
 
     def apply_plot_settings(self):
-        """
-        Apply the plot settings and update the graph with selected lines.
-        """
+
         x_range = self.get_range(self.x_axis_input.text(), None)
         y_range = self.get_range(self.y_axis_input.text(), None)
         title = self.title_input.text()
@@ -452,9 +420,7 @@ class SidePanelWindow(QWidget):
         self.update_legend()
 
     def init_correction_settings_ui(self):
-        """
-        Initialize UI elements for correction settings.
-        """
+
         self.target_year_label = QLabel("Target Year:")
         self.layout.addWidget(self.target_year_label, 11, 0)
         self.target_year_input = QLineEdit("")
@@ -484,9 +450,7 @@ class SidePanelWindow(QWidget):
         self.layout.addWidget(self.apply_correction_button, 18, 0, 1, 3)
 
     def init_line_settings_ui(self):
-        """
-        Initialize UI elements for line settings.
-        """
+        
         self.line_list_label = QLabel("Active Lines:")
         self.layout.addWidget(self.line_list_label, 17, 0)
         self.line_list = QListWidget()
@@ -528,9 +492,7 @@ class SidePanelWindow(QWidget):
         self.layout.addWidget(self.add_line_button, 25, 0, 1, 3)
 
     def update_line_list(self):
-        """
-        Update the list of active lines.
-        """
+
         self.line_list.clear()
         for line in self.main_window.active_lines:
             item = QListWidgetItem(line['name'])
@@ -539,9 +501,7 @@ class SidePanelWindow(QWidget):
             self.line_list.addItem(item)
 
     def add_line(self):
-        """
-        Add a line to the plot based on the user input.
-        """
+
         name = self.line_name_input.text()
         value = self.line_value_input.text()
         color = self.line_color_combo.currentText()
@@ -558,9 +518,7 @@ class SidePanelWindow(QWidget):
             self.main_window.console.append("Invalid value for the line.")
 
     def draw_lines(self):
-        """
-        Draw the active lines on the plot.
-        """
+
         ax = self.main_window.canvas.figure.gca()
         for line in self.main_window.active_lines:
             if line['active']:
@@ -573,9 +531,7 @@ class SidePanelWindow(QWidget):
         self.main_window.canvas.draw()
 
     def clear_lines(self):
-        """
-        Hide all lines from the plot added by the SidePanel.
-        """
+
         ax = self.main_window.canvas.figure.gca()
         for line in ax.get_lines():
             if line.get_label() in [l['name'] for l in self.main_window.active_lines]:
@@ -583,9 +539,7 @@ class SidePanelWindow(QWidget):
         self.main_window.canvas.draw()
         
     def map_legend_position(self, position):
-        """
-        Map the legend position from combo box to valid matplotlib legend positions.
-        """
+
         position_mapping = {
             "upperleft": "upper left",
             "bottomleft": "lower left",
@@ -595,9 +549,7 @@ class SidePanelWindow(QWidget):
         return position_mapping.get(position, "upper right")
 
     def update_legend(self):
-        """
-        Update the legend to reflect the current active lines.
-        """
+
         legend_size = int(self.legend_size_input.text()) if self.legend_size_input.text() else 10
         legend_position = self.legend_position_combo.currentText().replace(" ", "").lower()
         legend_position = self.map_legend_position(legend_position)

@@ -3,9 +3,7 @@ from PyQt5.QtGui import QIcon
 import os
 
 class GroupPanelWindow(QWidget):
-    """
-    Group panel window for creating groups.
-    """
+
     def __init__(self, main_window, is_forecast=False):
         super().__init__()
         self.main_window = main_window
@@ -37,9 +35,7 @@ class GroupPanelWindow(QWidget):
         self.setLayout(layout)
 
     def accept(self):
-        """
-        Accept the group creation.
-        """
+
         group_name = self.name_input.text().strip()
         if group_name:
             if self.is_forecast:
@@ -51,7 +47,5 @@ class GroupPanelWindow(QWidget):
             self.main_window.console.append("Enter a valid name for the group.")
 
     def cancel(self):
-        """
-        Cancel the group creation.
-        """
+
         self.close()

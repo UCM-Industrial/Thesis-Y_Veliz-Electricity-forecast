@@ -107,17 +107,15 @@ class GraphPlotter:
 
     def plot_single_graph(self):
         """
-        Plots a single graph based on user-selected file, sheet, and variable.
-
-        This method:
-        1. Lists all available Excel files in the dataset directory.
-        2. Prompts the user to select one of these files.
-        3. Loads the selected Excel file and lists all available sheets.
-        4. Prompts the user to select one of these sheets.
-        5. Loads the selected sheet into a DataFrame and lists all columns.
-        6. Prompts the user to select one of these columns (variables).
-        7. Extracts the selected column and the first column (assumed to be the x-axis) for plotting.
-        8. Creates and displays a line plot for the selected variable against the x-axis.
+        Plots a single graph based on user-selected file, sheet, and variable. This method:
+        - Lists all available Excel files in the dataset directory.
+        - Prompts the user to select one of these files.
+        - Loads the selected Excel file and lists all available sheets.
+        - Prompts the user to select one of these sheets.
+        - Loads the selected sheet into a DataFrame and lists all columns.
+        - Prompts the user to select one of these columns (variables).
+        - Extracts the selected column and the first column (assumed to be the x-axis) for plotting.
+        - Creates and displays a line plot for the selected variable against the x-axis.
 
         The graph includes labels, a legend, a title, and grid lines for better readability.
         """
@@ -163,57 +161,61 @@ class GraphPlotter:
 
     def plot_multiple_graphs(self):
         """
-        Plots multiple graphs for all files, sheets, and variables in the directory.
-
-        This method:
-        1. Lists all available Excel files in the dataset directory.
-        2. Iterates through each file and loads it.
-        3. Lists all sheets in the current file and iterates through each sheet.
-        4. Loads the current sheet into a DataFrame and lists all columns.
-        5. Iterates through each column (except the first one assumed to be the x-axis).
-        6. Extracts the selected column and the first column (assumed to be the x-axis) for plotting.
-        7. Creates a line plot for each variable against the x-axis and saves the plot as a PNG file.
+        Plots multiple graphs for specified variables in specified files. This method:
+        - Lists all available Excel files in the dataset directory.
+        - Iterates through each file and checks if it is in the specified files list.
+        - Loads the current file and lists all sheets.
+        - Iterates through each sheet and loads it into a DataFrame.
+        - Iterates through each specified variable for the current file.
+        - Extracts the specified variable and the first column (assumed to be the x-axis) for plotting.
+        - Creates a line plot for each specified variable against the x-axis and saves the plot as a PNG file.
 
         The saved graphs include labels, legends, titles, and grid lines for better readability.
         Each graph is saved in the graphs directory with a filename indicating the file, sheet, and variable.
         """
+        specific_files_vars = {
+            'Fab_flow.xlsx': ['Uox_45 (tons)', 'Uox_45_spent (tons)'],
+            'Packages.xlsx': ['Depu (tons)'],
+            'SWU.xlsx': ['Swu (kSWU)'],
+            'RT.xlsx': ['Total_weight (tons)']
+        }
+
         files = self.list_files(self.dataset_dir)
         for file in files:
-            file_path = os.path.join(self.dataset_dir, file)
-            excel_file = pd.ExcelFile(file_path)
-            sheet_names = excel_file.sheet_names
+            if file in specific_files_vars:
+                file_path = os.path.join(self.dataset_dir, file)
+                excel_file = pd.ExcelFile(file_path)
+                sheet_names = excel_file.sheet_names
 
-            for sheet in sheet_names:
-                df = pd.read_excel(file_path, sheet_name=sheet)
-                columns = df.columns.tolist()
+                for sheet in sheet_names:
+                    df = pd.read_excel(file_path, sheet_name=sheet)
+                    columns = df.columns.tolist()
 
-                for col in columns[1:]:  
-                    x_values = df.iloc[:, 0]
-                    y_values = df[col]
+                    for col in specific_files_vars[file]:
+                        if col in columns:
+                            x_values = df.iloc[:, 0]
+                            y_values = df[col]
 
-                    plt.figure(figsize=(10, 6))
-                    plt.plot(x_values, y_values)
-                    plt.legend([col])
-                    plt.title(f'{file} - {sheet} - {col}')
-                    plt.xlabel('Year')
-                    plt.ylabel(col)
-                    plt.xlim(2000, 2100)
-                    plt.grid(True)
-                    graph_path = os.path.join(self.graphs_dir, f'{file}_{sheet}_{col}.png')
-                    plt.savefig(graph_path)
-                    plt.close()
+                            plt.figure(figsize=(10, 6))
+                            plt.plot(x_values, y_values)
+                            plt.legend([col], loc='upper left')
+                            plt.xlabel('Year')
+                            plt.ylabel(col)
+                            plt.xlim(2000, 2110)
+                            plt.grid(True)
+                            graph_path = os.path.join(self.graphs_dir, f'{file}_{sheet}_{col}.png')
+                            plt.savefig(graph_path)
+                            plt.close()
         print(f"Graphs saved in {self.graphs_dir}")
 
 def main():
     """
-    Main function to execute the script. 
-
-    This function:
-    1. Initializes the base directory path.
-    2. Creates an instance of GraphPlotter with the base directory.
-    3. Prompts the user to select a scenario folder.
-    4. Prompts the user to choose between single or multiple graph plotting.
-    5. Executes the corresponding plotting method based on user choice.
+    Main function to execute the script. This function:
+    - Initializes the base directory path.
+    - Creates an instance of GraphPlotter with the base directory.
+    - Prompts the user to select a scenario folder.
+    - Prompts the user to choose between single or multiple graph plotting.
+    - Executes the corresponding plotting method based on user choice.
     """
     base_dir = os.path.dirname(__file__)
     plotter = GraphPlotter(base_dir)

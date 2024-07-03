@@ -3,18 +3,7 @@ import pandas as pd
 from statsmodels.tsa.arima.model import ARIMA
 
 def optimize_arima(series, p_range, d_range, q_range):
-    """
-    Optimize ARIMA model parameters.
 
-    Args:
-        series (pd.Series): Time series data.
-        p_range (range): Range of p values.
-        d_range (range): Range of d values.
-        q_range (range): Range of q values.
-
-    Returns:
-        tuple: Best AIC, best order, best model.
-    """
     best_aic = np.inf
     best_order = None
     best_mdl = None
@@ -33,28 +22,12 @@ def optimize_arima(series, p_range, d_range, q_range):
                     continue
     return best_aic, best_order, best_mdl
 
-def optimize_arima_models(adf_results, df, selected_countries, p_range, d_range, q_range, start_year, end_year):
-    """
-    Optimize ARIMA models for multiple countries.
+def optimize_arima_models(df, selected_countries, p_range, d_range, q_range, start_year, end_year):
 
-    Args:
-        adf_results (pd.DataFrame): ADF test results.
-        df (pd.DataFrame): Data frame containing the data.
-        selected_countries (list): List of selected countries.
-        p_range (range): Range of p values.
-        d_range (range): Range of d values.
-        q_range (range): Range of q values.
-        start_year (int): Start year for the data.
-        end_year (int): End year for the data.
-
-    Returns:
-        dict: ARIMA results for each country.
-    """
     arima_results = {}
 
     for country in selected_countries:
-        variable = adf_results[adf_results['Country'] == country]['Variable'].values[0]
-        data_series = df[(df['Country'] == country) & (df['Date'] >= start_year) & (df['Date'] <= end_year) & (df[variable].notna())][variable]
+        data_series = df[(df['Country'] == country) & (df['Date'] >= start_year) & (df['Date'] <= end_year) & (df.iloc[:, 2].notna())].iloc[:, 2]
 
         if data_series.empty or len(data_series) < max(p_range) + max(d_range) + max(q_range) + 1:
             arima_results[country] = {'error': 'Insufficient data for modeling.'}
@@ -77,19 +50,7 @@ def optimize_arima_models(adf_results, df, selected_countries, p_range, d_range,
     return arima_results
 
 def forecast_future(arima_results, df, start_year, forecast_until_year=2100, replace_negative_forecast=False):
-    """
-    Forecast future values using ARIMA models.
 
-    Args:
-        arima_results (dict): ARIMA results.
-        df (pd.DataFrame): Data frame containing the data.
-        start_year (int): Start year for the forecast.
-        forecast_until_year (int): Year until which to forecast.
-        replace_negative_forecast (bool): Whether to replace negative forecast values with zero.
-
-    Returns:
-        dict: Forecast results for each country.
-    """
     forecast_results = {}
 
     for country, result in arima_results.items():

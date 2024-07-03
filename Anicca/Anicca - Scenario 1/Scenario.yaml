@@ -66,6 +66,12 @@ components:
     NORTH_AMERICA:
         type: Facility
         file: NORTH_AMERICA.yaml   
+    NORTH_AMERICA_COP:
+        type: Facility
+        file: NORTH_AMERICA_COP.yaml  
+    RUSSIA:
+        type: Facility
+        file: RUSSIA.yaml      
     ASIA:
         type: Facility
         file: ASIA.yaml     
@@ -103,6 +109,12 @@ connections:
     NORTH_AMERICA:
         - UOX_45_SPENT to FD
         - UOX_45 from Fabrication
+    NORTH_AMERICA_COP:
+        - UOX_45_SPENT to FD
+        - UOX_45 from Fabrication
+    RUSSIA:
+        - UOX_45_SPENT to FD
+        - UOX_45 from Fabrication
     ASIA:
         - UOX_45_SPENT to FD
         - UOX_45 from Fabrication
@@ -133,6 +145,8 @@ Viewers:
         variables: [Packages]
         observables:
             - NORTH_AMERICA
+            - NORTH_AMERICA_COP
+            - RUSSIA
             - ASIA    
             - ASIA_COP  
             - EAST_EUROPE
@@ -149,6 +163,8 @@ Viewers:
         variables: [Packages]
         observables:
             - Fabrication to NORTH_AMERICA
+            - Fabrication to NORTH_AMERICA_COP
+            - Fabrication to RUSSIA
             - Fabrication to ASIA
             - Fabrication to ASIA_COP
             - Fabrication to EAST_EUROPE
